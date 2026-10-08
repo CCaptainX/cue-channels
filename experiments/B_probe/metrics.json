@@ -1,0 +1,188 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "position": "last_prompt_token (before any generated token)",
+  "task": "2-option two-digit addition; label = letter of the correct option",
+  "n_prompts": 200,
+  "split": "80/20 grouped by question (both orderings of a question stay together)",
+  "probe": "StandardScaler + LogisticRegression(C=0.1)",
+  "results": {
+    "cot": {
+      "format": "cot",
+      "system_prompt": "Think step by step, then give your final answer on the last line as 'Answer: <letter>'.",
+      "behavior": {
+        "format": "cot",
+        "n": 40,
+        "parsed": 20,
+        "correct": 20
+      },
+      "layer": 14,
+      "headline": {
+        "train_accuracy": 1.0,
+        "test_accuracy": 0.475,
+        "test_chance": 0.5,
+        "n_train": 160,
+        "n_test": 40,
+        "d": 1536,
+        "C": 0.1
+      },
+      "test_accuracy_over_5_split_seeds": {
+        "mean": 0.51,
+        "std": 0.064,
+        "values": [
+          0.475,
+          0.6,
+          0.575,
+          0.45,
+          0.45
+        ]
+      },
+      "shuffled_label_control_test_accuracy": 0.6,
+      "model_own_answer_probe": null,
+      "positive_controls_test_accuracy": {
+        "option_A_gt_option_B": 1.0,
+        "first_operand_gt_50": 0.95
+      },
+      "test_accuracy_by_layer": {
+        "0": 0.625,
+        "1": 0.725,
+        "2": 0.675,
+        "3": 0.55,
+        "4": 0.6,
+        "5": 0.425,
+        "6": 0.525,
+        "7": 0.5,
+        "8": 0.5,
+        "9": 0.5,
+        "10": 0.625,
+        "11": 0.55,
+        "12": 0.45,
+        "13": 0.525,
+        "14": 0.475,
+        "15": 0.475,
+        "16": 0.475,
+        "17": 0.525,
+        "18": 0.45,
+        "19": 0.475,
+        "20": 0.55,
+        "21": 0.55,
+        "22": 0.55,
+        "23": 0.55,
+        "24": 0.525,
+        "25": 0.55,
+        "26": 0.625,
+        "27": 0.625
+      },
+      "best_layer": {
+        "layer": 1,
+        "test_accuracy": 0.725,
+        "note": "selected post hoc on the test split; optimistic"
+      }
+    },
+    "direct": {
+      "format": "direct",
+      "system_prompt": "Reply with only the letter of the correct option, formatted as 'Answer: <letter>'.",
+      "behavior": {
+        "format": "direct",
+        "n": 200,
+        "parsed": 200,
+        "correct": 114
+      },
+      "layer": 14,
+      "headline": {
+        "train_accuracy": 1.0,
+        "test_accuracy": 0.55,
+        "test_chance": 0.5,
+        "n_train": 160,
+        "n_test": 40,
+        "d": 1536,
+        "C": 0.1
+      },
+      "test_accuracy_over_5_split_seeds": {
+        "mean": 0.545,
+        "std": 0.064,
+        "values": [
+          0.55,
+          0.6,
+          0.625,
+          0.5,
+          0.45
+        ]
+      },
+      "shuffled_label_control_test_accuracy": 0.65,
+      "model_own_answer_probe": {
+        "frac_answer_A": 0.88,
+        "test_accuracy_at_layer": 0.975,
+        "majority_baseline": 0.88,
+        "test_accuracy_by_layer": {
+          "0": 0.925,
+          "1": 0.95,
+          "2": 0.975,
+          "3": 0.975,
+          "4": 0.95,
+          "5": 0.95,
+          "6": 0.875,
+          "7": 0.95,
+          "8": 0.925,
+          "9": 0.95,
+          "10": 0.95,
+          "11": 0.95,
+          "12": 0.975,
+          "13": 0.975,
+          "14": 0.975,
+          "15": 0.95,
+          "16": 0.95,
+          "17": 0.95,
+          "18": 0.975,
+          "19": 0.975,
+          "20": 0.975,
+          "21": 0.975,
+          "22": 0.95,
+          "23": 0.95,
+          "24": 0.95,
+          "25": 0.95,
+          "26": 0.95,
+          "27": 0.95
+        }
+      },
+      "positive_controls_test_accuracy": {
+        "option_A_gt_option_B": 1.0,
+        "first_operand_gt_50": 0.925
+      },
+      "test_accuracy_by_layer": {
+        "0": 0.65,
+        "1": 0.575,
+        "2": 0.675,
+        "3": 0.65,
+        "4": 0.6,
+        "5": 0.6,
+        "6": 0.6,
+        "7": 0.6,
+        "8": 0.625,
+        "9": 0.575,
+        "10": 0.6,
+        "11": 0.6,
+        "12": 0.525,
+        "13": 0.575,
+        "14": 0.55,
+        "15": 0.5,
+        "16": 0.5,
+        "17": 0.65,
+        "18": 0.55,
+        "19": 0.6,
+        "20": 0.65,
+        "21": 0.625,
+        "22": 0.525,
+        "23": 0.575,
+        "24": 0.575,
+        "25": 0.525,
+        "26": 0.55,
+        "27": 0.6
+      },
+      "best_layer": {
+        "layer": 2,
+        "test_accuracy": 0.675,
+        "note": "selected post hoc on the test split; optimistic"
+      }
+    }
+  }
+}
