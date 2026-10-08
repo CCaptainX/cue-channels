@@ -1,0 +1,22 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "device": "mps",
+  "layer": 14,
+  "n_layers": 28,
+  "activations_shape": [
+    66,
+    1536
+  ],
+  "activations_dtype": "float32",
+  "model_dtype": "bfloat16",
+  "mean": 0.021969616413116455,
+  "std": 34.72395324707031,
+  "abs_max": 6624.0,
+  "last_token_norm": 53.910701751708984,
+  "prompt_tokens": 66,
+  "completion_tokens": 200,
+  "load_seconds": 7.3,
+  "generate_seconds": 4.6,
+  "prompt": "Q: If a book has 300 pages and I read 50 pages a day, how many days will it take to finish? Let's think step by step:",
+  "continuation": "To determine how many days it will take to finish reading a book with 300 pages if you read 50 pages per day, we can follow these steps:\n\n1. **Identify the total number of pages in the book**: The book has 300 pages.\n2. **Determine the daily reading rate**: You read 50 pages each day.\n3. **Calculate the number of days required**:\n   - To find out how many days it takes to read all 300 pages at a rate of 50 pages per day, divide the total number of pages by the daily reading rate.\n\n\\[\n\\text{Number of days} = \\frac{\\text{Total number of pages}}{\\text{Pages read per day}}\n\\]\n\n4. **Perform the division**:\n\n\\[\n\\text{Number of days} = \\frac{300}{50}\n\\]\n\n5. **Simplify the fraction**:\n\n\\[\n"
+}

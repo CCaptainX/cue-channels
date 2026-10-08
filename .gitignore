@@ -26,3 +26,6 @@ activations/
 *.safetensors
 *.bin
 *.pt
+
+# Experiment artifacts (commit summaries / metrics only)
+experiments/**/*.pkl

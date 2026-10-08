@@ -71,19 +71,25 @@ class LocalBackend:
         from transformers import AutoModelForCausalLM, AutoTokenizer
 
         self.device = detect_device()
-        dtype = torch.float32 if self.device == "cpu" else torch.float16
+        # bf16 rather than fp16: Qwen2.5 activations can overflow fp16.
+        dtype = torch.float32 if self.device == "cpu" else torch.bfloat16
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_config.hf_id)
         self.model = AutoModelForCausalLM.from_pretrained(
-            self.model_config.hf_id, torch_dtype=dtype
+            self.model_config.hf_id, dtype=dtype
         ).to(self.device)
         self.model.eval()
 
     def _encode(self, messages: Messages):
         assert self.tokenizer is not None, "call load() first"
-        ids = self.tokenizer.apply_chat_template(
-            messages, add_generation_prompt=True, return_tensors="pt"
+        enc = self.tokenizer.apply_chat_template(
+            messages, add_generation_prompt=True, return_tensors="pt", return_dict=True
         )
-        return ids.to(self.device)
+        return enc["input_ids"].to(self.device)
+
+    def encode_raw(self, text: str):
+        """Tokenize plain text with no chat template (e.g. for completion-style prompts)."""
+        assert self.tokenizer is not None, "call load() first"
+        return self.tokenizer(text, return_tensors="pt")["input_ids"].to(self.device)
 
     def generate(self, messages: Messages, **kwargs: Any) -> Generation:
         import torch
@@ -116,6 +122,15 @@ class LocalBackend:
         hs = out.hidden_states
         layers = layers if layers is not None else list(range(len(hs) - 1))
         return {i: hs[i + 1][0, -1].float().cpu().numpy() for i in layers}
+
+    def get_residual_stream(self, messages: Messages, layer: int):
+        """Residual stream after block ``layer`` at every prompt position: [seq, d_model]."""
+        import torch
+
+        input_ids = self._encode(messages)
+        with torch.no_grad():
+            out = self.model(input_ids, output_hidden_states=True)
+        return out.hidden_states[layer + 1][0].float().cpu().numpy()
 
     def shutdown(self) -> None:
         self.model = None
