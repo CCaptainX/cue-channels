@@ -18,6 +18,12 @@ See [`docs/scope.md`](docs/scope.md) for hypotheses and the full plan.
 🚧 Scaffold only. The local backend works end to end on toy items. The SageMaker backend
 is a stub, and the real item sets, LLM-judge monitor, and probe analysis are still TODO.
 
+**Experiment log.** A: sanity run · B: pre-CoT probe on addition, at chance · C: Turpin few-shot bias, 0% influence ·
+D: base vs Instruct, same null (distillation rejected) · E: pre-registered L24 probe on BBH logical deduction,
+not supported (task at chance) · **E2 (pilot gate failed):** with BBH's standard 3-shot prompts, the 30-item no-CoT
+pilot scored 0.267 (CI 0.133–0.433) against a required 0.55–0.85, with "B" chosen on 73% of items. Per the
+pre-registration the full run was not executed. See `experiments/*/README.md`.
+
 ## Quickstart
 
 ```bash
