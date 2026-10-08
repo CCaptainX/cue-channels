@@ -1,0 +1,9 @@
+torch
+transformers>=4.44
+accelerate
+transformer_lens
+einops
+numpy
+scikit-learn
+pytest
+ruff

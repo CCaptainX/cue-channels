@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cue-channels"
+version = "0.0.1"
+description = "Attention-probe analysis of CoT faithfulness: do models decide before they verbalize?"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "torch",
+    "transformers>=4.44",
+    "accelerate",
+    "transformer_lens",
+    "einops",
+    "numpy",
+    "scikit-learn",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+sagemaker = ["sagemaker", "boto3"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = ["slow: downloads model weights or runs inference"]
+addopts = "-m 'not slow'"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
