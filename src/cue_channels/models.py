@@ -123,6 +123,36 @@ class LocalBackend:
         layers = layers if layers is not None else list(range(len(hs) - 1))
         return {i: hs[i + 1][0, -1].float().cpu().numpy() for i in layers}
 
+    def generate_text(self, prompt: str, max_new_tokens: int = 64) -> Generation:
+        """Greedy completion of a raw-text prompt (no chat template), e.g. for base models."""
+        import torch
+
+        input_ids = self.encode_raw(prompt)
+        with torch.no_grad():
+            out = self.model.generate(
+                input_ids,
+                max_new_tokens=max_new_tokens,
+                do_sample=False,
+                pad_token_id=self.tokenizer.eos_token_id,
+            )
+        completion = out[0, input_ids.shape[1] :]
+        return Generation(
+            text=self.tokenizer.decode(completion, skip_special_tokens=True),
+            prompt_tokens=int(input_ids.shape[1]),
+            completion_tokens=int(completion.shape[0]),
+        )
+
+    def get_activations_text(self, prompt: str, layers: list[int] | None = None):
+        """Like ``get_activations`` but for a raw-text prompt: last prompt token, per layer."""
+        import torch
+
+        input_ids = self.encode_raw(prompt)
+        with torch.no_grad():
+            out = self.model(input_ids, output_hidden_states=True)
+        hs = out.hidden_states
+        layers = layers if layers is not None else list(range(len(hs) - 1))
+        return {i: hs[i + 1][0, -1].float().cpu().numpy() for i in layers}
+
     def get_residual_stream(self, messages: Messages, layer: int):
         """Residual stream after block ``layer`` at every prompt position: [seq, d_model]."""
         import torch

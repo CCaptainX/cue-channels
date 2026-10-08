@@ -31,6 +31,13 @@ MODEL_REGISTRY: dict[str, ModelConfig] = {
         n_layers=28,
         d_model=1536,
     ),
+    # Pretrained-only counterpart of the default; no chat template, use raw-text prompts.
+    "qwen2.5-1.5b-base": ModelConfig(
+        key="qwen2.5-1.5b-base",
+        hf_id="Qwen/Qwen2.5-1.5B",
+        n_layers=28,
+        d_model=1536,
+    ),
     "smollm2-1.7b": ModelConfig(
         key="smollm2-1.7b",
         hf_id="HuggingFaceTB/SmolLM2-1.7B-Instruct",
