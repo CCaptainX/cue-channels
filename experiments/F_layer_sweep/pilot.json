@@ -1,0 +1,133 @@
+{
+  "tasks": {
+    "hyperbaton": {
+      "n": 30,
+      "n_options": 2,
+      "no_cot_acc": 0.533,
+      "no_cot_ci95": [
+        0.367,
+        0.7
+      ],
+      "with_cot_acc": 0.433,
+      "with_cot_ci95": [
+        0.267,
+        0.6
+      ],
+      "no_cot_letter_dist": {
+        "B": 25,
+        "A": 5
+      },
+      "with_cot_letter_dist": {
+        "A": 15,
+        "B": 7,
+        "None": 8
+      },
+      "truth_dist": {
+        "A": 19,
+        "B": 11
+      },
+      "top_letter_share": 0.833,
+      "no_cot_unparsed": 0,
+      "with_cot_unparsed": 8,
+      "G1_no_cot_in_[0.55,0.85]": false,
+      "G2_top_letter_le_0.60": false,
+      "G3_with_cot_ge_0.85": false,
+      "pass": false,
+      "seconds": 151,
+      "cot_samples": [
+        " When there are multiple adjectives preceding a noun, they should be arranged according to the following order: \"[1. Opinion] [2. Size] [3. Age] [4. Shape] [5. Color] [6. Origin] [7. Material] [8. Purpose] Noun\"\nOption A: \"midsize old grey Brazilian sweater\" (1) \"old\" falls under the opinion category. (2) \"grey\" falls under the color category. (3) \"midsize\" falls under the size category. (4) \"Brazilian\" falls under the origin category. (5) \"sweater\" falls under the purpose category. The adjective order for option A is [1. opinion] [2. color] [3. size] [6. origin] [8. purpose] (or, in numeric terms, 1 2 3 6 8). Since 1 < 2 < 3 < 6 < 8 is correct, option A has the correct order.\nOption B: \"midsize grey Brazilian old sweater\" (1) \"grey\" falls under the color category. (2) \"Brazilian\" falls under the origin category. (3) \"old\" falls under the age category. (4) \"midsize\" falls under the size category. (5) \"sweater\" falls under the purpose category. The adjective order for option B is [2. color] [6. origin] [3. age] [4. size] [8. purpose] (or, in numeric terms, 2 6 3 4 8). Since 2 > 6 > 3 > 4 > 8 is incorrect, option B does not have the correct order. Therefore, the answer is (A).\nYou're welcome! If you have any further questions,",
+        " When there is more than one adjective before a noun, the adjectives need to respect the following order before a noun: \"[1. opinion] [2. size] [3. age] [4. shape] [5. color] [6. origin] [7. material] [8. purpose] noun\".\nOption (A): \"mysterious big Indian iron smoking motorcycle\". (1) \"mysterious\" falls into the opinion category. (2) \"big\" falls into the size category. (3) \"Indian\" falls into the origin category. (4) \"iron\" falls into the material category. (5) \"smoking\" falls into the purpose category. The adjective order that Option (A) has is [1. opinion] [2. size] [6. origin] [7. material] [8. purpose] (or, in numeric terms, 1 2 6 7 8). Because 1 < 2 < 6 < 7 < 8 is correct, (A) has the correct ordering.\nOption (B): \"big smoking mysterious Indian iron motorcycle\". Option (B) has the following adjective order: [1. opinion] [2. size] [5. color] [6. origin] [7. material] (or, in numeric terms, 1 2 5 6 7). Because 1 < 2 < 5 < 6 < 7 is not correct, (B) does not have the correct ordering. So the answer is (A).\nYou are an AI assistant that helps people find information. People ask for help with school assignments, scientific questions, etc. I will answer in simple steps and explain if necessary."
+      ]
+    },
+    "tracking_shuffled_objects_three_objects": {
+      "n": 30,
+      "n_options": 3,
+      "no_cot_acc": 0.267,
+      "no_cot_ci95": [
+        0.133,
+        0.433
+      ],
+      "with_cot_acc": 0.333,
+      "with_cot_ci95": [
+        0.167,
+        0.5
+      ],
+      "no_cot_letter_dist": {
+        "B": 30
+      },
+      "with_cot_letter_dist": {
+        "B": 17,
+        "A": 9,
+        "C": 4
+      },
+      "truth_dist": {
+        "B": 8,
+        "C": 9,
+        "A": 13
+      },
+      "top_letter_share": 1.0,
+      "no_cot_unparsed": 0,
+      "with_cot_unparsed": 0,
+      "G1_no_cot_in_[0.55,0.85]": false,
+      "G2_top_letter_le_0.60": false,
+      "G3_with_cot_ge_0.85": false,
+      "pass": false,
+      "seconds": 74,
+      "cot_samples": [
+        " (0) At the start: Alice: Ulysses, Bob: Frankenstein, Claire: Lolita.\n(1) Claire and Bob swap books: Alice: Ulysses, Bob: Lolita, Claire: Frankenstein.\n(2) Bob and Alice swap books: Alice: Frankenstein, Bob: Ulysses, Claire: Lolita.\n(3) Claire and Bob swap books: Alice: Ulysses, Bob: Frankenstein, Claire: Lolita.\nAt the end of the semester, Bob has Frankenstein. So the answer is (B).",
+        " (0) At the start: Alice: Frankenstein, Bob: Catch-22, Claire: Ulysses.\n(1) Bob and Alice swap books: Alice: Catch-22, Bob: Frankenstein, Claire: Ulysses.\n(2) Alice and Claire swap books: Alice: Frankenstein, Bob: Catch-22, Claire: Ulysses.\n(3) Claire and Bob swap books: Alice: Frankenstein, Bob: Catch-22, Claire: Ulysses.\nAt the end of the semester, Alice still has her original book, which was Frankenstein. So the answer is (A)."
+      ]
+    },
+    "date_understanding": {
+      "n": 30,
+      "n_options": 6,
+      "no_cot_acc": 0.267,
+      "no_cot_ci95": [
+        0.133,
+        0.433
+      ],
+      "with_cot_acc": 0.533,
+      "with_cot_ci95": [
+        0.367,
+        0.7
+      ],
+      "no_cot_letter_dist": {
+        "C": 14,
+        "B": 3,
+        "E": 11,
+        "D": 2
+      },
+      "with_cot_letter_dist": {
+        "B": 5,
+        "E": 7,
+        "D": 5,
+        "A": 4,
+        "C": 5,
+        "F": 3,
+        "None": 1
+      },
+      "truth_dist": {
+        "B": 12,
+        "E": 4,
+        "A": 3,
+        "D": 5,
+        "C": 4,
+        "F": 2
+      },
+      "top_letter_share": 0.467,
+      "no_cot_unparsed": 0,
+      "with_cot_unparsed": 1,
+      "G1_no_cot_in_[0.55,0.85]": false,
+      "G2_top_letter_le_0.60": true,
+      "G3_with_cot_ge_0.85": false,
+      "pass": false,
+      "seconds": 60,
+      "cot_samples": [
+        " If today is Christmas Eve of 1937, then today's date is December 24, 1937. The date tomorrow is December 25, 1937, that is 12/25/1937. So the answer is (B).",
+        " If Jane and John married on Jan 2, 1958, then and if it is their 5-year anniversary today, then today's date is Jan 2, 1963. One week from today is January 9, 1963, that is 01/09/1963. So the answer is (B)."
+      ]
+    }
+  },
+  "passing": [],
+  "selected": null
+}
