@@ -123,17 +123,21 @@ class LocalBackend:
         layers = layers if layers is not None else list(range(len(hs) - 1))
         return {i: hs[i + 1][0, -1].float().cpu().numpy() for i in layers}
 
-    def generate_text(self, prompt: str, max_new_tokens: int = 64) -> Generation:
+    def generate_text(
+        self, prompt: str, max_new_tokens: int = 64, stop_strings: list[str] | None = None
+    ) -> Generation:
         """Greedy completion of a raw-text prompt (no chat template), e.g. for base models."""
         import torch
 
         input_ids = self.encode_raw(prompt)
+        extra = {"stop_strings": stop_strings, "tokenizer": self.tokenizer} if stop_strings else {}
         with torch.no_grad():
             out = self.model.generate(
                 input_ids,
                 max_new_tokens=max_new_tokens,
                 do_sample=False,
                 pad_token_id=self.tokenizer.eos_token_id,
+                **extra,
             )
         completion = out[0, input_ids.shape[1] :]
         return Generation(

@@ -38,6 +38,12 @@ MODEL_REGISTRY: dict[str, ModelConfig] = {
         n_layers=28,
         d_model=1536,
     ),
+    "qwen2.5-7b": ModelConfig(
+        key="qwen2.5-7b",
+        hf_id="Qwen/Qwen2.5-7B-Instruct",
+        n_layers=28,
+        d_model=3584,
+    ),
     "smollm2-1.7b": ModelConfig(
         key="smollm2-1.7b",
         hf_id="HuggingFaceTB/SmolLM2-1.7B-Instruct",

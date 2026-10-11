@@ -1,0 +1,26 @@
+{
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "device": "mps",
+  "dtype": "torch.bfloat16",
+  "env_PYTORCH_MPS_HIGH_WATERMARK_RATIO": null,
+  "n_layers": 28,
+  "d_model": 3584,
+  "n_hidden_states": 29,
+  "hidden_state_shape": [
+    1,
+    19,
+    3584
+  ],
+  "activation_vector_shapes": {
+    "0": [
+      3584
+    ],
+    "27": [
+      3584
+    ]
+  },
+  "finite": true,
+  "load_seconds": 22.4,
+  "mps_allocated_gb": 15.5,
+  "sample_generation": " The problem is asking for the sum of 2 and 2. \n\n1. Start with the first number, which"
+}
