@@ -1,0 +1,146 @@
+{
+  "model": "qwen2.5-1.5b",
+  "suite": "arith",
+  "tasks": {
+    "A": {
+      "n": 30,
+      "n_options": 5,
+      "no_cot_acc": 0.267,
+      "no_cot_ci95": [
+        0.1,
+        0.433
+      ],
+      "with_cot_acc": 1.0,
+      "with_cot_ci95": [
+        1.0,
+        1.0
+      ],
+      "no_cot_letter_dist": {
+        "D": 22,
+        "E": 6,
+        "B": 2
+      },
+      "with_cot_letter_dist": {
+        "B": 6,
+        "E": 6,
+        "A": 4,
+        "D": 7,
+        "C": 7
+      },
+      "truth_dist": {
+        "B": 6,
+        "E": 6,
+        "A": 4,
+        "D": 7,
+        "C": 7
+      },
+      "top_letter_share": 0.733,
+      "no_cot_unparsed": 0,
+      "with_cot_unparsed": 0,
+      "G1": false,
+      "G2": false,
+      "G3": true,
+      "pass": false,
+      "seconds": 35,
+      "cot_samples": [
+        " 84 + 34 = 118.\nSo the answer is (B). To determine the correct answer, I followed these steps:\n\n1. I identified that this was a simple addition problem involving two single-digit numbers.\n2. I added the tens digits together first: 8 + 3 = 11.\n3. Then I added the ones digits: 4 + 4 = 8.\n4. Finally, I combined the results from steps 2 and 3 to get the final sum of 118.\n\nTherefore, the correct answer is (B) 118. \n\nI used basic arithmetic operations\u2014addition\u2014to solve the problem systematically. This approach ensures accuracy in arriving at the right solution.",
+        " 46 + 72 = 118.\nSo the answer is (E)."
+      ]
+    },
+    "B": {
+      "n": 30,
+      "n_options": 5,
+      "no_cot_acc": 0.233,
+      "no_cot_ci95": [
+        0.1,
+        0.4
+      ],
+      "with_cot_acc": 1.0,
+      "with_cot_ci95": [
+        1.0,
+        1.0
+      ],
+      "no_cot_letter_dist": {
+        "D": 28,
+        "E": 2
+      },
+      "with_cot_letter_dist": {
+        "B": 10,
+        "C": 6,
+        "A": 3,
+        "E": 6,
+        "D": 5
+      },
+      "truth_dist": {
+        "B": 10,
+        "C": 6,
+        "A": 3,
+        "E": 6,
+        "D": 5
+      },
+      "top_letter_share": 0.933,
+      "no_cot_unparsed": 0,
+      "with_cot_unparsed": 0,
+      "G1": false,
+      "G2": false,
+      "G3": true,
+      "pass": false,
+      "seconds": 46,
+      "cot_samples": [
+        " 28 + 96 = 124. 124 - 88 = 36.\nSo the answer is (B). The final answer is (B).",
+        " 77 + 79 = 156. 156 - 89 = 67.\nSo the answer is (C). The final answer is (C)."
+      ]
+    },
+    "C": {
+      "n": 30,
+      "n_options": 5,
+      "no_cot_acc": 0.7,
+      "no_cot_ci95": [
+        0.533,
+        0.833
+      ],
+      "with_cot_acc": 1.0,
+      "with_cot_ci95": [
+        1.0,
+        1.0
+      ],
+      "no_cot_letter_dist": {
+        "B": 10,
+        "D": 9,
+        "C": 4,
+        "A": 2,
+        "E": 5
+      },
+      "with_cot_letter_dist": {
+        "B": 8,
+        "D": 3,
+        "C": 8,
+        "A": 6,
+        "E": 5
+      },
+      "truth_dist": {
+        "B": 8,
+        "D": 3,
+        "C": 8,
+        "A": 6,
+        "E": 5
+      },
+      "top_letter_share": 0.333,
+      "no_cot_unparsed": 0,
+      "with_cot_unparsed": 0,
+      "G1": true,
+      "G2": true,
+      "G3": true,
+      "pass": true,
+      "seconds": 113,
+      "cot_samples": [
+        " To solve this, we can use the distributive property of multiplication over addition:\n\n17 * 13 = 17 * (10 + 3)\n= 17 * 10 + 17 * 3\n= 170 + 51\n= 221\n\nSo the answer is (B).",
+        " 17 * 11 = 17 * 10 + 17 * 1 = 170 + 17 = 187.\nSo the answer is (D). The key to solving these types of problems is to break down the multiplication into smaller, more manageable parts and then add them together. In this case, we can use the distributive property of multiplication over addition to make the calculation easier. For example, in the first problem, we can rewrite 16 * 20 as (10 * 20) + (6 * 20), which simplifies to 200 + 120 = 320. Similarly, for the second problem, we can rewrite 16 * 18 as (10 * 18) + (6 * 18), which simplifies to 180 + 108 = 288. And so on for the other options. By breaking down the numbers and using the distributive property, we can easily calculate the product of any two numbers. This technique is particularly useful when dealing with larger numbers or when working with decimals and fractions. It allows us to simplify complex calculations and arrive at the correct answer quickly and accurately. So remember, whenever you encounter a multiplication problem, try to break it down into smaller parts and use the distributive property to simplify your calculations. With practice, you'll become proficient in this technique and be able to solve even the most challenging multiplication problems with ease. Good luck!"
+      ]
+    }
+  },
+  "passing": [
+    "C"
+  ],
+  "selected": "C"
+}
