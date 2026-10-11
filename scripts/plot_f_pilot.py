@@ -2,6 +2,7 @@
 """Figure 4 for experiment F: no-CoT letter distribution per pilot task vs ground truth."""
 
 import json
+import sys
 from pathlib import Path
 
 import matplotlib
@@ -9,7 +10,9 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 
-F_DIR = Path("experiments/F_layer_sweep")
+# usage: plot_f_pilot.py [experiment_dir] [model label]
+F_DIR = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("experiments/F_layer_sweep")
+MODEL = sys.argv[2] if len(sys.argv) > 2 else "Qwen2.5-1.5B-Instruct"
 pilot = json.loads((F_DIR / "pilot.json").read_text())
 tasks = list(pilot["tasks"])
 short = {"hyperbaton": "hyperbaton (2-way)",
@@ -32,7 +35,7 @@ for ax, t in zip(axes, tasks, strict=True):
     ax.set_ylim(0, r["n"])
     ax.set_ylabel("items (of 30)")
 axes[0].legend(fontsize=7, loc="upper left")
-fig.suptitle("F pilot: no-CoT letter distribution (Qwen2.5-1.5B-Instruct, BBH 3-shot)", fontsize=10)
+fig.suptitle(f"{F_DIR.name} pilot: no-CoT letter distribution ({MODEL}, BBH 3-shot)", fontsize=10)
 out = F_DIR / "figures/4_no_cot_letter_distribution.png"
 fig.savefig(out, dpi=300)
 print(out)
