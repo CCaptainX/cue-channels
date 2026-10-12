@@ -1,0 +1,38 @@
+{
+  "n_items_each": 5000,
+  "chance": 0.2,
+  "H2_items": {
+    "logistic_regression": 0.205,
+    "random_forest": 0.202,
+    "rule_median": 0.196,
+    "rule_centre_of_offsets": 0.206,
+    "best": 0.206,
+    "letter_dist": {
+      "A": 991,
+      "B": 967,
+      "C": 1046,
+      "D": 1009,
+      "E": 987
+    }
+  },
+  "H_items_positive_control": {
+    "logistic_regression": 0.607,
+    "random_forest": 1.0,
+    "rule_median": 0.607,
+    "rule_centre_of_offsets": 1.0,
+    "best": 1.0,
+    "letter_dist": {
+      "A": 1012,
+      "B": 1023,
+      "C": 972,
+      "D": 1013,
+      "E": 980
+    }
+  },
+  "gate_H2_best_le_0.30": true,
+  "gate": "PASS",
+  "detector_sensitive_on_H": true,
+  "shifted_token_identity_on_200_H2_prompts": {
+    "(E": 200
+  }
+}

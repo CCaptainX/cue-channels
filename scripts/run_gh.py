@@ -28,7 +28,9 @@ from cue_channels.models import LocalBackend  # noqa: E402
 STOP = ["\nQ:"]
 
 
-def suite_tasks(suite: str) -> list[str]:
+def suite_tasks(suite: str, only: list[str] | None = None) -> list[str]:
+    if only:
+        return only
     return f_common.TASKS if suite == "bbh" else ["A", "B", "C"]
 
 
@@ -82,10 +84,10 @@ def load_check(model: str, out: Path) -> None:
     print(json.dumps(res, indent=2))
 
 
-def pilot(model: str, suite: str, out: Path) -> None:
+def pilot(model: str, suite: str, out: Path, only: list[str] | None = None) -> None:
     b = load_backend(model)
     results = {}
-    for task in suite_tasks(suite):
+    for task in suite_tasks(suite, only):
         t0 = time.time()
         its = task_items(suite, task, 30)
         cot_pre, ao_pre = task_prompts(suite, task)
@@ -141,11 +143,12 @@ def main() -> None:
     ap.add_argument("--model", required=True)
     ap.add_argument("--suite", choices=["bbh", "arith"], default="bbh")
     ap.add_argument("--out", required=True)
+    ap.add_argument("--tasks", default=None, help="comma-separated subset of tasks")
     a = ap.parse_args()
     if a.cmd == "load-check":
         load_check(a.model, Path(a.out))
     else:
-        pilot(a.model, a.suite, Path(a.out))
+        pilot(a.model, a.suite, Path(a.out), a.tasks.split(",") if a.tasks else None)
 
 
 if __name__ == "__main__":

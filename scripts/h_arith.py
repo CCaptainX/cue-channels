@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import random
 
-SEEDS = {"A": 101, "B": 102, "C": 103}
+SEEDS = {"A": 101, "B": 102, "C": 103, "C2": 201}
 DESCRIPTION = "Answer the arithmetic question by choosing the correct option."
 LETTERS = "ABCDE"
 DELTAS = [-10, -2, -1, 1, 2, 10]
@@ -32,13 +32,26 @@ def _operands(variant: str, rng: random.Random) -> tuple[str, int, str]:
     raise ValueError(variant)
 
 
+def _product_distractors(correct: int, rng: random.Random) -> list[int]:
+    """H2: 4 distinct other products a'*b' with (a', b') ~ U{10..20}^2 (same law as the correct)."""
+    opts: list[int] = []
+    while len(opts) < 4:
+        v = rng.randint(10, 20) * rng.randint(10, 20)
+        if v != correct and v not in opts:
+            opts.append(v)
+    return opts
+
+
 def _item(variant: str, rng: random.Random, force_letter: str | None = None) -> dict:
-    question, correct, steps = _operands(variant, rng)
-    while True:
-        ds = rng.sample(DELTAS, 4)
-        opts = [correct + d for d in ds]
-        if all(o > 0 for o in opts) and len(set(opts)) == 4:
-            break
+    question, correct, steps = _operands("C" if variant == "C2" else variant, rng)
+    if variant == "C2":
+        opts = _product_distractors(correct, rng)
+    else:
+        while True:
+            ds = rng.sample(DELTAS, 4)
+            opts = [correct + d for d in ds]
+            if all(o > 0 for o in opts) and len(set(opts)) == 4:
+                break
     values = [correct] + opts
     rng.shuffle(values)
     if force_letter is not None:  # exemplars only: move the correct option to a fixed letter
