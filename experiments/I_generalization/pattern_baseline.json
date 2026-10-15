@@ -1,0 +1,38 @@
+{
+  "add_carry": {
+    "n_items": 5000,
+    "logistic_regression": 0.208,
+    "random_forest": 0.204,
+    "rule_median": 0.188,
+    "majority_letter_rate": 0.207,
+    "best": 0.208,
+    "G4_pass": true
+  },
+  "mod": {
+    "n_items": 5000,
+    "logistic_regression": 0.199,
+    "random_forest": 0.201,
+    "rule_median": 0.204,
+    "majority_letter_rate": 0.211,
+    "best": 0.204,
+    "G4_pass": true
+  },
+  "gsm8k_easy": {
+    "n_items": 742,
+    "logistic_regression": 0.181,
+    "random_forest": 0.235,
+    "rule_median": 0.199,
+    "majority_letter_rate": 0.212,
+    "best": 0.235,
+    "G4_pass": true
+  },
+  "aqua_easy": {
+    "n_items": 23381,
+    "logistic_regression": 0.22,
+    "random_forest": 0.354,
+    "rule_median": 0.203,
+    "majority_letter_rate": 0.235,
+    "best": 0.354,
+    "G4_pass": false
+  }
+}

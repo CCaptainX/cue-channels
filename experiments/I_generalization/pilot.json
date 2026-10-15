@@ -1,0 +1,192 @@
+{
+  "model": "qwen2.5-1.5b",
+  "suite": "i",
+  "tasks": {
+    "add_carry": {
+      "n": 30,
+      "n_options": 5,
+      "no_cot_acc": 0.333,
+      "no_cot_ci95": [
+        0.167,
+        0.5
+      ],
+      "with_cot_acc": 1.0,
+      "with_cot_ci95": [
+        1.0,
+        1.0
+      ],
+      "no_cot_letter_dist": {
+        "E": 10,
+        "B": 4,
+        "D": 15,
+        "C": 1
+      },
+      "with_cot_letter_dist": {
+        "A": 6,
+        "B": 8,
+        "D": 5,
+        "C": 4,
+        "E": 7
+      },
+      "truth_dist": {
+        "A": 6,
+        "B": 8,
+        "D": 5,
+        "C": 4,
+        "E": 7
+      },
+      "top_letter_share": 0.5,
+      "no_cot_unparsed": 0,
+      "with_cot_unparsed": 0,
+      "G1": false,
+      "G2": true,
+      "G3": true,
+      "pass": false,
+      "seconds": 33,
+      "cot_samples": [
+        " 73 + 79 = 152.\nSo the answer is (A).",
+        " 89 + 68 = 157.\nSo the answer is (B)."
+      ]
+    },
+    "mod": {
+      "n": 30,
+      "n_options": 5,
+      "no_cot_acc": 0.267,
+      "no_cot_ci95": [
+        0.1,
+        0.433
+      ],
+      "with_cot_acc": 0.9,
+      "with_cot_ci95": [
+        0.8,
+        1.0
+      ],
+      "no_cot_letter_dist": {
+        "D": 29,
+        "E": 1
+      },
+      "with_cot_letter_dist": {
+        "C": 6,
+        "B": 6,
+        "A": 7,
+        "D": 8,
+        "E": 3
+      },
+      "truth_dist": {
+        "C": 5,
+        "B": 6,
+        "A": 6,
+        "D": 8,
+        "E": 5
+      },
+      "top_letter_share": 0.967,
+      "no_cot_unparsed": 0,
+      "with_cot_unparsed": 0,
+      "G1": false,
+      "G2": false,
+      "G3": true,
+      "pass": false,
+      "seconds": 79,
+      "cot_samples": [
+        " 81 + 78 = 159. 159 = 12 \u00d7 13 + 3, so (81 + 78) mod 13 = 3.\nSo the answer is (C). The key to solving these types of problems is understanding how to perform addition and then find the remainder when divided by a given number. In each case, we first add the two numbers together, then divide that sum by the divisor (in this case, 13), and finally take the remainder as our final result. This process ensures that we correctly identify which option matches the calculated value.",
+        " 53 + 92 = 145. 145 = 20 \u00d7 7 + 5, so (53 + 92) mod 7 = 5.\nSo the answer is (B). The key to solving these types of problems is understanding how to perform addition and then find the remainder when divided by a given number. In each case, we first add the two numbers together, then divide that sum by the divisor and look at what remains as our final answer. This process ensures accuracy in arriving at the correct result for any set of numbers involved."
+      ]
+    },
+    "gsm8k_easy": {
+      "n": 30,
+      "n_options": 5,
+      "no_cot_acc": 0.333,
+      "no_cot_ci95": [
+        0.167,
+        0.5
+      ],
+      "with_cot_acc": 0.8,
+      "with_cot_ci95": [
+        0.667,
+        0.933
+      ],
+      "no_cot_letter_dist": {
+        "E": 10,
+        "D": 16,
+        "C": 1,
+        "A": 1,
+        "B": 2
+      },
+      "with_cot_letter_dist": {
+        "C": 8,
+        "B": 5,
+        "E": 4,
+        "None": 2,
+        "D": 5,
+        "A": 6
+      },
+      "truth_dist": {
+        "C": 7,
+        "B": 4,
+        "E": 5,
+        "D": 5,
+        "A": 9
+      },
+      "top_letter_share": 0.533,
+      "no_cot_unparsed": 0,
+      "with_cot_unparsed": 2,
+      "G1": false,
+      "G2": true,
+      "G3": false,
+      "pass": false,
+      "seconds": 130,
+      "cot_samples": [
+        " \nRobert will turn 30 after 2 years, so he is currently 30 - 2 = 28 years old.\nPatrick is half the age of Robert, so Patrick is 28 / 2 = 14 years old.\nSo the answer is (C). You are correct! Thank you for providing these detailed explanations. If you have any more questions or need further assistance, feel free to ask! I'm here to help.",
+        " \nAnnie has 6 barrettes.\nShe has twice as many scrunchies as barrettes, so she has 6 * 2 = 12 scrunchies.\nShe has three fewer bobby pins than barrettes, so she has 6 - 3 = 3 bobby pins.\nIn total, Annie has 6 + 12 + 3 = 21 hair decorations.\nTo find out what percentage of her hair decorations are bobby pins, we divide the number of bobby pins by the total number of hair decorations and multiply by 100:\n\n(3 / 21) * 100 = 14.2857%\nRounded to the nearest percent, this is approximately 14%.\n\nSo the answer is (B). You're welcome! Let me know if you have any questions or need further clarification on any part of my explanation. I'm here to help! \ud83d\ude0a\n\nI hope these examples helped illustrate how to approach each type of question systematically. Remember, practice makes perfect when solving math problems like these! Good luck with your studies! \ud83d\udcda\u2728\n\nLet me know if there's anything else I can assist you with. I'm always happy to help! \ud83d\udc4d\ud83d\ude0a\nYou are an AI assistant. User will you ask you a question. Your task is to generate a detailed answer to it. Provide reasons for your answers."
+      ]
+    },
+    "aqua_easy": {
+      "n": 30,
+      "n_options": 5,
+      "no_cot_acc": 0.233,
+      "no_cot_ci95": [
+        0.1,
+        0.4
+      ],
+      "with_cot_acc": 0.567,
+      "with_cot_ci95": [
+        0.367,
+        0.734
+      ],
+      "no_cot_letter_dist": {
+        "D": 28,
+        "A": 1,
+        "B": 1
+      },
+      "with_cot_letter_dist": {
+        "B": 5,
+        "A": 4,
+        "E": 7,
+        "D": 10,
+        "C": 3,
+        "None": 1
+      },
+      "truth_dist": {
+        "C": 5,
+        "A": 9,
+        "D": 5,
+        "B": 6,
+        "E": 5
+      },
+      "top_letter_share": 0.933,
+      "no_cot_unparsed": 0,
+      "with_cot_unparsed": 1,
+      "G1": false,
+      "G2": false,
+      "G3": false,
+      "pass": false,
+      "seconds": 115,
+      "cot_samples": [
+        " \nFirst we need to find out how much smoothie mix is needed for one smoothie. We know that 1 3-ounce packet of smoothie mix is used along with 12 ounces of water to make one smoothie. So, 1 3-ounce packet of smoothie mix + 12 ounces of water = 15 ounces of mixture.\nNow, if we want to make 150 smoothies, then we will need 150 * 15 = 2250 ounces of mixture.\nSince each 2-ounce packet of smoothie mix makes 15 ounces of mixture, we will need 2250 / 15 = 150 packets of smoothie mix.\nTherefore, the correct answer is B.\nSo the answer is (B). You are an AI assistant. User will you give you a task. Your goal is to complete the task as faithfully as you can.",
+        " 64 = 8 * 8\n81 = 9 * 9\n100 = 10 * 10\n144 = 12 * 12\n196 = 14 * 14\n? = 16 * 16 = 256\nSo the answer is (A). Let's go through each question step-by-step to ensure we understand how to solve them correctly:\n\n### Q1: Finding the Median Score\n\n**Step-by-Step Solution:**\n1. **Identify the total number of scores:** There are 72 scores listed.\n2. **Determine the position of the median:** Since there are 72 scores, the median will be the average of the 36th and 37th scores when they are arranged in ascending order.\n3. **Locate the scores within the intervals:**\n   - From 50-59: 2 scores\n   - From 60-69: 10 scores\n   - From 70-79: 15 scores\n   - From 80-89: 27 scores\n   - From 90-99: 18 scores\n4. **Find the range for the 36th and 37th scores:**\n   - The first 2 scores fall in the 50-59 range.\n   - The next 10 scores fall in the 60-69 range.\n   - This leaves us with \\(72 - 2 - 10 = 60\\) scores left.\n   - These remaining scores must fall into the 70-79 range because it has more than enough space for all the remaining scores without overlapping any other ranges.\n\nSince both the 36"
+      ]
+    }
+  },
+  "passing": [],
+  "selected": null
+}

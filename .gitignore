@@ -29,3 +29,6 @@ activations/
 
 # Experiment artifacts (commit summaries / metrics only)
 experiments/**/*.pkl
+
+# Large third-party dataset (pinned by URL + sha256 in experiments/I_generalization/pilot.md)
+experiments/I_generalization/data/aqua_train.json

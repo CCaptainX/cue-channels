@@ -20,6 +20,7 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).parent))
 import f_common  # noqa: E402
 import h_arith  # noqa: E402
+import i_tasks  # noqa: E402
 from run_e_layer_sweep import bootstrap_ci  # noqa: E402
 
 from cue_channels.config import RunConfig  # noqa: E402
@@ -31,14 +32,20 @@ STOP = ["\nQ:"]
 def suite_tasks(suite: str, only: list[str] | None = None) -> list[str]:
     if only:
         return only
+    if suite == "i":
+        return i_tasks.TASKS
     return f_common.TASKS if suite == "bbh" else ["A", "B", "C"]
 
 
 def task_items(suite: str, task: str, n: int) -> list[dict]:
+    if suite == "i":
+        return i_tasks.items(task, n)
     return f_common.load_items(task, 200)[:n] if suite == "bbh" else h_arith.items(task, n)
 
 
 def task_prompts(suite: str, task: str) -> tuple[str, str]:
+    if suite == "i":
+        return i_tasks.prompts(task)
     return f_common.load_prompts(task) if suite == "bbh" else h_arith.prompts(task)
 
 
@@ -141,7 +148,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("cmd", choices=["load-check", "pilot"])
     ap.add_argument("--model", required=True)
-    ap.add_argument("--suite", choices=["bbh", "arith"], default="bbh")
+    ap.add_argument("--suite", choices=["bbh", "arith", "i"], default="bbh")
     ap.add_argument("--out", required=True)
     ap.add_argument("--tasks", default=None, help="comma-separated subset of tasks")
     a = ap.parse_args()
