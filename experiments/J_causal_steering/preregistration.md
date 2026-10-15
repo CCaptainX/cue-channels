@@ -38,3 +38,9 @@ v result, the report says the effect is not direction-specific. Condition S is e
 
 ## Limits
 Hard cap 5 h for J.
+
+## Addendum (registered 2026-10-15T23:24:41Z UTC, before any full J run): exploratory larger α
+A smoke test on 3 items showed ‖v‖ = 3.72 vs mean residual norm 115.6 at block 22 (so α = +5 adds about 16% of the residual norm), and
+no change in outputs at α = +5; a hook check at α = 200 confirmed the intervention is applied (logit-change norm 2673). Because a null on
+the registered grid could simply reflect a weak push, the following are added **as exploratory only — not part of the decision rule**:
+v at α ∈ {+10, +20} and the random direction at α = +20, each under P and S. They are reported in a separate section.
