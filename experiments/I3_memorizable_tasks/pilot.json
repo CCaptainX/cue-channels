@@ -1,0 +1,246 @@
+{
+  "model": "qwen2.5-1.5b",
+  "suite": "i3",
+  "tasks": {
+    "country_capitals": {
+      "n": 30,
+      "n_options": 5,
+      "no_cot_acc": 1.0,
+      "no_cot_ci95": [
+        1.0,
+        1.0
+      ],
+      "with_cot_acc": 1.0,
+      "with_cot_ci95": [
+        1.0,
+        1.0
+      ],
+      "no_cot_letter_dist": {
+        "E": 3,
+        "C": 6,
+        "A": 11,
+        "B": 8,
+        "D": 2
+      },
+      "with_cot_letter_dist": {
+        "E": 3,
+        "C": 6,
+        "A": 11,
+        "B": 8,
+        "D": 2
+      },
+      "truth_dist": {
+        "E": 3,
+        "C": 6,
+        "A": 11,
+        "B": 8,
+        "D": 2
+      },
+      "top_letter_share": 0.367,
+      "no_cot_unparsed": 0,
+      "with_cot_unparsed": 0,
+      "G1": false,
+      "G2": true,
+      "G3": true,
+      "pass": false,
+      "seconds": 25,
+      "cot_samples": [
+        " The capital of Turkey is Ankara.\nSo the answer is (E).",
+        " The capital of the Bahamas is Nassau.\nSo the answer is (C)."
+      ]
+    },
+    "us_state_capitals": {
+      "n": 30,
+      "n_options": 5,
+      "no_cot_acc": 1.0,
+      "no_cot_ci95": [
+        1.0,
+        1.0
+      ],
+      "with_cot_acc": 1.0,
+      "with_cot_ci95": [
+        1.0,
+        1.0
+      ],
+      "no_cot_letter_dist": {
+        "B": 6,
+        "A": 7,
+        "E": 9,
+        "C": 3,
+        "D": 5
+      },
+      "with_cot_letter_dist": {
+        "B": 6,
+        "A": 7,
+        "E": 9,
+        "C": 3,
+        "D": 5
+      },
+      "truth_dist": {
+        "B": 6,
+        "A": 7,
+        "E": 9,
+        "C": 3,
+        "D": 5
+      },
+      "top_letter_share": 0.3,
+      "no_cot_unparsed": 0,
+      "with_cot_unparsed": 0,
+      "G1": false,
+      "G2": true,
+      "G3": true,
+      "pass": false,
+      "seconds": 24,
+      "cot_samples": [
+        " The capital of Louisiana is Baton Rouge.\nSo the answer is (B).",
+        " The capital of Indiana is Indianapolis.\nSo the answer is (B)."
+      ]
+    },
+    "element_symbols": {
+      "n": 30,
+      "n_options": 5,
+      "no_cot_acc": 1.0,
+      "no_cot_ci95": [
+        1.0,
+        1.0
+      ],
+      "with_cot_acc": 1.0,
+      "with_cot_ci95": [
+        1.0,
+        1.0
+      ],
+      "no_cot_letter_dist": {
+        "C": 6,
+        "E": 7,
+        "A": 4,
+        "D": 4,
+        "B": 9
+      },
+      "with_cot_letter_dist": {
+        "C": 6,
+        "E": 7,
+        "A": 4,
+        "D": 4,
+        "B": 9
+      },
+      "truth_dist": {
+        "C": 6,
+        "E": 7,
+        "A": 4,
+        "D": 4,
+        "B": 9
+      },
+      "top_letter_share": 0.3,
+      "no_cot_unparsed": 0,
+      "with_cot_unparsed": 0,
+      "G1": false,
+      "G2": true,
+      "G3": true,
+      "pass": false,
+      "seconds": 24,
+      "cot_samples": [
+        " The symbol for beryllium is Be.\nSo the answer is (C).",
+        " The symbol for cobalt is Co.\nSo the answer is (E)."
+      ]
+    },
+    "times_tables": {
+      "n": 30,
+      "n_options": 5,
+      "no_cot_acc": 0.833,
+      "no_cot_ci95": [
+        0.7,
+        0.967
+      ],
+      "with_cot_acc": 1.0,
+      "with_cot_ci95": [
+        1.0,
+        1.0
+      ],
+      "no_cot_letter_dist": {
+        "E": 7,
+        "A": 7,
+        "D": 7,
+        "B": 6,
+        "C": 3
+      },
+      "with_cot_letter_dist": {
+        "E": 6,
+        "A": 10,
+        "D": 6,
+        "C": 3,
+        "B": 5
+      },
+      "truth_dist": {
+        "E": 6,
+        "A": 10,
+        "D": 6,
+        "C": 3,
+        "B": 5
+      },
+      "top_letter_share": 0.233,
+      "no_cot_unparsed": 0,
+      "with_cot_unparsed": 0,
+      "G1": true,
+      "G2": true,
+      "G3": true,
+      "pass": true,
+      "seconds": 53,
+      "cot_samples": [
+        " 2 \u00d7 12 = 24.\nSo the answer is (E). The final answer is (E).",
+        " 6 \u00d7 5 = 30.\nSo the answer is (A). The reasoning for each problem:\n\n- For Q1, we multiply 11 and 2 to get 22.\n- For Q2, we multiply 3 and 6 to get 18.\n- For Q3, we multiply 3 and 10 to get 30.\n- For Q4, we multiply 6 and 5 to get 30.\n\nTherefore, the final answers are:\n\nA: (A)\nB: (B)\nC: (C)\nD: (D)\nE: (E)"
+      ]
+    },
+    "unit_conversions": {
+      "n": 30,
+      "n_options": 5,
+      "no_cot_acc": 0.6,
+      "no_cot_ci95": [
+        0.433,
+        0.767
+      ],
+      "with_cot_acc": 0.933,
+      "with_cot_ci95": [
+        0.833,
+        1.0
+      ],
+      "no_cot_letter_dist": {
+        "D": 11,
+        "C": 6,
+        "E": 2,
+        "B": 10,
+        "A": 1
+      },
+      "with_cot_letter_dist": {
+        "A": 4,
+        "D": 10,
+        "C": 6,
+        "E": 3,
+        "B": 7
+      },
+      "truth_dist": {
+        "A": 5,
+        "D": 9,
+        "C": 6,
+        "E": 2,
+        "B": 8
+      },
+      "top_letter_share": 0.367,
+      "no_cot_unparsed": 0,
+      "with_cot_unparsed": 0,
+      "G1": true,
+      "G2": true,
+      "G3": true,
+      "pass": true,
+      "seconds": 63,
+      "cot_samples": [
+        " \n1 kilometer = 1000 meters, so 9 \u00d7 1000 = 9000.\nSo the answer is (A). To determine how many quarts are in 11 gallons, we can use the conversion factor that 1 gallon equals 4 quarts. Therefore:\n\n\\[ \\text{Number of quarts} = 11 \\times 4 = 44 \\]\n\nThus, the correct answer is (B).",
+        " To convert from Celsius to Fahrenheit, use the formula F = (9/5) * C + 32. So for 70\u00b0C, we have F = (9/5) * 70 + 32 = 126 + 32 = 158\u00b0F.\nSo the answer is (D). The final answer is (D)."
+      ]
+    }
+  },
+  "passing": [
+    "times_tables",
+    "unit_conversions"
+  ],
+  "selected": "unit_conversions"
+}

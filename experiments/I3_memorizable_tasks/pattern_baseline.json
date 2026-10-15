@@ -1,0 +1,42 @@
+{
+  "country_capitals": {
+    "n_items": 5000,
+    "logistic_regression": 0.199,
+    "random_forest": 0.199,
+    "rule_median": 0.2,
+    "best": 0.2,
+    "G4_pass": true
+  },
+  "us_state_capitals": {
+    "n_items": 5000,
+    "logistic_regression": 0.188,
+    "random_forest": 0.206,
+    "rule_median": 0.206,
+    "best": 0.206,
+    "G4_pass": true
+  },
+  "element_symbols": {
+    "n_items": 5000,
+    "logistic_regression": 0.191,
+    "random_forest": 0.198,
+    "rule_median": 0.201,
+    "best": 0.201,
+    "G4_pass": true
+  },
+  "times_tables": {
+    "n_items": 5000,
+    "logistic_regression": 0.19,
+    "random_forest": 0.2,
+    "rule_median": 0.207,
+    "best": 0.207,
+    "G4_pass": true
+  },
+  "unit_conversions": {
+    "n_items": 5000,
+    "logistic_regression": 0.198,
+    "random_forest": 0.18,
+    "rule_median": 0.199,
+    "best": 0.199,
+    "G4_pass": true
+  }
+}

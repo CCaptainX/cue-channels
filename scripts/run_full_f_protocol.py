@@ -25,7 +25,7 @@ SEEDS = range(5)
 
 
 # ---------------------------------------------------------------- collection
-def collect(model: str, suite: str, task: str, n: int) -> dict:
+def collect(model: str, suite: str, task: str, n: int, shifted: str = "qend5") -> dict:
     import torch
 
     b = load_backend(model)
@@ -40,17 +40,23 @@ def collect(model: str, suite: str, task: str, n: int) -> dict:
         ids = b.encode_raw(prompt)
         q_end = b.encode_raw(f_common.question_end_prefix(cot_pre, it)).shape[1] - 1
         q_start = b.encode_raw(cot_pre + "\n\nQ: ").shape[1]
+        if shifted == "option_e":  # token where "(E" begins, located directly
+            cut = it["input"].index("(E)") + 2
+            s_idx = b.encode_raw(cot_pre + "\n\nQ: " + it["input"][:cut]).shape[1] - 1
+        else:
+            s_idx = q_end - 5
         with torch.no_grad():
             hs = b.model(ids, output_hidden_states=True).hidden_states[1:]  # L x [1, T, D]
         H = torch.stack([h[0] for h in hs]).float()  # [L, T, D]
         acts["last"].append(H[:, -1].cpu().numpy().astype(np.float16))
-        acts["shifted"].append(H[:, q_end - 5].cpu().numpy().astype(np.float16))
+        acts["shifted"].append(H[:, s_idx].cpu().numpy().astype(np.float16))
         acts["mean_all"].append(H.mean(1).cpu().numpy().astype(np.float16))
         acts["mean_q"].append(H[:, q_start:q_end + 1].mean(1).cpu().numpy().astype(np.float16))
         cot_t = b.generate_text(prompt, max_new_tokens=384, stop_strings=STOP).text
         nc_t = b.generate_text(f_common.no_cot_prompt(ao_pre, it), max_new_tokens=2).text
         meta.append({"idx": it["idx"], "target": it["target"], "letters": it["letters"],
                      "prompt_len": int(ids.shape[1]), "q_end": int(q_end), "q_start": int(q_start),
+                     "shifted_idx": int(s_idx), "shifted_mode": shifted, "group": it.get("group"),
                      "no_cot_text": nc_t, "cot_text": cot_t,
                      "no_cot": f_common.parse_no_cot(nc_t, it["letters"]),
                      "with_cot": f_common.parse_cot(cot_t, it["letters"])})
@@ -62,16 +68,24 @@ def collect(model: str, suite: str, task: str, n: int) -> dict:
 
 
 # ---------------------------------------------------------------- probing
-def cv_correct(X, y, seed=0):
-    from sklearn.model_selection import KFold, StratifiedKFold
-
-    from cue_channels.probes.train import _make_pipeline
+def _splits(X, y, seed, groups):
+    from sklearn.model_selection import KFold, StratifiedGroupKFold, StratifiedKFold
 
     _, counts = np.unique(y, return_counts=True)
     strat = counts.min() >= 5
+    if groups is not None:
+        sgk = StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=seed)
+        return sgk.split(X, y, groups), strat
     sp = (StratifiedKFold if strat else KFold)(n_splits=5, shuffle=True, random_state=seed)
+    return sp.split(X, y), strat
+
+
+def cv_correct(X, y, seed=0, groups=None):
+    from cue_channels.probes.train import _make_pipeline
+
+    splits, strat = _splits(X, y, seed, groups)
     c = np.zeros(len(y), dtype=bool)
-    for tr, te in sp.split(X, y):
+    for tr, te in splits:
         if len(np.unique(y[tr])) < 2:
             c[te] = y[te] == y[tr][0]
             continue
@@ -79,15 +93,12 @@ def cv_correct(X, y, seed=0):
     return c, strat
 
 
-def cv_predict(X, y, seed=0):
-    from sklearn.model_selection import KFold, StratifiedKFold
-
+def cv_predict(X, y, seed=0, groups=None):
     from cue_channels.probes.train import _make_pipeline
 
-    _, counts = np.unique(y, return_counts=True)
-    sp = (StratifiedKFold if counts.min() >= 5 else KFold)(5, shuffle=True, random_state=seed)
+    splits, _ = _splits(X, y, seed, groups)
     pred = np.empty(len(y), dtype=object)
-    for tr, te in sp.split(X, y):
+    for tr, te in splits:
         if len(np.unique(y[tr])) < 2:
             pred[te] = y[tr][0]
             continue
@@ -95,10 +106,10 @@ def cv_predict(X, y, seed=0):
     return pred
 
 
-def cell(X, y):
+def cell(X, y, groups=None):
     accs, strat_all = [], True
     for s in SEEDS:
-        c, strat = cv_correct(X, y, s)
+        c, strat = cv_correct(X, y, s, groups)
         strat_all &= strat
         accs.append(float(c.mean()))
         if s == 0:
@@ -108,17 +119,17 @@ def cell(X, y):
             "seed_values": [round(a, 3) for a in accs], "stratified": strat_all}
 
 
-def max_over_layers_perm(Xl, y, n_perm=100):
+def max_over_layers_perm(Xl, y, n_perm=100, groups=None):
     from joblib import Parallel, delayed
 
     def one(p):
         yp = np.random.default_rng(1000 + p).permutation(y)
-        return max(cv_correct(Xl[:, lyr], yp, 0)[0].mean() for lyr in range(Xl.shape[1]))
+        return max(cv_correct(Xl[:, lyr], yp, 0, groups)[0].mean() for lyr in range(Xl.shape[1]))
 
     return np.array(Parallel(n_jobs=-1)(delayed(one)(p) for p in range(n_perm)))
 
 
-def analyze(blob: dict, n_perm: int = 100) -> dict:
+def analyze(blob: dict, n_perm: int = 100, grouped: bool = False) -> dict:
     meta, A = blob["meta"], blob["acts"]
     L, D = blob["n_layers"], blob["d_model"]
     K = len(meta[0]["letters"])
@@ -144,17 +155,20 @@ def analyze(blob: dict, n_perm: int = 100) -> dict:
         y = np.array([x for x in lab if x is not None])
         maj = max(collections.Counter(y.tolist()).values()) / len(y)
         Xl = A["last"][keep].astype(np.float32)  # [n, L, D]
+        g = None
+        if grouped:
+            g = np.array([m["group"] for m, k in zip(meta, keep, strict=True) if k])
         by_layer = {}
         for lyr in range(L):
-            by_layer[lyr] = cell(Xl[:, lyr], y)
+            by_layer[lyr] = cell(Xl[:, lyr], y, g)
             print(f"  target {name} layer {lyr}: {by_layer[lyr]['seed_mean']}", flush=True)
         gauss = []
         for s in SEEDS:
             G = np.random.default_rng(500 + s).standard_normal((len(y), D)).astype(np.float32)
-            gauss.append(float(cv_correct(G, y, s)[0].mean()))
+            gauss.append(float(cv_correct(G, y, s, g)[0].mean()))
         peak = max(by_layer, key=lambda k: by_layer[k]["seed_mean"])
         t0 = time.time()
-        perm = max_over_layers_perm(Xl, y, n_perm)
+        perm = max_over_layers_perm(Xl, y, n_perm, g)
         pv = float((np.sum(perm >= by_layer[peak]["acc"]) + 1) / (n_perm + 1))
         print(f"  target {name}: peak L{peak}, perm {time.time() - t0:.0f}s p={pv:.3f}", flush=True)
 
@@ -166,15 +180,16 @@ def analyze(blob: dict, n_perm: int = 100) -> dict:
         pos_feats = np.array([[m["prompt_len"], m["q_end"]] for m in meta_k], dtype=np.float32)
         checks = {
             "last_token": by_layer[peak],
-            "length_balanced": {**(cell(Xl[lb, peak], y[lb]) if lb.sum() >= 10 and
+            "length_balanced": {**(cell(Xl[lb, peak], y[lb], g[lb] if g is not None else None)
+                                   if lb.sum() >= 10 and
                                    len(np.unique(y[lb])) > 1 else {"acc": None}),
                                 "n": int(lb.sum()), "underpowered": bool(lb.sum() < 60),
                                 "majority": round(max(collections.Counter(y[lb].tolist()).values())
                                                   / max(lb.sum(), 1), 3) if lb.sum() else None},
-            "position_only": cell(pos_feats, y),
-            "shifted_token": cell(A["shifted"][keep][:, peak].astype(np.float32), y),
-            "mean_pooled_all": cell(A["mean_all"][keep][:, peak].astype(np.float32), y),
-            "mean_pooled_question": cell(A["mean_q"][keep][:, peak].astype(np.float32), y),
+            "position_only": cell(pos_feats, y, g),
+            "shifted_token": cell(A["shifted"][keep][:, peak].astype(np.float32), y, g),
+            "mean_pooled_all": cell(A["mean_all"][keep][:, peak].astype(np.float32), y, g),
+            "mean_pooled_question": cell(A["mean_q"][keep][:, peak].astype(np.float32), y, g),
         }
         pk = by_layer[peak]
         chance = 1 / K
@@ -207,7 +222,7 @@ def analyze(blob: dict, n_perm: int = 100) -> dict:
             "rule_B_vs_majority": bool(vs_major_B) if name == "B" else None,
             "positional_bias_ruled_out": bool(all(pos_ok.values())), "positional_detail": pos_ok,
             "verdict": verdict,
-            "_peak_pred": cv_predict(Xl[:, peak], y, 0), "_keep": keep,
+            "_peak_pred": cv_predict(Xl[:, peak], y, 0, g), "_keep": keep,
         }
     out["targets"] = res
     return out
@@ -317,12 +332,14 @@ def plots(m: dict, fig_dir: Path, title: str) -> None:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", required=True)
-    ap.add_argument("--suite", required=True, choices=["bbh", "arith"])
+    ap.add_argument("--suite", required=True, choices=["bbh", "arith", "i", "i3"])
     ap.add_argument("--task", required=True)
     ap.add_argument("--n", type=int, default=200)
     ap.add_argument("--out", required=True)
     ap.add_argument("--n-perm", type=int, default=100)
     ap.add_argument("--reuse", action="store_true")
+    ap.add_argument("--shifted", choices=["qend5", "option_e"], default="qend5")
+    ap.add_argument("--grouped", action="store_true", help="StratifiedGroupKFold by item group")
     a = ap.parse_args()
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -331,12 +348,14 @@ def main() -> None:
     if a.reuse and pkl.exists():
         blob = pickle.load(open(pkl, "rb"))
     else:
-        blob = collect(a.model, a.suite, a.task, a.n)
+        blob = collect(a.model, a.suite, a.task, a.n, a.shifted)
         blob["collect_seconds"] = round(time.time() - t0)
         pickle.dump(blob, open(pkl, "wb"))
     print(f"collected in {blob.get('collect_seconds')}s", flush=True)
     t1 = time.time()
-    m = analyze(blob, a.n_perm)
+    m = analyze(blob, a.n_perm, a.grouped)
+    m["cv"] = "StratifiedGroupKFold by fact" if a.grouped else "StratifiedKFold"
+    m["shifted_mode"] = a.shifted
     m["analysis_seconds"] = round(time.time() - t1)
     m["collect_seconds"] = blob.get("collect_seconds")
     m["model"], m["suite"], m["task"], m["device"] = a.model, a.suite, a.task, blob.get("device")
