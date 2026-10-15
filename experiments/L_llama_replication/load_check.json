@@ -2,7 +2,7 @@
   "model": "meta-llama/Llama-3.2-1B-Instruct",
   "status": "BLOCKED",
   "checked_utc": "2026-10-15T23:25:07Z",
-  "error": "GatedRepoError 401 — no Hugging Face token on this machine (huggingface_hub LocalTokenNotFoundError); the repo is gated.",
+  "error": "GatedRepoError 401 \u2014 no Hugging Face token on this machine (huggingface_hub LocalTokenNotFoundError); the repo is gated.",
   "action": "Per preregistration 07932be: stop L and report. No token was entered and no unofficial mirror was used.",
-  "to_unblock": "Accept the Llama 3.2 license on huggingface.co with the owner's account, then run  locally (user action), and rerun L1."
+  "to_unblock": "Accept the Llama 3.2 license on huggingface.co with the owner's account, then run 'hf auth login' locally (user action), and rerun L1."
 }
