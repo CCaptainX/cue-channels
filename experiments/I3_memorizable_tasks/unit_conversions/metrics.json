@@ -1,0 +1,1354 @@
+{
+  "n": 200,
+  "n_layers": 28,
+  "d_model": 1536,
+  "n_options": 5,
+  "chance": 0.2,
+  "behavior": {
+    "no_cot_acc": 0.545,
+    "no_cot_ci95": [
+      0.475,
+      0.615
+    ],
+    "with_cot_acc": 0.955,
+    "with_cot_ci95": [
+      0.925,
+      0.98
+    ],
+    "no_cot_dist": {
+      "D": 77,
+      "B": 42,
+      "A": 21,
+      "C": 33,
+      "E": 27
+    },
+    "with_cot_dist": {
+      "D": 38,
+      "E": 40,
+      "A": 43,
+      "C": 37,
+      "B": 39,
+      "None": 3
+    },
+    "truth_dist": {
+      "D": 37,
+      "E": 40,
+      "A": 43,
+      "C": 36,
+      "B": 44
+    },
+    "no_cot_unparsed": 0,
+    "with_cot_unparsed": 3,
+    "A_eq_B_rate": 0.543
+  },
+  "targets": {
+    "A": {
+      "n": 200,
+      "excluded_unparsed": 0,
+      "majority": 0.385,
+      "label_dist": {
+        "D": 77,
+        "B": 42,
+        "A": 21,
+        "C": 33,
+        "E": 27
+      },
+      "gaussian_baseline": {
+        "mean": 0.351,
+        "sd": 0.026
+      },
+      "by_layer": {
+        "0": {
+          "acc": 0.305,
+          "ci95": [
+            0.245,
+            0.37
+          ],
+          "seed_mean": 0.328,
+          "seed_sd": 0.027,
+          "seed_values": [
+            0.305,
+            0.34,
+            0.34,
+            0.365,
+            0.29
+          ],
+          "stratified": "True"
+        },
+        "1": {
+          "acc": 0.325,
+          "ci95": [
+            0.26,
+            0.39
+          ],
+          "seed_mean": 0.327,
+          "seed_sd": 0.016,
+          "seed_values": [
+            0.325,
+            0.35,
+            0.3,
+            0.33,
+            0.33
+          ],
+          "stratified": "True"
+        },
+        "2": {
+          "acc": 0.33,
+          "ci95": [
+            0.265,
+            0.395
+          ],
+          "seed_mean": 0.324,
+          "seed_sd": 0.015,
+          "seed_values": [
+            0.33,
+            0.345,
+            0.3,
+            0.325,
+            0.32
+          ],
+          "stratified": "True"
+        },
+        "3": {
+          "acc": 0.315,
+          "ci95": [
+            0.25,
+            0.38
+          ],
+          "seed_mean": 0.33,
+          "seed_sd": 0.018,
+          "seed_values": [
+            0.315,
+            0.355,
+            0.305,
+            0.335,
+            0.34
+          ],
+          "stratified": "True"
+        },
+        "4": {
+          "acc": 0.31,
+          "ci95": [
+            0.25,
+            0.375
+          ],
+          "seed_mean": 0.32,
+          "seed_sd": 0.026,
+          "seed_values": [
+            0.31,
+            0.365,
+            0.315,
+            0.325,
+            0.285
+          ],
+          "stratified": "True"
+        },
+        "5": {
+          "acc": 0.31,
+          "ci95": [
+            0.25,
+            0.375
+          ],
+          "seed_mean": 0.326,
+          "seed_sd": 0.021,
+          "seed_values": [
+            0.31,
+            0.355,
+            0.32,
+            0.345,
+            0.3
+          ],
+          "stratified": "True"
+        },
+        "6": {
+          "acc": 0.315,
+          "ci95": [
+            0.25,
+            0.375
+          ],
+          "seed_mean": 0.326,
+          "seed_sd": 0.019,
+          "seed_values": [
+            0.315,
+            0.34,
+            0.295,
+            0.335,
+            0.345
+          ],
+          "stratified": "True"
+        },
+        "7": {
+          "acc": 0.355,
+          "ci95": [
+            0.29,
+            0.42
+          ],
+          "seed_mean": 0.336,
+          "seed_sd": 0.014,
+          "seed_values": [
+            0.355,
+            0.33,
+            0.335,
+            0.315,
+            0.345
+          ],
+          "stratified": "True"
+        },
+        "8": {
+          "acc": 0.3,
+          "ci95": [
+            0.24,
+            0.36
+          ],
+          "seed_mean": 0.307,
+          "seed_sd": 0.01,
+          "seed_values": [
+            0.3,
+            0.31,
+            0.295,
+            0.305,
+            0.325
+          ],
+          "stratified": "True"
+        },
+        "9": {
+          "acc": 0.32,
+          "ci95": [
+            0.26,
+            0.385
+          ],
+          "seed_mean": 0.3,
+          "seed_sd": 0.028,
+          "seed_values": [
+            0.32,
+            0.29,
+            0.26,
+            0.29,
+            0.34
+          ],
+          "stratified": "True"
+        },
+        "10": {
+          "acc": 0.285,
+          "ci95": [
+            0.225,
+            0.345
+          ],
+          "seed_mean": 0.299,
+          "seed_sd": 0.025,
+          "seed_values": [
+            0.285,
+            0.32,
+            0.26,
+            0.3,
+            0.33
+          ],
+          "stratified": "True"
+        },
+        "11": {
+          "acc": 0.295,
+          "ci95": [
+            0.23,
+            0.36
+          ],
+          "seed_mean": 0.302,
+          "seed_sd": 0.026,
+          "seed_values": [
+            0.295,
+            0.345,
+            0.265,
+            0.305,
+            0.3
+          ],
+          "stratified": "True"
+        },
+        "12": {
+          "acc": 0.265,
+          "ci95": [
+            0.205,
+            0.33
+          ],
+          "seed_mean": 0.271,
+          "seed_sd": 0.015,
+          "seed_values": [
+            0.265,
+            0.285,
+            0.245,
+            0.28,
+            0.28
+          ],
+          "stratified": "True"
+        },
+        "13": {
+          "acc": 0.27,
+          "ci95": [
+            0.21,
+            0.335
+          ],
+          "seed_mean": 0.295,
+          "seed_sd": 0.025,
+          "seed_values": [
+            0.27,
+            0.32,
+            0.275,
+            0.33,
+            0.28
+          ],
+          "stratified": "True"
+        },
+        "14": {
+          "acc": 0.335,
+          "ci95": [
+            0.27,
+            0.4
+          ],
+          "seed_mean": 0.287,
+          "seed_sd": 0.027,
+          "seed_values": [
+            0.335,
+            0.29,
+            0.26,
+            0.29,
+            0.26
+          ],
+          "stratified": "True"
+        },
+        "15": {
+          "acc": 0.33,
+          "ci95": [
+            0.265,
+            0.395
+          ],
+          "seed_mean": 0.31,
+          "seed_sd": 0.024,
+          "seed_values": [
+            0.33,
+            0.34,
+            0.275,
+            0.315,
+            0.29
+          ],
+          "stratified": "True"
+        },
+        "16": {
+          "acc": 0.365,
+          "ci95": [
+            0.3,
+            0.43
+          ],
+          "seed_mean": 0.346,
+          "seed_sd": 0.017,
+          "seed_values": [
+            0.365,
+            0.36,
+            0.32,
+            0.35,
+            0.335
+          ],
+          "stratified": "True"
+        },
+        "17": {
+          "acc": 0.355,
+          "ci95": [
+            0.29,
+            0.42
+          ],
+          "seed_mean": 0.344,
+          "seed_sd": 0.011,
+          "seed_values": [
+            0.355,
+            0.345,
+            0.325,
+            0.355,
+            0.34
+          ],
+          "stratified": "True"
+        },
+        "18": {
+          "acc": 0.42,
+          "ci95": [
+            0.355,
+            0.49
+          ],
+          "seed_mean": 0.378,
+          "seed_sd": 0.023,
+          "seed_values": [
+            0.42,
+            0.38,
+            0.36,
+            0.355,
+            0.375
+          ],
+          "stratified": "True"
+        },
+        "19": {
+          "acc": 0.405,
+          "ci95": [
+            0.34,
+            0.475
+          ],
+          "seed_mean": 0.369,
+          "seed_sd": 0.019,
+          "seed_values": [
+            0.405,
+            0.37,
+            0.36,
+            0.355,
+            0.355
+          ],
+          "stratified": "True"
+        },
+        "20": {
+          "acc": 0.465,
+          "ci95": [
+            0.395,
+            0.535
+          ],
+          "seed_mean": 0.38,
+          "seed_sd": 0.045,
+          "seed_values": [
+            0.465,
+            0.38,
+            0.35,
+            0.365,
+            0.34
+          ],
+          "stratified": "True"
+        },
+        "21": {
+          "acc": 0.425,
+          "ci95": [
+            0.355,
+            0.495
+          ],
+          "seed_mean": 0.403,
+          "seed_sd": 0.038,
+          "seed_values": [
+            0.425,
+            0.45,
+            0.425,
+            0.36,
+            0.355
+          ],
+          "stratified": "True"
+        },
+        "22": {
+          "acc": 0.465,
+          "ci95": [
+            0.395,
+            0.535
+          ],
+          "seed_mean": 0.421,
+          "seed_sd": 0.033,
+          "seed_values": [
+            0.465,
+            0.45,
+            0.42,
+            0.395,
+            0.375
+          ],
+          "stratified": "True"
+        },
+        "23": {
+          "acc": 0.45,
+          "ci95": [
+            0.38,
+            0.525
+          ],
+          "seed_mean": 0.405,
+          "seed_sd": 0.027,
+          "seed_values": [
+            0.45,
+            0.395,
+            0.41,
+            0.365,
+            0.405
+          ],
+          "stratified": "True"
+        },
+        "24": {
+          "acc": 0.445,
+          "ci95": [
+            0.38,
+            0.515
+          ],
+          "seed_mean": 0.393,
+          "seed_sd": 0.032,
+          "seed_values": [
+            0.445,
+            0.39,
+            0.41,
+            0.355,
+            0.365
+          ],
+          "stratified": "True"
+        },
+        "25": {
+          "acc": 0.435,
+          "ci95": [
+            0.37,
+            0.505
+          ],
+          "seed_mean": 0.372,
+          "seed_sd": 0.038,
+          "seed_values": [
+            0.435,
+            0.385,
+            0.375,
+            0.33,
+            0.335
+          ],
+          "stratified": "True"
+        },
+        "26": {
+          "acc": 0.435,
+          "ci95": [
+            0.37,
+            0.51
+          ],
+          "seed_mean": 0.369,
+          "seed_sd": 0.039,
+          "seed_values": [
+            0.435,
+            0.39,
+            0.35,
+            0.335,
+            0.335
+          ],
+          "stratified": "True"
+        },
+        "27": {
+          "acc": 0.405,
+          "ci95": [
+            0.335,
+            0.475
+          ],
+          "seed_mean": 0.359,
+          "seed_sd": 0.027,
+          "seed_values": [
+            0.405,
+            0.355,
+            0.37,
+            0.34,
+            0.325
+          ],
+          "stratified": "True"
+        }
+      },
+      "peak_layer": 22,
+      "peak": {
+        "acc": 0.465,
+        "ci95": [
+          0.395,
+          0.535
+        ],
+        "seed_mean": 0.421,
+        "seed_sd": 0.033,
+        "seed_values": [
+          0.465,
+          0.45,
+          0.42,
+          0.395,
+          0.375
+        ],
+        "stratified": "True"
+      },
+      "layer_24": {
+        "acc": 0.445,
+        "ci95": [
+          0.38,
+          0.515
+        ],
+        "seed_mean": 0.393,
+        "seed_sd": 0.032,
+        "seed_values": [
+          0.445,
+          0.39,
+          0.41,
+          0.355,
+          0.365
+        ],
+        "stratified": "True"
+      },
+      "max_over_layers_perm": {
+        "n_perm": 100,
+        "p_value": 0.0099,
+        "null_mean": 0.327,
+        "null_p95": 0.375
+      },
+      "positional_checks": {
+        "last_token": {
+          "acc": 0.465,
+          "ci95": [
+            0.395,
+            0.535
+          ],
+          "seed_mean": 0.421,
+          "seed_sd": 0.033,
+          "seed_values": [
+            0.465,
+            0.45,
+            0.42,
+            0.395,
+            0.375
+          ],
+          "stratified": "True"
+        },
+        "length_balanced": {
+          "acc": 0.433,
+          "ci95": [
+            0.34,
+            0.536
+          ],
+          "seed_mean": 0.456,
+          "seed_sd": 0.026,
+          "seed_values": [
+            0.433,
+            0.505,
+            0.443,
+            0.454,
+            0.443
+          ],
+          "stratified": "True",
+          "n": 97,
+          "underpowered": false,
+          "majority": 0.474
+        },
+        "position_only": {
+          "acc": 0.38,
+          "ci95": [
+            0.315,
+            0.445
+          ],
+          "seed_mean": 0.383,
+          "seed_sd": 0.01,
+          "seed_values": [
+            0.38,
+            0.395,
+            0.385,
+            0.39,
+            0.365
+          ],
+          "stratified": "True"
+        },
+        "shifted_token": {
+          "acc": 0.755,
+          "ci95": [
+            0.695,
+            0.81
+          ],
+          "seed_mean": 0.726,
+          "seed_sd": 0.015,
+          "seed_values": [
+            0.755,
+            0.72,
+            0.72,
+            0.725,
+            0.71
+          ],
+          "stratified": "True"
+        },
+        "mean_pooled_all": {
+          "acc": 0.415,
+          "ci95": [
+            0.345,
+            0.485
+          ],
+          "seed_mean": 0.413,
+          "seed_sd": 0.034,
+          "seed_values": [
+            0.415,
+            0.47,
+            0.405,
+            0.41,
+            0.365
+          ],
+          "stratified": "True"
+        },
+        "mean_pooled_question": {
+          "acc": 0.395,
+          "ci95": [
+            0.325,
+            0.465
+          ],
+          "seed_mean": 0.396,
+          "seed_sd": 0.028,
+          "seed_values": [
+            0.395,
+            0.445,
+            0.385,
+            0.395,
+            0.36
+          ],
+          "stratified": "True"
+        }
+      },
+      "rule_supported_uncorrected": true,
+      "rule_B_vs_majority": null,
+      "positional_bias_ruled_out": false,
+      "positional_detail": {
+        "vs_position_only": false,
+        "vs_shifted_token": false
+      },
+      "verdict": "supported"
+    },
+    "B": {
+      "n": 197,
+      "excluded_unparsed": 3,
+      "majority": 0.218,
+      "label_dist": {
+        "D": 38,
+        "E": 40,
+        "A": 43,
+        "C": 37,
+        "B": 39
+      },
+      "gaussian_baseline": {
+        "mean": 0.239,
+        "sd": 0.023
+      },
+      "by_layer": {
+        "0": {
+          "acc": 0.183,
+          "ci95": [
+            0.132,
+            0.239
+          ],
+          "seed_mean": 0.163,
+          "seed_sd": 0.032,
+          "seed_values": [
+            0.183,
+            0.102,
+            0.188,
+            0.162,
+            0.183
+          ],
+          "stratified": "True"
+        },
+        "1": {
+          "acc": 0.162,
+          "ci95": [
+            0.112,
+            0.213
+          ],
+          "seed_mean": 0.161,
+          "seed_sd": 0.017,
+          "seed_values": [
+            0.162,
+            0.132,
+            0.173,
+            0.157,
+            0.183
+          ],
+          "stratified": "True"
+        },
+        "2": {
+          "acc": 0.147,
+          "ci95": [
+            0.102,
+            0.198
+          ],
+          "seed_mean": 0.132,
+          "seed_sd": 0.014,
+          "seed_values": [
+            0.147,
+            0.112,
+            0.127,
+            0.127,
+            0.147
+          ],
+          "stratified": "True"
+        },
+        "3": {
+          "acc": 0.142,
+          "ci95": [
+            0.096,
+            0.193
+          ],
+          "seed_mean": 0.125,
+          "seed_sd": 0.016,
+          "seed_values": [
+            0.142,
+            0.096,
+            0.122,
+            0.132,
+            0.132
+          ],
+          "stratified": "True"
+        },
+        "4": {
+          "acc": 0.188,
+          "ci95": [
+            0.137,
+            0.244
+          ],
+          "seed_mean": 0.156,
+          "seed_sd": 0.024,
+          "seed_values": [
+            0.188,
+            0.132,
+            0.147,
+            0.132,
+            0.183
+          ],
+          "stratified": "True"
+        },
+        "5": {
+          "acc": 0.147,
+          "ci95": [
+            0.102,
+            0.198
+          ],
+          "seed_mean": 0.155,
+          "seed_sd": 0.015,
+          "seed_values": [
+            0.147,
+            0.137,
+            0.152,
+            0.183,
+            0.157
+          ],
+          "stratified": "True"
+        },
+        "6": {
+          "acc": 0.137,
+          "ci95": [
+            0.091,
+            0.188
+          ],
+          "seed_mean": 0.155,
+          "seed_sd": 0.016,
+          "seed_values": [
+            0.137,
+            0.157,
+            0.142,
+            0.157,
+            0.183
+          ],
+          "stratified": "True"
+        },
+        "7": {
+          "acc": 0.203,
+          "ci95": [
+            0.147,
+            0.264
+          ],
+          "seed_mean": 0.177,
+          "seed_sd": 0.019,
+          "seed_values": [
+            0.203,
+            0.157,
+            0.173,
+            0.157,
+            0.193
+          ],
+          "stratified": "True"
+        },
+        "8": {
+          "acc": 0.188,
+          "ci95": [
+            0.132,
+            0.244
+          ],
+          "seed_mean": 0.173,
+          "seed_sd": 0.011,
+          "seed_values": [
+            0.188,
+            0.178,
+            0.157,
+            0.162,
+            0.178
+          ],
+          "stratified": "True"
+        },
+        "9": {
+          "acc": 0.183,
+          "ci95": [
+            0.132,
+            0.239
+          ],
+          "seed_mean": 0.163,
+          "seed_sd": 0.021,
+          "seed_values": [
+            0.183,
+            0.178,
+            0.178,
+            0.152,
+            0.127
+          ],
+          "stratified": "True"
+        },
+        "10": {
+          "acc": 0.218,
+          "ci95": [
+            0.162,
+            0.274
+          ],
+          "seed_mean": 0.168,
+          "seed_sd": 0.028,
+          "seed_values": [
+            0.218,
+            0.162,
+            0.173,
+            0.147,
+            0.137
+          ],
+          "stratified": "True"
+        },
+        "11": {
+          "acc": 0.183,
+          "ci95": [
+            0.132,
+            0.239
+          ],
+          "seed_mean": 0.148,
+          "seed_sd": 0.019,
+          "seed_values": [
+            0.183,
+            0.137,
+            0.152,
+            0.127,
+            0.142
+          ],
+          "stratified": "True"
+        },
+        "12": {
+          "acc": 0.178,
+          "ci95": [
+            0.127,
+            0.234
+          ],
+          "seed_mean": 0.165,
+          "seed_sd": 0.011,
+          "seed_values": [
+            0.178,
+            0.173,
+            0.173,
+            0.152,
+            0.152
+          ],
+          "stratified": "True"
+        },
+        "13": {
+          "acc": 0.208,
+          "ci95": [
+            0.152,
+            0.264
+          ],
+          "seed_mean": 0.172,
+          "seed_sd": 0.021,
+          "seed_values": [
+            0.208,
+            0.173,
+            0.157,
+            0.147,
+            0.173
+          ],
+          "stratified": "True"
+        },
+        "14": {
+          "acc": 0.203,
+          "ci95": [
+            0.152,
+            0.259
+          ],
+          "seed_mean": 0.163,
+          "seed_sd": 0.023,
+          "seed_values": [
+            0.203,
+            0.168,
+            0.142,
+            0.168,
+            0.137
+          ],
+          "stratified": "True"
+        },
+        "15": {
+          "acc": 0.183,
+          "ci95": [
+            0.132,
+            0.239
+          ],
+          "seed_mean": 0.165,
+          "seed_sd": 0.017,
+          "seed_values": [
+            0.183,
+            0.173,
+            0.183,
+            0.142,
+            0.147
+          ],
+          "stratified": "True"
+        },
+        "16": {
+          "acc": 0.162,
+          "ci95": [
+            0.117,
+            0.218
+          ],
+          "seed_mean": 0.173,
+          "seed_sd": 0.021,
+          "seed_values": [
+            0.162,
+            0.168,
+            0.213,
+            0.157,
+            0.162
+          ],
+          "stratified": "True"
+        },
+        "17": {
+          "acc": 0.183,
+          "ci95": [
+            0.137,
+            0.239
+          ],
+          "seed_mean": 0.179,
+          "seed_sd": 0.021,
+          "seed_values": [
+            0.183,
+            0.142,
+            0.208,
+            0.183,
+            0.178
+          ],
+          "stratified": "True"
+        },
+        "18": {
+          "acc": 0.228,
+          "ci95": [
+            0.173,
+            0.289
+          ],
+          "seed_mean": 0.199,
+          "seed_sd": 0.023,
+          "seed_values": [
+            0.228,
+            0.193,
+            0.223,
+            0.168,
+            0.183
+          ],
+          "stratified": "True"
+        },
+        "19": {
+          "acc": 0.203,
+          "ci95": [
+            0.147,
+            0.259
+          ],
+          "seed_mean": 0.197,
+          "seed_sd": 0.011,
+          "seed_values": [
+            0.203,
+            0.203,
+            0.208,
+            0.193,
+            0.178
+          ],
+          "stratified": "True"
+        },
+        "20": {
+          "acc": 0.208,
+          "ci95": [
+            0.152,
+            0.264
+          ],
+          "seed_mean": 0.215,
+          "seed_sd": 0.022,
+          "seed_values": [
+            0.208,
+            0.193,
+            0.244,
+            0.239,
+            0.193
+          ],
+          "stratified": "True"
+        },
+        "21": {
+          "acc": 0.264,
+          "ci95": [
+            0.203,
+            0.33
+          ],
+          "seed_mean": 0.264,
+          "seed_sd": 0.006,
+          "seed_values": [
+            0.264,
+            0.269,
+            0.269,
+            0.254,
+            0.264
+          ],
+          "stratified": "True"
+        },
+        "22": {
+          "acc": 0.289,
+          "ci95": [
+            0.228,
+            0.355
+          ],
+          "seed_mean": 0.269,
+          "seed_sd": 0.024,
+          "seed_values": [
+            0.289,
+            0.234,
+            0.299,
+            0.254,
+            0.269
+          ],
+          "stratified": "True"
+        },
+        "23": {
+          "acc": 0.279,
+          "ci95": [
+            0.218,
+            0.34
+          ],
+          "seed_mean": 0.263,
+          "seed_sd": 0.029,
+          "seed_values": [
+            0.279,
+            0.228,
+            0.284,
+            0.228,
+            0.294
+          ],
+          "stratified": "True"
+        },
+        "24": {
+          "acc": 0.279,
+          "ci95": [
+            0.218,
+            0.345
+          ],
+          "seed_mean": 0.258,
+          "seed_sd": 0.02,
+          "seed_values": [
+            0.279,
+            0.249,
+            0.264,
+            0.223,
+            0.274
+          ],
+          "stratified": "True"
+        },
+        "25": {
+          "acc": 0.239,
+          "ci95": [
+            0.183,
+            0.299
+          ],
+          "seed_mean": 0.238,
+          "seed_sd": 0.005,
+          "seed_values": [
+            0.239,
+            0.239,
+            0.239,
+            0.228,
+            0.244
+          ],
+          "stratified": "True"
+        },
+        "26": {
+          "acc": 0.244,
+          "ci95": [
+            0.188,
+            0.305
+          ],
+          "seed_mean": 0.239,
+          "seed_sd": 0.012,
+          "seed_values": [
+            0.244,
+            0.223,
+            0.234,
+            0.234,
+            0.259
+          ],
+          "stratified": "True"
+        },
+        "27": {
+          "acc": 0.274,
+          "ci95": [
+            0.213,
+            0.335
+          ],
+          "seed_mean": 0.251,
+          "seed_sd": 0.023,
+          "seed_values": [
+            0.274,
+            0.279,
+            0.228,
+            0.223,
+            0.249
+          ],
+          "stratified": "True"
+        }
+      },
+      "peak_layer": 22,
+      "peak": {
+        "acc": 0.289,
+        "ci95": [
+          0.228,
+          0.355
+        ],
+        "seed_mean": 0.269,
+        "seed_sd": 0.024,
+        "seed_values": [
+          0.289,
+          0.234,
+          0.299,
+          0.254,
+          0.269
+        ],
+        "stratified": "True"
+      },
+      "layer_24": {
+        "acc": 0.279,
+        "ci95": [
+          0.218,
+          0.345
+        ],
+        "seed_mean": 0.258,
+        "seed_sd": 0.02,
+        "seed_values": [
+          0.279,
+          0.249,
+          0.264,
+          0.223,
+          0.274
+        ],
+        "stratified": "True"
+      },
+      "max_over_layers_perm": {
+        "n_perm": 100,
+        "p_value": 0.1188,
+        "null_mean": 0.25,
+        "null_p95": 0.295
+      },
+      "positional_checks": {
+        "last_token": {
+          "acc": 0.289,
+          "ci95": [
+            0.228,
+            0.355
+          ],
+          "seed_mean": 0.269,
+          "seed_sd": 0.024,
+          "seed_values": [
+            0.289,
+            0.234,
+            0.299,
+            0.254,
+            0.269
+          ],
+          "stratified": "True"
+        },
+        "length_balanced": {
+          "acc": 0.181,
+          "ci95": [
+            0.106,
+            0.266
+          ],
+          "seed_mean": 0.191,
+          "seed_sd": 0.026,
+          "seed_values": [
+            0.181,
+            0.223,
+            0.213,
+            0.191,
+            0.149
+          ],
+          "stratified": "True",
+          "n": 94,
+          "underpowered": false,
+          "majority": 0.234
+        },
+        "position_only": {
+          "acc": 0.234,
+          "ci95": [
+            0.178,
+            0.294
+          ],
+          "seed_mean": 0.235,
+          "seed_sd": 0.004,
+          "seed_values": [
+            0.234,
+            0.239,
+            0.239,
+            0.228,
+            0.234
+          ],
+          "stratified": "True"
+        },
+        "shifted_token": {
+          "acc": 0.472,
+          "ci95": [
+            0.401,
+            0.538
+          ],
+          "seed_mean": 0.472,
+          "seed_sd": 0.014,
+          "seed_values": [
+            0.472,
+            0.487,
+            0.487,
+            0.457,
+            0.457
+          ],
+          "stratified": "True"
+        },
+        "mean_pooled_all": {
+          "acc": 0.34,
+          "ci95": [
+            0.274,
+            0.406
+          ],
+          "seed_mean": 0.291,
+          "seed_sd": 0.03,
+          "seed_values": [
+            0.34,
+            0.269,
+            0.305,
+            0.254,
+            0.289
+          ],
+          "stratified": "True"
+        },
+        "mean_pooled_question": {
+          "acc": 0.33,
+          "ci95": [
+            0.264,
+            0.396
+          ],
+          "seed_mean": 0.287,
+          "seed_sd": 0.026,
+          "seed_values": [
+            0.33,
+            0.274,
+            0.299,
+            0.254,
+            0.279
+          ],
+          "stratified": "True"
+        }
+      },
+      "rule_supported_uncorrected": false,
+      "rule_B_vs_majority": true,
+      "positional_bias_ruled_out": false,
+      "positional_detail": {
+        "vs_position_only": false,
+        "vs_shifted_token": false
+      },
+      "verdict": "not supported"
+    }
+  },
+  "cv": "StratifiedGroupKFold by fact",
+  "shifted_mode": "option_e",
+  "analysis_seconds": 635,
+  "collect_seconds": 671,
+  "model": "qwen2.5-1.5b",
+  "suite": "i3",
+  "task": "unit_conversions",
+  "device": "mps"
+}
