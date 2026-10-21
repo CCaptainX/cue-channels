@@ -1,0 +1,21 @@
+{
+ "note": "exploratory, not pre-registered; 1000 label permutations, max over 28 layers, seed 0",
+ "targets": {
+  "no_cot_answer": {
+   "peak_layer": 22,
+   "observed": 0.705,
+   "null_max": 0.38,
+   "null_p95": 0.335,
+   "p": 0.001,
+   "n_perm": 1000
+  },
+  "with_cot_answer": {
+   "peak_layer": 21,
+   "observed": 0.667,
+   "null_max": 0.338,
+   "null_p95": 0.303,
+   "p": 0.001,
+   "n_perm": 1000
+  }
+ }
+}
