@@ -5,7 +5,7 @@
 
 ## TL;DR
 
-Does a model know its answer before it starts reasoning out loud? Cox et al. (2026) showed it is often decodable from pre-CoT activations, and that steering along that direction changes it. I ran a pre-registered replication on Qwen 2.5 1.5B Instruct, one of their models, on two-digit multiplication, where the chain of thought visibly does work. The pre-CoT answer is linearly readable, as they found. Four pre-registered tests of where the signal comes from and whether the model uses it came back not supported, mixed or inconclusive; even steering close to Cox et al.'s protocol, strong enough to break the model, did not move its answer. Post-hoc analyses fit a hypothesis, "readable but not committed": the signal drops out once the CoT begins and returns after the arithmetic. The options-only baseline caught a distractor leak every other check missed; I'd treat it as standard for any MCQ probing with constructed distractors. 'Readable but not causally used' is one hypothesis consistent with the data; redundant encoding, non-linearity, or use at earlier layers remain live alternatives. Scope: one model, one task family.
+Does a model know its answer before it starts reasoning out loud? Cox et al. (2026) showed it is often decodable from pre-CoT activations, and that steering along that direction changes it. I ran a pre-registered replication on Qwen 2.5 1.5B Instruct, one of their models, on two-digit multiplication, where the chain of thought visibly does work. The pre-CoT answer is linearly readable, as they found. Four pre-registered tests of where the signal comes from and whether the model uses it came back not supported, mixed or inconclusive; even steering close to Cox et al.'s protocol, strong enough to break the model, did not move its answer. Post-hoc analyses fit a hypothesis, "readable but not committed": the signal drops out once the CoT begins and returns after the arithmetic. This is one model, one task family — a scoped empirical result and a reusable methodology check.
 
 ## 1. Introduction and motivation
 
@@ -120,6 +120,8 @@ I pre-registered four tests of where the signal comes from and whether the model
 - **Multiple comparisons:** the headline cells survive a max-over-layers null (p = 0.001 with 1,000 permutations, itself the floor); the per-position and post-hoc analyses, which may also overfit to position, are not corrected.
 - **Eventual vs correct answer:** with CoT the model is right 98.5% of the time, so the two cannot be separated for the with-CoT target.
 - **Small held-out sets** (100–200 items; CIs about ±0.06–0.10).
+
+The options-only baseline caught a distractor leak every other check missed; I'd treat it as standard for any MCQ probing with constructed distractors. 'Readable but not causally used' is one hypothesis consistent with the data; redundant encoding, non-linearity, or use at earlier layers remain live alternatives. Scope: one model, one task family.
 
 ## 8. Next experiments
 
