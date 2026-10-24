@@ -4,22 +4,25 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cue-channels"
-version = "0.0.1"
-description = "Attention-probe analysis of CoT faithfulness: do models decide before they verbalize?"
+version = "0.1.0"
+description = "Pre-CoT answer decoding on Qwen 2.5 1.5B: is the answer readable before the chain of thought, and is it used?"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "torch",
-    "transformers>=4.44",
+    # exact versions used for every committed result: requirements.txt / requirements-lock.txt
+    "torch>=2.14",
+    "transformers>=5.19",
     "accelerate",
-    "transformer_lens",
-    "einops",
     "numpy",
-    "scikit-learn",
+    "scipy",
+    "scikit-learn>=1.9",
+    "joblib",
+    "matplotlib",
 ]
 
 [project.optional-dependencies]
 dev = ["pytest", "ruff"]
+writeup = ["python-docx"]
 sagemaker = ["sagemaker", "boto3"]
 
 [tool.setuptools.packages.find]

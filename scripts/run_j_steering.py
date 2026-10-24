@@ -22,13 +22,14 @@ import h_arith  # noqa: E402
 from run_gh import STOP, load_backend  # noqa: E402
 
 OUT = Path("experiments/J_causal_steering")
+H2_DIR = Path("experiments/H2_distractor_fix")
 LAYER = 22
 ALPHAS = [-2, -1, 0, 1, 2, 5]
 RAND_ALPHAS = [2, 5]
 
 
 def steering_vectors():
-    blob = pickle.load(open("experiments/H2_distractor_fix/full_activations.pkl", "rb"))
+    blob = pickle.load(open(H2_DIR / "full_activations.pkl", "rb"))
     X = blob["acts"]["last"][:, LAYER].astype(np.float32)
     lab = np.array([m["no_cot"] for m in blob["meta"]])
     v = X[lab == "A"].mean(0) - X[lab != "A"].mean(0)
@@ -115,9 +116,14 @@ def summarize(results, base_key="v|0|P"):
 
 
 def main():
+    global OUT, H2_DIR
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=100)
+    ap.add_argument("--out", default=str(OUT), help="output directory (default: %(default)s)")
+    ap.add_argument("--h2-dir", default=str(H2_DIR),
+                    help="H2 run providing full_activations.pkl (default: %(default)s)")
     a = ap.parse_args()
+    OUT, H2_DIR = Path(a.out), Path(a.h2_dir)
     v, r, vinfo = steering_vectors()
     items = h_arith.items("C2", 300)[200:200 + a.limit]
     cot_pre, ao_pre = h_arith.prompts("C2")

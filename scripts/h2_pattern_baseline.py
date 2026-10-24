@@ -91,6 +91,11 @@ def evaluate(rows) -> dict:
 
 
 def main() -> None:
+    import argparse
+
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--out", default=str(OUT), help="directory for pattern_baseline.json")
+    out_dir = Path(ap.parse_args().out)
     h2 = evaluate(gen("C2", 9201, 5000))
     h = evaluate(gen("C", 9101, 5000))
     gate = h2["best"] <= 0.30
@@ -109,8 +114,8 @@ def main() -> None:
         ids = tok(f_common.cot_prompt(pre, it))["input_ids"]
         toks[tok.decode([ids[q_end - 5]])] = toks.get(tok.decode([ids[q_end - 5]]), 0) + 1
     out["shifted_token_identity_on_200_H2_prompts"] = toks
-    OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / "pattern_baseline.json").write_text(json.dumps(out, indent=2) + "\n")
+    out_dir.mkdir(parents=True, exist_ok=True)
+    (out_dir / "pattern_baseline.json").write_text(json.dumps(out, indent=2) + "\n")
     print(json.dumps(out, indent=2))
 
 

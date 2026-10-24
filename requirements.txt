@@ -1,9 +1,18 @@
-torch
-transformers>=4.44
-accelerate
-transformer_lens
-einops
-numpy
-scikit-learn
-pytest
-ruff
+# Direct dependencies, pinned to the versions every committed result was produced with
+# (Python 3.14.5, macOS / Apple M4 Pro, MPS backend). The full transitive lock is
+# requirements-lock.txt; install that for an exact environment.
+torch==2.14.1
+transformers==5.19.0
+tokenizers==0.23.2
+safetensors==0.8.0
+huggingface_hub==1.33.0
+accelerate==1.15.0
+numpy==2.5.3
+scipy==1.18.1
+scikit-learn==1.9.1
+joblib==1.6.0
+matplotlib==3.11.2
+pillow==12.3.0
+# dev / tests
+pytest==9.1.1
+ruff==0.16.10

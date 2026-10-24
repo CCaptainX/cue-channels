@@ -23,13 +23,15 @@ from run_gh import load_backend  # noqa: E402
 from cue_channels.probes.train import _make_pipeline  # noqa: E402
 
 OUT = Path("experiments/M_mid_cot_decay")
+H2_DIR = Path("experiments/H2_distractor_fix")
+J_DIR = Path("experiments/J_causal_steering")
 LAYER = 22
 ANCHORS = ["last_prompt", "first_cot", "first_eq", "pre_digit", "digit", "post_digit",
            "paren", "letter", "after_letter"]
 
 
 def transfer_probe():
-    blob = pickle.load(open("experiments/H2_distractor_fix/full_activations.pkl", "rb"))
+    blob = pickle.load(open(H2_DIR / "full_activations.pkl", "rb"))
     X = blob["acts"]["last"][:, LAYER].astype(np.float32)
     y = np.array([m["no_cot"] for m in blob["meta"]])
     keep = np.array([v is not None for v in y])
@@ -54,9 +56,29 @@ def char_anchors(cot: str, product: int) -> dict:
     return a
 
 
+def _parse_paths(extra=None):
+    """Input/output directories; defaults reproduce the committed layout (run from repo root)."""
+    import argparse
+
+    global OUT, H2_DIR, J_DIR
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--out", default=str(OUT), help="output directory (default: %(default)s)")
+    ap.add_argument("--h2-dir", default=str(H2_DIR),
+                    help="H2 run providing full_activations.pkl (default: %(default)s)")
+    ap.add_argument("--j-dir", default=str(J_DIR),
+                    help="J run providing generations.jsonl (default: %(default)s)")
+    if extra:
+        extra(ap)
+    a = ap.parse_args()
+    OUT, H2_DIR = Path(a.out), Path(a.h2_dir)
+    J_DIR = Path(a.j_dir)
+    return a
+
+
 def main():
+    _parse_paths()
     gens = {}
-    for line in open("experiments/J_causal_steering/generations.jsonl"):
+    for line in open(J_DIR / "generations.jsonl"):
         r = json.loads(line)
         if r["condition"] == "v|0|P":
             gens[r["idx"]] = r

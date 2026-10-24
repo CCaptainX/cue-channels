@@ -1,5 +1,21 @@
 # H2: H with pattern-proof distractors. Scenario 1: H's result replicates
 
+## At a glance
+
+- **Name in the LW post:** The multiplication benchmark (headline result) (Sections 3–4, Figures 1–2).
+- **Hypothesis:** With pattern-proof distractors, the model's answer is linearly decodable before the CoT (no-CoT target L22 0.705; with-CoT target L21 0.667).
+- **Pre-registration:** `1ee5528` · **Results:** `db4fad4` (options-only baseline), `0b9dd69` (results); exploratory: `647b901`, `c37dc63`
+- **Outputs:** `metrics.json`, `pattern_baseline.json`, `exploratory/` in this directory.
+- **Expected runtime:** about 25 min (collection 12, analysis 9) (Apple M4 Pro, MPS, model already downloaded).
+
+Reproduce from the repo root (after `make setup`):
+
+```bash
+bash scripts/reproduce_h2.sh results/h2_repro   # baseline + full protocol + comparison; writes only to results/
+```
+
+Re-running with the default paths overwrites the committed outputs here; `git diff` then shows any change.
+
 Pre-registration [`preregistration.md`](preregistration.md) (`1ee5528`) → pattern baseline [`pattern_baseline.md`](pattern_baseline.md)
 (`db4fad4`) → this results commit. (Naming note: H's own full-run commit `8cb14c3` was titled "H2 results"; this directory is the
 new distractor-fix experiment.) Full numbers: [`metrics.json`](metrics.json); pilot: [`pilot.json`](pilot.json); generations:

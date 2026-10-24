@@ -20,6 +20,7 @@ from run_full_f_protocol import cv_correct  # noqa: E402
 from run_gh import load_backend  # noqa: E402
 
 OUT = Path("experiments/K_per_token_sweep")
+H2_DIR = Path("experiments/H2_distractor_fix")
 ANCHORS = ["Q", "question_end", "Options"] + [f"{k}_{L}" for L in "ABCDE" for k in ("open", "value_end")] + \
           ["A:", "think", "last"]
 TASKS = {
@@ -101,7 +102,25 @@ def probe_map(X, y, groups):
     return acc, ci
 
 
+def _parse_paths(extra=None):
+    """Input/output directories; defaults reproduce the committed layout (run from repo root)."""
+    import argparse
+
+    global OUT, H2_DIR
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--out", default=str(OUT), help="output directory (default: %(default)s)")
+    ap.add_argument("--h2-dir", default=str(H2_DIR),
+                    help="H2 run providing generations.jsonl (default: %(default)s)")
+    if extra:
+        extra(ap)
+    a = ap.parse_args()
+    OUT, H2_DIR = Path(a.out), Path(a.h2_dir)
+    return a
+
+
 def main():
+    _parse_paths()
+    TASKS["H2_mult"]["gens"] = str(H2_DIR / "generations.jsonl")
     OUT.mkdir(parents=True, exist_ok=True)
     out = {}
     for task, cfg in TASKS.items():

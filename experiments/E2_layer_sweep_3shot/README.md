@@ -1,5 +1,21 @@
 # E2: E with BBH 3-shot prompts and a pilot gate. Gate FAILED; full run not executed.
 
+## At a glance
+
+- **Name in the LW post:** BBH 3-shot pilot (pilot failure) (Appendix A).
+- **Hypothesis:** E with BBH's standard 3-shot prompts passes a no-CoT competence pilot gate (it did not).
+- **Pre-registration:** `c918f6e` · **Results:** `f66ebcb` (pilot)
+- **Outputs:** `pilot.json` in this directory.
+- **Expected runtime:** not recorded (30-item pilot) (Apple M4 Pro, MPS, model already downloaded).
+
+Reproduce from the repo root (after `make setup`):
+
+```bash
+python scripts/run_e2_layer_sweep.py --pilot
+```
+
+Re-running with the default paths overwrites the committed outputs here; `git diff` then shows any change.
+
 Pre-registration: [`preregistration.md`](preregistration.md) (commit `c918f6e`, inherits E's `0f7353a`).
 Pilot output: [`pilot.json`](pilot.json), including all 30 raw completions.
 

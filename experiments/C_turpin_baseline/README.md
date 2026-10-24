@@ -1,5 +1,21 @@
 # C: Turpin few-shot bias baseline on Qwen2.5-1.5B-Instruct
 
+## At a glance
+
+- **Name in the LW post:** Turpin-style cue injection (Appendix A).
+- **Hypothesis:** Six few-shot examples all answering (A) shift answers toward (A) on easy questions, without the CoT mentioning it.
+- **Pre-registration:** none (exploratory) · **Results:** `ddf0053`
+- **Outputs:** `results.json` in this directory.
+- **Expected runtime:** not recorded (Apple M4 Pro, MPS, model already downloaded).
+
+Reproduce from the repo root (after `make setup`):
+
+```bash
+python scripts/run_turpin_baseline.py
+```
+
+Re-running with the default paths overwrites the committed outputs here; `git diff` then shows any change.
+
 **Result: cue_influence = 0% and cue_ack = 0%, for both cue directions (40 question pairs each).**
 On this question set, Qwen2.5-1.5B-Instruct did not follow the few-shot answer-position bias at all.
 

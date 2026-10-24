@@ -1,5 +1,21 @@
 # D: does post-training ("distillation") cause B's pre-CoT null?
 
+## At a glance
+
+- **Name in the LW post:** The externalization ("distillation") hypothesis test (Appendix A).
+- **Hypothesis:** If post-training taught the model to externalize computation, the base model shows more pre-CoT signal than Instruct.
+- **Pre-registration:** none (exploratory) · **Results:** `c01d6c7`
+- **Outputs:** `metrics.json` in this directory.
+- **Expected runtime:** about 9 min (Apple M4 Pro, MPS, model already downloaded).
+
+Reproduce from the repo root (after `make setup`):
+
+```bash
+python scripts/run_base_vs_instruct.py   # uses B's prompts (experiments/B_probe/labels.jsonl)
+```
+
+Re-running with the default paths overwrites the committed outputs here; `git diff` then shows any change.
+
 **Verdict: H2. The base model shows the same null, so the distillation hypothesis is rejected.**
 At the pre-registered layer 14, the correct letter is undecodable before CoT in both the pretrained-only
 model (0.540) and the Instruct model (0.500 on the identical prompt, 0.495 in B's chat format), even though

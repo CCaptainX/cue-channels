@@ -1,5 +1,22 @@
 # B: linear probe pipeline on synthetic data
 
+## At a glance
+
+- **Name in the LW post:** The initial layer-14 null (Appendix A).
+- **Hypothesis:** A linear probe at layer 14, last prompt token, decodes which of two options is correct on two-option addition prompts.
+- **Pre-registration:** none (exploratory) · **Results:** `d2e16f1`
+- **Outputs:** `metrics.json` in this directory.
+- **Expected runtime:** not recorded (Apple M4 Pro, MPS, model already downloaded).
+
+Reproduce from the repo root (after `make setup`):
+
+```bash
+python scripts/make_dummy_probe_data.py
+python scripts/train_dummy_probe.py
+```
+
+Re-running with the default paths overwrites the committed outputs here; `git diff` then shows any change.
+
 **Model:** Qwen/Qwen2.5-1.5B-Instruct (bf16, MPS) · **Position:** last prompt token, before any generated token
 **Data:** 100 two-digit addition questions with two options. Each appears twice, with the correct answer once in (A) and once in (B), for 200 prompts (`labels.jsonl`).
 **Probe:** StandardScaler + LogisticRegression(C=0.1), 80/20 split grouped by question.

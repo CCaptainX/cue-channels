@@ -1,5 +1,22 @@
 # H: F's full protocol on arithmetic (a × b) with Qwen2.5-1.5B-Instruct
 
+## At a glance
+
+- **Name in the LW post:** The leaky first multiplication run (Section 4 (distractor-pattern correction), Appendix D).
+- **Hypothesis:** On two-digit multiplication the pre-CoT answer is linearly decodable at the last prompt token (distractors were later found to leak).
+- **Pre-registration:** `c1f8159` · **Results:** `f0c44ec` (pilot), `8cb14c3` (results)
+- **Outputs:** `metrics.json` in this directory.
+- **Expected runtime:** about 30 min (Apple M4 Pro, MPS, model already downloaded).
+
+Reproduce from the repo root (after `make setup`):
+
+```bash
+python scripts/run_gh.py pilot --model qwen2.5-1.5b --suite arith --out experiments/H_arithmetic
+python scripts/run_full_f_protocol.py --model qwen2.5-1.5b --suite arith --task C --out experiments/H_arithmetic
+```
+
+Re-running with the default paths overwrites the committed outputs here; `git diff` then shows any change.
+
 Pre-registration: [`../G_scale_7b/preregistration.md`](../G_scale_7b/preregistration.md) (`c1f8159`, inherits F `c67a872`).
 Dispatched automatically after the G pilot failed (`b163ee6`). Pilot: [`pilot.md`](pilot.md) (`f0c44ec`); variant C was selected.
 Full numbers: [`metrics.json`](metrics.json). Generations: [`generations.jsonl`](generations.jsonl). Activations gitignored.

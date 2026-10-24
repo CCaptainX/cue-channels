@@ -1,5 +1,22 @@
 # M: mid-CoT probe decay on H2 items
 
+## At a glance
+
+- **Name in the LW post:** The mid-CoT decay test (Section 5, Figure 4).
+- **Hypothesis:** Registered rules on the last-token probe across CoT tokens (overwrite / persists / noise). Verdict: "signal was always noise".
+- **Pre-registration:** `3742d74` · **Results:** `32bef59`
+- **Outputs:** `metrics.json` in this directory.
+- **Expected runtime:** about 5 min (Apple M4 Pro, MPS, model already downloaded).
+
+Reproduce from the repo root (after `make setup`):
+
+```bash
+python scripts/run_m_decay.py --h2-dir results/h2_repro   # needs H2 activations and J's generations (committed)
+python scripts/plot_m_decay.py
+```
+
+Re-running with the default paths overwrites the committed outputs here; `git diff` then shows any change.
+
 Pre-registration: [`preregistration.md`](preregistration.md) (`3742d74`). Numbers: [`metrics.json`](metrics.json); per-item curves:
 [`per_item_curves.jsonl`](per_item_curves.jsonl); figures: `figures/decay_curve.png`, `figures/example_annotated.png`. 100 held-out C2 items
 (200–299) with J's α = 0 greedy CoTs (`e9882de`); prompt tokenization matched the generation prefix on 100/100 items. Runtime ≈ 5 min.

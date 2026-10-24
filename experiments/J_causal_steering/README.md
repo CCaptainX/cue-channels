@@ -1,5 +1,22 @@
 # J: CAA causal steering along the H2 layer-22 direction: NOT SUPPORTED
 
+## At a glance
+
+- **Name in the LW post:** The causal steering test (Section 5, Section 6 (strongest steering null), Figure 3).
+- **Hypothesis:** Steering at layer 22 along the mean-difference "A" direction (α = +2) raises "A" answers by > 0.15. Not supported.
+- **Pre-registration:** `d9bbb0f` (+ addendum `37676ba`) · **Results:** `e9882de`
+- **Outputs:** `metrics.json`, `generations.jsonl` in this directory.
+- **Expected runtime:** about 3 h 10 min (Apple M4 Pro, MPS, model already downloaded).
+
+Reproduce from the repo root (after `make setup`):
+
+```bash
+python scripts/run_j_steering.py --h2-dir results/h2_repro   # needs H2 activations: run scripts/reproduce_h2.sh first
+python scripts/plot_j_dose_response.py
+```
+
+Re-running with the default paths overwrites the committed outputs here; `git diff` then shows any change.
+
 Pre-registration: [`preregistration.md`](preregistration.md) (`d9bbb0f`), with a pre-run exploratory addendum (`37676ba`). Full numbers:
 [`metrics.json`](metrics.json); every output: [`generations.jsonl`](generations.jsonl); plot: [`figures/dose_response.png`](figures/dose_response.png).
 Qwen 2.5 1.5B Instruct; 100 held-out C2 items (200–299, disjoint from the 200 used for the vector); runtime ≈ 3 h 10 min.

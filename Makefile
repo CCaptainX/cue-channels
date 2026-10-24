@@ -5,12 +5,19 @@ BIN := $(VENV)/bin
 PY ?= $(if $(wildcard $(BIN)/python),$(BIN)/python,python3)
 MODEL ?= qwen2.5-1.5b
 
-.PHONY: setup test test-slow eval-local clean format lint
+.PHONY: setup setup-exact test test-slow reproduce-h2 figures clean format lint
 
-setup:  ## Create a project-local venv and install deps (never system-wide)
+setup:  ## Create a project-local venv and install pinned deps (never system-wide)
 	$(BOOTSTRAP_PY) -m venv $(VENV)
 	$(BIN)/pip install -U pip
-	$(BIN)/pip install -e ".[dev]"
+	$(BIN)/pip install -r requirements.txt
+	$(BIN)/pip install -e . --no-deps
+
+setup-exact:  ## Same, but with the full transitive lock (requirements-lock.txt)
+	$(BOOTSTRAP_PY) -m venv $(VENV)
+	$(BIN)/pip install -U pip
+	$(BIN)/pip install -r requirements-lock.txt
+	$(BIN)/pip install -e . --no-deps
 
 test:  ## Fast tests: imports + pure-Python logic, no model download
 	$(PY) -m pytest -q
@@ -18,8 +25,11 @@ test:  ## Fast tests: imports + pure-Python logic, no model download
 test-slow:  ## Includes tests that download weights / run inference
 	$(PY) -m pytest -q -m slow
 
-eval-local:  ## Run the toy cue eval on the local backend
-	$(PY) scripts/run_eval_local.py --model $(MODEL) --out results/
+reproduce-h2:  ## Re-run the headline result into results/h2_repro and compare (~25 min on M4 Pro)
+	PY=$(PY) bash scripts/reproduce_h2.sh results/h2_repro
+
+figures:  ## Rebuild the LW post figures from committed metrics (writeup/figures/)
+	$(PY) writeup/make_figures.py
 
 format:
 	$(PY) -m ruff format src scripts tests

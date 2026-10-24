@@ -22,6 +22,7 @@ from run_k_per_token import ANCHORS, anchor_positions  # noqa: E402
 from cue_channels.probes.train import _make_pipeline  # noqa: E402
 
 OUT = Path("experiments/N_shuffle_options")
+H2_DIR = Path("experiments/H2_distractor_fix")
 LAYER = 22
 L = "ABCDE"
 
@@ -83,11 +84,28 @@ def r2(x, y):
     return float(1 - ((y - pred) ** 2).sum() / ((y - y.mean()) ** 2).sum()), float(slope)
 
 
+def _parse_paths(extra=None):
+    """Input/output directories; defaults reproduce the committed layout (run from repo root)."""
+    import argparse
+
+    global OUT, H2_DIR
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--out", default=str(OUT), help="output directory (default: %(default)s)")
+    ap.add_argument("--h2-dir", default=str(H2_DIR),
+                    help="H2 run providing generations.jsonl (default: %(default)s)")
+    if extra:
+        extra(ap)
+    a = ap.parse_args()
+    OUT, H2_DIR = Path(a.out), Path(a.h2_dir)
+    return a
+
+
 def main():
+    _parse_paths()
     items = h_arith.items("C2", 200)
     rev = [reverse_item(it) for it in items]
     pre, ao_pre = h_arith.prompts("C2")
-    gens = [json.loads(line) for line in open("experiments/H2_distractor_fix/generations.jsonl")]
+    gens = [json.loads(line) for line in open(H2_DIR / "generations.jsonl")]
     nc_orig = [g["no_cot"] for g in gens]
     b = load_backend("qwen2.5-1.5b")
     A_o, _ = collect(b, pre, ao_pre, items, False)

@@ -1,5 +1,22 @@
 # N: option-order reversal: does the pre-CoT signal track the correct option's position? Registered verdict: MIXED
 
+## At a glance
+
+- **Name in the LW post:** The option-reversal test (Section 5, Figures 5–6).
+- **Hypothesis:** Each item's probe peak tracks the correct option's slot under order reversal (R² ≥ 0.6). Verdict: mixed (R² = 0.29).
+- **Pre-registration:** `ecb491d` · **Results:** `db62ccb`
+- **Outputs:** `metrics.json`, `per_item.jsonl` in this directory.
+- **Expected runtime:** about 10 min (Apple M4 Pro, MPS, model already downloaded).
+
+Reproduce from the repo root (after `make setup`):
+
+```bash
+python scripts/run_n_shuffle.py
+python scripts/plot_n_shuffle.py
+```
+
+Re-running with the default paths overwrites the committed outputs here; `git diff` then shows any change.
+
 Pre-registration: [`preregistration.md`](preregistration.md) (`ecb491d`). Numbers: [`metrics.json`](metrics.json); per-item measures:
 [`per_item.jsonl`](per_item.jsonl); figures: `figures/peak_vs_correct_slot.png`, `figures/heatmaps_original_vs_reversed.png`.
 H2's 200 items in original and reversed option order; L22; K's 16 anchors; cross-fitted (5-fold) probe probabilities per item.
