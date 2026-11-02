@@ -1,6 +1,6 @@
 # I3 pilot: memorizable-task triage on Qwen 2.5 1.5B Instruct: 2 of 5 pass
 
-Pre-registration: [`preregistration.md`](preregistration.md) (`d5d1be1`). Raw numbers: [`pilot.json`](pilot.json), [`pattern_baseline.json`](pattern_baseline.json).
+Pre-registration: [`preregistration.md`](preregistration.md) (`5c3e806`). Raw numbers: [`pilot.json`](pilot.json), [`pattern_baseline.json`](pattern_baseline.json).
 30 items per task, 5 options, 3-shot raw text. Pilot runtime about 3 min.
 
 | Task | G1 no-CoT [95% CI] (0.55–0.85) | G3 with-CoT (≥ 0.85) | G2 top letter (≤ 60%) | G4 options-only (≤ 0.30) | Result |

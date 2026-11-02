@@ -1,7 +1,7 @@
 # J: pre-registration — CAA causal steering along the H2 layer-22 direction
 
 **Registered:** 2026-10-15T23:22:30Z (UTC), before any steering run. Model, task generator (`h_arith` variant C2), prompts and parsing as H2
-(`1ee5528` → `0b9dd69`). Reference: Rimsky et al. (2023) CAA; Cox et al. (2026) steering protocol and orthogonal control.
+(`7c41311` → `2ac5425`). Reference: Rimsky et al. (2023) CAA; Cox et al. (2026) steering protocol and orthogonal control.
 
 ## Question
 Is the layer-22 residual direction that H2's probe reads causally load-bearing on the model's eventual (with-CoT) answer?

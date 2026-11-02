@@ -4,7 +4,7 @@
 
 - **Name in the write-up:** The leaky first multiplication run (Section 4 (distractor-pattern correction), Appendix D).
 - **Hypothesis:** On two-digit multiplication the pre-CoT answer is linearly decodable at the last prompt token (distractors were later found to leak).
-- **Pre-registration:** `c1f8159` · **Results:** `f0c44ec` (pilot), `8cb14c3` (results)
+- **Pre-registration:** `f3ce9d4` · **Results:** `f7df7bd` (pilot), `533dbff` (results)
 - **Outputs:** `metrics.json` in this directory.
 - **Expected runtime:** about 30 min (Apple M4 Pro, MPS, model already downloaded).
 
@@ -17,8 +17,8 @@ python scripts/run_full_f_protocol.py --model qwen2.5-1.5b --suite arith --task 
 
 Re-running with the default paths overwrites the committed outputs here; `git diff` then shows any change.
 
-Pre-registration: [`../G_scale_7b/preregistration.md`](../G_scale_7b/preregistration.md) (`c1f8159`, inherits F `c67a872`).
-Dispatched automatically after the G pilot failed (`b163ee6`). Pilot: [`pilot.md`](pilot.md) (`f0c44ec`); variant C was selected.
+Pre-registration: [`../G_scale_7b/preregistration.md`](../G_scale_7b/preregistration.md) (`f3ce9d4`, inherits F `5f12575`).
+Dispatched automatically after the G pilot failed (`905adfd`). Pilot: [`pilot.md`](pilot.md) (`f7df7bd`); variant C was selected.
 Full numbers: [`metrics.json`](metrics.json). Generations: [`generations.jsonl`](generations.jsonl). Activations gitignored.
 Runtime: 18 min collection + 10 min analysis (cap 2 h).
 

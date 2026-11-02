@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Experiment K: per-token x per-layer probe maps (pre-registered, 56b863a)."""
+"""Experiment K: per-token x per-layer probe maps (pre-registered, 9256836)."""
 
 from __future__ import annotations
 

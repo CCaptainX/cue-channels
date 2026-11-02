@@ -86,7 +86,7 @@ written in the prompt) decode at 0.93–1.00. The paper-length version is [`writ
 For every main experiment, the hypothesis, gates and decision rules sit in
 `experiments/<letter>_<name>/preregistration.md`. That file was committed before any of the experiment's data, and
 `git log` shows each pre-registration commit ahead of its results commits. [`MAPPING.md`](MAPPING.md) lists both SHAs
-for every experiment. Analyses I added afterwards are labelled post hoc or exploratory. No history has been rewritten.
+for every experiment. Analyses I added afterwards are labelled post hoc or exploratory.
 
 ## Reproduce the headline result
 

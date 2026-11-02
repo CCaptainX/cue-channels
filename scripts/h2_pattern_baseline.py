@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """H2 step 0: can the correct option be predicted from the 5 option values alone?
 
-Pre-registered in experiments/H2_distractor_fix/preregistration.md (1ee5528).
+Pre-registered in experiments/H2_distractor_fix/preregistration.md (7c41311).
 """
 
 from __future__ import annotations

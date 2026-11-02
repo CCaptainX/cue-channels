@@ -1,7 +1,7 @@
 # H2: pre-registration — H with pattern-proof distractors
 
 **Registered:** 2026-10-12T15:56:50Z (UTC). Committed before any H2 item is generated or any model is run. Inherits H
-([`../G_scale_7b/preregistration.md`](../G_scale_7b/preregistration.md), `c1f8159`) and F (`c67a872`) for model, prompt
+([`../G_scale_7b/preregistration.md`](../G_scale_7b/preregistration.md), `f3ce9d4`) and F (`5f12575`) for model, prompt
 layout, probes, CV, seeds, baselines, permutation correction, figures and decision rules. **Only the distractor
 construction changes**, plus the pattern-only prerequisite and the scenario definitions below.
 

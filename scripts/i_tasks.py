@@ -1,4 +1,4 @@
-"""Experiment I tasks (pre-registered in experiments/I_generalization/preregistration.md, 8a6de72)."""
+"""Experiment I tasks (pre-registered in experiments/I_generalization/preregistration.md, be4fee1)."""
 
 from __future__ import annotations
 

@@ -4,7 +4,7 @@
 
 - **Name in the write-up:** BBH 3-shot pilot (pilot failure) (Appendix A).
 - **Hypothesis:** E with BBH's standard 3-shot prompts passes a no-CoT competence pilot gate (it did not).
-- **Pre-registration:** `c918f6e` · **Results:** `f66ebcb` (pilot)
+- **Pre-registration:** `80f4000` · **Results:** `cdebe3a` (pilot)
 - **Outputs:** `pilot.json` in this directory.
 - **Expected runtime:** not recorded (30-item pilot) (Apple M4 Pro, MPS, model already downloaded).
 
@@ -16,7 +16,7 @@ python scripts/run_e2_layer_sweep.py --pilot
 
 Re-running with the default paths overwrites the committed outputs here; `git diff` then shows any change.
 
-Pre-registration: [`preregistration.md`](preregistration.md) (commit `c918f6e`, inherits E's `0f7353a`).
+Pre-registration: [`preregistration.md`](preregistration.md) (commit `80f4000`, inherits E's `411b554`).
 Pilot output: [`pilot.json`](pilot.json), including all 30 raw completions.
 
 **Pilot outcome.** On the first 30 items of E's seed-0 sample, Qwen2.5-1.5B-Instruct prompted with BBH's exact

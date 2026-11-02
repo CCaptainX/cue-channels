@@ -1,7 +1,7 @@
 # I3: pre-registration — memorizable (one-pass-retrievable) tasks on Qwen 2.5 1.5B Instruct
 
 **Registered:** 2026-10-15T12:58:17Z (UTC), together with the item generator `scripts/i3_tasks.py` (fact lists are fixed in that file), before
-any I3 item is shown to a model. Ancestors: H2 (`1ee5528` → `0b9dd69`), I (`8a6de72` → `e094845`). Everything not stated here is
+any I3 item is shown to a model. Ancestors: H2 (`7c41311` → `2ac5425`), I (`be4fee1` → `0eb4fcb`). Everything not stated here is
 identical to H2/I: `Qwen/Qwen2.5-1.5B-Instruct`, bf16 MPS, greedy, raw-text 3-shot (exemplar letters forced B, A, C), stop at `\nQ:`,
 5 options (chance 0.20), probe and statistics as H2, 100-permutation max-over-layers test, Gaussian / majority / chance baselines.
 

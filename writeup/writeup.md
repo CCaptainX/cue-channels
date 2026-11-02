@@ -148,15 +148,15 @@ Letters refer to `experiments/<letter>_<name>/` in the repo and to Appendix B. L
 Repository: [github.com/CCaptainX/cue-channels](https://github.com/CCaptainX/cue-channels) (private; access on request). Each experiment lives in `experiments/<letter>_<name>/` with its pre-registration, pilot, metrics and README; probe code is in `src/cue_channels/probes/`. B–D were exploratory; E onward were pre-registered.
 
 Main-body experiments (pre-registration → results):
-- Multiplication benchmark (H2): `1ee5528` → `db4fad4` → `0b9dd69` — supported, both targets.
-- Multiplication-tables replication and unit-conversions boundary (I3): `d5d1be1` → `bbc4706`, `a13d731`, `af736fd` — times tables supported; unit conversions not supported at the last token.
-- Causal steering test (J): `d9bbb0f` (+ exploratory addendum `37676ba`) → `e9882de` — not supported.
-- Per-token sweep (K): `56b863a` → `c48a077` — not confirmed.
-- Mid-CoT decay test (M): `3742d74` → `32bef59` — registered verdict "signal was always noise" (not supported); retrained-probe analysis post hoc.
-- Option-reversal test (N): `ecb491d` → `db62ccb` — mixed; post-hoc evidence labelled.
-- Exploratory robustness checks (regularization sweep, correct/incorrect breakdown; not pre-registered): `647b901`; 1,000-permutation null: `c37dc63`.
+- Multiplication benchmark (H2): `7c41311` → `63dd6cb` → `2ac5425` — supported, both targets.
+- Multiplication-tables replication and unit-conversions boundary (I3): `5c3e806` → `b91b174`, `f516678`, `ba93e39` — times tables supported; unit conversions not supported at the last token.
+- Causal steering test (J): `d310a5b` (+ exploratory addendum `c4a9e51`) → `00c70ac` — not supported.
+- Per-token sweep (K): `9256836` → `06a8204` — not confirmed.
+- Mid-CoT decay test (M): `6cb35be` → `da18d77` — registered verdict "signal was always noise" (not supported); retrained-probe analysis post hoc.
+- Option-reversal test (N): `f9ab9ad` → `dbcf320` — mixed; post-hoc evidence labelled.
+- Exploratory robustness checks (regularization sweep, correct/incorrect breakdown; not pre-registered): `8b0c762`; 1,000-permutation null: `013fdfe`.
 
-Appendix experiments: E `0f7353a` → `2bc86bc`; E2 `c918f6e` → `f66ebcb`; F `c67a872` → `1ac7091`; G/H `c1f8159` → `00dcea8`, `b163ee6`, `f0c44ec`, `8cb14c3`; I `8a6de72` → `e094845`; I4 `a54d1a6` → `aaa65aa`, `3e99734`.
+Appendix experiments: E `411b554` → `b29a082`; E2 `80f4000` → `cdebe3a`; F `5f12575` → `18957c2`; G/H `f3ce9d4` → `1e8231d`, `905adfd`, `f7df7bd`, `533dbff`; I `be4fee1` → `0eb4fcb`; I4 `28c6a1b` → `6c6eb43`, `6cf21db`.
 
 ## Appendix C: What "untested" means for multi-step tasks
 

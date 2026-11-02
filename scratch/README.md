@@ -9,4 +9,4 @@ the results in the write-up, and none of it is maintained.
 | `docs/reading-notes.md` | Early reading notes. |
 | `notebooks/00_setup_sanity.ipynb` | First environment sanity notebook (superseded by experiment A, `scripts/sanity_qwen.py`). |
 | `scripts/run_eval_local.py`, `scripts/run_eval_sagemaker.py` | The original toy cue-channel eval (local) and an unimplemented SageMaker stub. They use `src/cue_channels/eval/`, which is kept because the tests cover it. Run from the repo root as `python scratch/scripts/run_eval_local.py`. |
-| `experiments/L_llama_replication/` | Pre-registered Llama 3.2 1B replication (`07932be`). Blocked at the load check (gated model, no HF token; `34d5617`, `33f2532`); never run, not reported in the post. |
+| `experiments/L_llama_replication/` | Pre-registered Llama 3.2 1B replication (`11f8dcb`). Blocked at the load check (gated model, no HF token; `ac436d3`, `c1ecda8`); never run, not reported in the post. |

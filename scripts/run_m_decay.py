@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Experiment M: mid-CoT probe decay (pre-registered, 3742d74)."""
+"""Experiment M: mid-CoT probe decay (pre-registered, 6cb35be)."""
 
 from __future__ import annotations
 
@@ -153,7 +153,7 @@ def main():
     noise = all(curve[t]["acc"] <= maj + 0.05 for t in (1, 2, 3))
     verdict = ("overwrite confirmed" if overwrite else "signal persists" if persists
                else "signal was always noise" if noise else "mixed")
-    out = {"preregistration": "3742d74", "n_items": len(per_item), "majority": round(maj, 3),
+    out = {"preregistration": "6cb35be", "n_items": len(per_item), "majority": round(maj, 3),
            "prefix_tokenization_ok": sum(r["prefix_ok"] for r in per_item),
            "anchors": anchor_res, "curve_transfer": curve, "curve_per_position_cv": pos_cv,
            "decision": {"overwrite_confirmed": bool(overwrite), "signal_persists": bool(persists),

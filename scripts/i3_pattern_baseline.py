@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""I3 gate G4: options-only baseline (pre-registered, d5d1be1)."""
+"""I3 gate G4: options-only baseline (pre-registered, 5c3e806)."""
 
 from __future__ import annotations
 

@@ -1,6 +1,6 @@
 # I3 / times_tables: full run (Qwen 2.5 1.5B Instruct)
 
-Pre-registration: [`../preregistration.md`](../preregistration.md) (`d5d1be1`); pilot `bbc4706`. N = 200, layers 0–27, 5 seeds,
+Pre-registration: [`../preregistration.md`](../preregistration.md) (`5c3e806`); pilot `b91b174`. N = 200, layers 0–27, 5 seeds,
 **StratifiedGroupKFold by fact**, option-E token located directly. Full numbers: [`metrics.json`](metrics.json); figures in `figures/`.
 Runtime: collection 382 s, analysis 257 s.
 

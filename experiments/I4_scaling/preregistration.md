@@ -1,12 +1,12 @@
 # I4: pre-registration — Qwen 2.5 7B Instruct on I's multi-step tasks (fires after I3 regardless of outcome)
 
 **Registered:** 2026-10-15T12:58:17Z (UTC), before any I4 model run. Tasks, items, prompts, distractors and gates are exactly those of experiment I
-(`experiments/I_generalization/preregistration.md`, `8a6de72`; generator `scripts/i_tasks.py` as committed in `e094845`, including the
+(`experiments/I_generalization/preregistration.md`, `be4fee1`; generator `scripts/i_tasks.py` as committed in `0eb4fcb`, including the
 disclosed GSM8K sampler fix): add_carry, mod, gsm8k_easy, aqua_easy. AQuA failed G4 (options-only 0.354) in I; G4 is model-independent,
 so aqua_easy cannot pass and is piloted only for completeness.
 
 ## Model
-`Qwen/Qwen2.5-7B-Instruct`, precision ladder as G1 (`c1f8159`): bf16 MPS → bf16 MPS with watermark ratio 0.0 → stop and report.
+`Qwen/Qwen2.5-7B-Instruct`, precision ladder as G1 (`f3ce9d4`): bf16 MPS → bf16 MPS with watermark ratio 0.0 → stop and report.
 28 layers, d_model 3584 expected; recorded in `load_check.json`.
 
 ## Hypothesis

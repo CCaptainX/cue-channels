@@ -4,7 +4,7 @@
 
 - **Name in the write-up:** The initial layer-14 null (Appendix A).
 - **Hypothesis:** A linear probe at layer 14, last prompt token, decodes which of two options is correct on two-option addition prompts.
-- **Pre-registration:** none (exploratory) · **Results:** `d2e16f1`
+- **Pre-registration:** none (exploratory) · **Results:** `2f743fe`
 - **Outputs:** `metrics.json` in this directory.
 - **Expected runtime:** not recorded (Apple M4 Pro, MPS, model already downloaded).
 

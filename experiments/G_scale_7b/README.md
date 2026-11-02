@@ -4,7 +4,7 @@
 
 - **Name in the write-up:** 7B BBH triage (pilot failure) (Appendix A).
 - **Hypothesis:** Qwen 2.5 7B Instruct passes the BBH competence gates that 1.5B failed (it did not; pre-registered pivot to H).
-- **Pre-registration:** `c1f8159` · **Results:** `00dcea8` (load check), `b163ee6` (pilot)
+- **Pre-registration:** `f3ce9d4` · **Results:** `1e8231d` (load check), `905adfd` (pilot)
 - **Outputs:** `pilot.json`, `load_check.json` in this directory.
 - **Expected runtime:** about 40 min (15.5 GB model) (Apple M4 Pro, MPS, model already downloaded).
 

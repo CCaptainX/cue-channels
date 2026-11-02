@@ -4,7 +4,7 @@
 
 - **Name in the write-up:** The multiplication-tables replication and the unit-conversions boundary (Section 3).
 - **Hypothesis:** On one-pass-retrievable tasks the no-CoT target peaks in L19–25 with accuracy ≥ 0.55.
-- **Pre-registration:** `d5d1be1` · **Results:** `bbc4706` (pilot), `a13d731` (times tables), `af736fd` (unit conversions)
+- **Pre-registration:** `5c3e806` · **Results:** `b91b174` (pilot), `f516678` (times tables), `ba93e39` (unit conversions)
 - **Outputs:** `times_tables/metrics.json`, `unit_conversions/metrics.json` in this directory.
 - **Expected runtime:** about 3 min pilot + 11 min (times tables) + 22 min (unit conversions) (Apple M4 Pro, MPS, model already downloaded).
 

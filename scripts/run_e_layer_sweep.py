@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Experiment E: pre-registered late-layer pre-CoT probe on BBH logical_deduction_three_objects.
 
-Implements experiments/E_layer_sweep/preregistration.md exactly (commit 0f7353a).
+Implements experiments/E_layer_sweep/preregistration.md exactly (commit 411b554).
 """
 
 from __future__ import annotations
@@ -183,7 +183,7 @@ def main() -> None:
     verdict = "SUPPORTED" if (cond1 and cond2) else "NOT SUPPORTED"
 
     metrics = {
-        "preregistration": "experiments/E_layer_sweep/preregistration.md (commit 0f7353a)",
+        "preregistration": "experiments/E_layer_sweep/preregistration.md (commit 411b554)",
         "model": cfg.model_config.hf_id,
         "task": "BBH logical_deduction_three_objects, N=150 (seed 0), zero-shot, chat template",
         "device": blob.get("device"),

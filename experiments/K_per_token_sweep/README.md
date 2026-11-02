@@ -4,7 +4,7 @@
 
 - **Name in the write-up:** The per-token sweep (Section 5).
 - **Hypothesis:** Multiplication and unit conversions peak at different prompt positions (≥ 0.10 margin). Not confirmed.
-- **Pre-registration:** `56b863a` · **Results:** `c48a077`
+- **Pre-registration:** `9256836` · **Results:** `06a8204`
 - **Outputs:** `metrics.json` in this directory.
 - **Expected runtime:** about 8 min (Apple M4 Pro, MPS, model already downloaded).
 
@@ -17,7 +17,7 @@ python scripts/plot_k_heatmaps.py
 
 Re-running with the default paths overwrites the committed outputs here; `git diff` then shows any change.
 
-Pre-registration: [`preregistration.md`](preregistration.md) (`56b863a`). Numbers: [`metrics.json`](metrics.json) (16 anchors × 28 layers per task,
+Pre-registration: [`preregistration.md`](preregistration.md) (`9256836`). Numbers: [`metrics.json`](metrics.json) (16 anchors × 28 layers per task,
 plus H2's every-token map). Heatmaps: `figures/heatmap_H2_mult.png`, `figures/heatmap_I3_unit_conversions.png`,
 `figures/heatmap_H2_mult_all_tokens.png`. Target A (no-CoT answer), seed 0, 5-fold CV (grouped by fact for unit conversions).
 Runtime 8 min. Anchor tokens verified on the first 3 items of each task (`anchor_token_checks`).

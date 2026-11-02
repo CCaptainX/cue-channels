@@ -4,7 +4,7 @@
 
 - **Name in the write-up:** The externalization ("distillation") hypothesis test (Appendix A).
 - **Hypothesis:** If post-training taught the model to externalize computation, the base model shows more pre-CoT signal than Instruct.
-- **Pre-registration:** none (exploratory) · **Results:** `c01d6c7`
+- **Pre-registration:** none (exploratory) · **Results:** `8b71125`
 - **Outputs:** `metrics.json` in this directory.
 - **Expected runtime:** about 9 min (Apple M4 Pro, MPS, model already downloaded).
 

@@ -1,7 +1,7 @@
 # G pilot (Qwen2.5-7B-Instruct, BBH 3-shot): no task passed, so the pivot to H was triggered
 
-Pre-registration: [`preregistration.md`](preregistration.md) (`c1f8159`). Load check: [`load_check.json`](load_check.json)
-(`00dcea8`; bf16 on MPS, 15.5 GB, 28 layers, d_model 3584). Raw numbers: [`pilot.json`](pilot.json). Figure:
+Pre-registration: [`preregistration.md`](preregistration.md) (`f3ce9d4`). Load check: [`load_check.json`](load_check.json)
+(`1e8231d`; bf16 on MPS, 15.5 GB, 28 layers, d_model 3584). Raw numbers: [`pilot.json`](pilot.json). Figure:
 [`figures/4_no_cot_letter_distribution.png`](figures/4_no_cot_letter_distribution.png). Same 30 items per task as F. Runtime 39 min 37 s.
 
 | Task | no-CoT acc [95% CI] | with-CoT acc [95% CI] | top no-CoT letter | G1 [0.55, 0.85] | G2 ≤ 60% | G3 ≥ 0.85 |

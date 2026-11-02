@@ -1,6 +1,6 @@
 # H2 step 0: pattern-only baseline: PASS
 
-Pre-registration: [`preregistration.md`](preregistration.md) (`1ee5528`). Script: `scripts/h2_pattern_baseline.py`. Raw numbers:
+Pre-registration: [`preregistration.md`](preregistration.md) (`7c41311`). Script: `scripts/h2_pattern_baseline.py`. Raw numbers:
 [`pattern_baseline.json`](pattern_baseline.json). 5,000 generated items per rule, **option values only** (no model, no question text),
 5-fold CV, per-option scorers with argmax over the 5 options.
 

@@ -3,7 +3,7 @@
 **Registered:** 2026-10-08T23:19:27Z (UTC), before any E2 model run (pilot or full).
 
 **E2 inherits E's pre-registration** ([`../E_layer_sweep/preregistration.md`](../E_layer_sweep/preregistration.md),
-commit `0f7353a`) unchanged, except for the prompt format and the pilot gate. Model, data sample (N = 150,
+commit `411b554`) unchanged, except for the prompt format and the pilot gate. Model, data sample (N = 150,
 seed 0, same sha256), hypothesis, primary probe (CoT-prompt activations @ **L24** → model's **own no-CoT letter**),
 probe and CV setup, bootstrap CIs, controls, permutation test and secondary analyses are as in E.
 
