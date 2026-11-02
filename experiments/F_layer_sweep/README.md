@@ -2,7 +2,7 @@
 
 ## At a glance
 
-- **Name in the LW post:** Full-protocol BBH triage (pilot failure) (Appendix A).
+- **Name in the write-up:** Full-protocol BBH triage (pilot failure) (Appendix A).
 - **Hypothesis:** At least one of three BBH tasks passes the competence gates for the full layer-sweep protocol (none did).
 - **Pre-registration:** `c67a872` · **Results:** `1ac7091` (pilot)
 - **Outputs:** `pilot.json` in this directory.

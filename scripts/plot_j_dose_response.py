@@ -22,10 +22,10 @@ for ax, mode, title in ((axes[0], "P", "P: last prompt token only (primary)"),
     xs = [a for a in alphas if key(a) in m]
     for letter, col in zip("ABCDE", ("#1f4e79", "#c55a11", "#548235", "#7030a0", "#7f7f7f"), strict=True):
         ys = [m[key(a)]["letter_dist"].get(letter, 0) / 100 for a in xs]
-        ax.plot(xs, ys, "-o", color=col, ms=3, lw=1.6 if letter == "A" else 0.9,
+        ax.plot(xs, ys, "-o", color=col, ms=3, linewidth=1.6 if letter == "A" else 0.9,
                 label=f"answer {letter}" + (" (steered toward)" if letter == "A" else ""))
     acc = [m[key(a)]["with_cot_accuracy"] for a in xs]
-    ax.plot(xs, acc, "k--", lw=1, label="with-CoT accuracy")
+    ax.plot(xs, acc, "k--", linewidth=1, label="with-CoT accuracy")
     rx = [a for a in (2, 5, 20) if f"rand|{a}|{mode}" in m]
     ax.plot(rx, [m[f"rand|{a}|{mode}"]["rate_A"] for a in rx], "x", color="#c00000", ms=7,
             label="random direction: share A")

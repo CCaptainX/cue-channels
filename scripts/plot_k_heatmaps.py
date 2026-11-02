@@ -37,7 +37,7 @@ for task, title in (("H2_mult", "H2: a × b (10–20)"), ("I3_unit_conversions",
     b = r["best_late"]
     ax.plot(r["anchors"].index(b["anchor"]), b["layer"], "r*", ms=10)
     for x in (2.5, 12.5):
-        ax.axvline(x, color="white", lw=0.8, ls="--")
+        ax.axvline(x, color="white", linewidth=0.8, ls="--")
     ax.set_title(f"{title}: Target A probe accuracy by anchor × layer\n"
                  f"best (layers ≥ 18): {lab(b['anchor']).replace(chr(10), ' ')} @ L{b['layer']} = {b['acc']:.2f}; "
                  f"majority {r['majority']:.2f}", fontsize=9)

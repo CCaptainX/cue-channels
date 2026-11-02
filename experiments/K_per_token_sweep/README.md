@@ -2,7 +2,7 @@
 
 ## At a glance
 
-- **Name in the LW post:** The per-token sweep (Section 5).
+- **Name in the write-up:** The per-token sweep (Section 5).
 - **Hypothesis:** Multiplication and unit conversions peak at different prompt positions (≥ 0.10 margin). Not confirmed.
 - **Pre-registration:** `56b863a` · **Results:** `c48a077`
 - **Outputs:** `metrics.json` in this directory.

@@ -28,7 +28,7 @@ test-slow:  ## Includes tests that download weights / run inference
 reproduce-h2:  ## Re-run the headline result into results/h2_repro and compare (~25 min on M4 Pro)
 	PY=$(PY) bash scripts/reproduce_h2.sh results/h2_repro
 
-figures:  ## Rebuild the LW post figures from committed metrics (writeup/figures/)
+figures:  ## Rebuild the write-up figures from committed metrics (writeup/figures/)
 	$(PY) writeup/make_figures.py
 
 format:

@@ -2,7 +2,7 @@
 
 ## At a glance
 
-- **Name in the LW post:** 7B BBH triage (pilot failure) (Appendix A).
+- **Name in the write-up:** 7B BBH triage (pilot failure) (Appendix A).
 - **Hypothesis:** Qwen 2.5 7B Instruct passes the BBH competence gates that 1.5B failed (it did not; pre-registered pivot to H).
 - **Pre-registration:** `c1f8159` · **Results:** `00dcea8` (load check), `b163ee6` (pilot)
 - **Outputs:** `pilot.json`, `load_check.json` in this directory.

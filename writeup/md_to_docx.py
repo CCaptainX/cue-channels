@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Convert lw_post_draft.md to .docx (headings, bullets, inline styles, links, inline figures)."""
+"""Convert writeup.md to .docx (headings, bullets, inline styles, links, inline figures)."""
 
 import re
 import sys
@@ -156,7 +156,7 @@ def main(md_path: Path, out_path: Path) -> None:
                 para.append(lines[i].rstrip())
             add_inline(doc.add_paragraph(), " ".join(para))
         i += 1
-    doc.core_properties.title = "cue-channels — LW post draft v2 (CoT faithfulness probing)"
+    doc.core_properties.title = "cue-channels — write-up (CoT faithfulness probing)"
     doc.core_properties.author = "CCaptainX"
     doc.save(out_path)
     print(out_path)

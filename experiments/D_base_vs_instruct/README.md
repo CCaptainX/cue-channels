@@ -2,7 +2,7 @@
 
 ## At a glance
 
-- **Name in the LW post:** The externalization ("distillation") hypothesis test (Appendix A).
+- **Name in the write-up:** The externalization ("distillation") hypothesis test (Appendix A).
 - **Hypothesis:** If post-training taught the model to externalize computation, the base model shows more pre-CoT signal than Instruct.
 - **Pre-registration:** none (exploratory) · **Results:** `c01d6c7`
 - **Outputs:** `metrics.json` in this directory.

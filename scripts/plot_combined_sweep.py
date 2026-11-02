@@ -26,15 +26,15 @@ def main(out, specs):
         runs.append((label, json.load(open(path))))
     fig, axes = plt.subplots(1, 2, figsize=(10, 4), sharey=True)
     for ax, tgt, title in zip(axes, "AB", ("Target A: no-CoT answer", "Target B: with-CoT answer"), strict=True):
-        ax.axvspan(19, 25, color="#dddddd", alpha=0.5, lw=0, label="pre-registered peak window (L19–25)")
-        ax.axhline(0.55, color="#999999", ls=":", lw=1, label="pre-registered bar (0.55)")
-        ax.axhline(0.20, color="#444444", ls=":", lw=0.8, label="chance (0.20)")
+        ax.axvspan(19, 25, color="#dddddd", alpha=0.5, linewidth=0, label="pre-registered peak window (L19–25)")
+        ax.axhline(0.55, color="#999999", ls=":", linewidth=1, label="pre-registered bar (0.55)")
+        ax.axhline(0.20, color="#444444", ls=":", linewidth=0.8, label="chance (0.20)")
         for k, (label, m) in enumerate(runs):
             t = m["targets"][tgt]
             n = m["n_layers"]
             y = np.array([t["by_layer"][str(i)]["seed_mean"] for i in range(n)])
             pk = t["peak_layer"]
-            ax.plot(range(n), y, color=COLORS[k % 7], ls=STYLES[k % 7], lw=1.6,
+            ax.plot(range(n), y, color=COLORS[k % 7], ls=STYLES[k % 7], linewidth=1.6,
                     label=f"{label} (peak L{pk}: {t['peak']['acc']:.2f})")
             ax.plot(pk, t["by_layer"][str(pk)]["seed_mean"], "o", color=COLORS[k % 7], ms=4)
         ax.set_title(title)

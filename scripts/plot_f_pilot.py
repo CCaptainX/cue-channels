@@ -28,7 +28,7 @@ for ax, t in zip(axes, tasks, strict=True):
     xs = range(len(letters))
     ax.bar([x - 0.2 for x in xs], model, 0.4, label="model no-CoT answer", color="#3b6ea8")
     ax.bar([x + 0.2 for x in xs], truth, 0.4, label="ground truth", color="#bbbbbb")
-    ax.axhline(0.6 * r["n"], color="#c0392b", ls=":", lw=1, label="60% bias limit (G2)")
+    ax.axhline(0.6 * r["n"], color="#c0392b", ls=":", linewidth=1, label="60% bias limit (G2)")
     ax.set_xticks(list(xs), list(letters))
     sub = f"no-CoT acc {r['no_cot_acc']:.2f}, top {r['top_letter_share']:.0%}"
     ax.set_title(f"{short.get(t, t)}\n{sub}", fontsize=9)

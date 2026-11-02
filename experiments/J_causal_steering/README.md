@@ -2,7 +2,7 @@
 
 ## At a glance
 
-- **Name in the LW post:** The causal steering test (Section 5, Section 6 (strongest steering null), Figure 3).
+- **Name in the write-up:** The causal steering test (Section 5, Section 6 (strongest steering null), Figure 3).
 - **Hypothesis:** Steering at layer 22 along the mean-difference "A" direction (α = +2) raises "A" answers by > 0.15. Not supported.
 - **Pre-registration:** `d9bbb0f` (+ addendum `37676ba`) · **Results:** `e9882de`
 - **Outputs:** `metrics.json`, `generations.jsonl` in this directory.

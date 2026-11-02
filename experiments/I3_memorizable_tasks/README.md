@@ -2,7 +2,7 @@
 
 ## At a glance
 
-- **Name in the LW post:** The multiplication-tables replication and the unit-conversions boundary (Section 3).
+- **Name in the write-up:** The multiplication-tables replication and the unit-conversions boundary (Section 3).
 - **Hypothesis:** On one-pass-retrievable tasks the no-CoT target peaks in L19–25 with accuracy ≥ 0.55.
 - **Pre-registration:** `d5d1be1` · **Results:** `bbc4706` (pilot), `a13d731` (times tables), `af736fd` (unit conversions)
 - **Outputs:** `times_tables/metrics.json`, `unit_conversions/metrics.json` in this directory.

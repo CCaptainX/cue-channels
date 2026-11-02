@@ -188,8 +188,8 @@ On carry addition, modular arithmetic and easy GSM8K, consider what each probe t
 - Lanham, T. et al. (2023). *Measuring Faithfulness in Chain-of-Thought Reasoning.* [arXiv:2307.13702](https://arxiv.org/abs/2307.13702).
 - Pfau, J., Merrill, W., & Bowman, S. R. (2024). *Let's Think Dot by Dot: Hidden Computation in Transformer Language Models.* COLM 2024. [arXiv:2404.15758](https://arxiv.org/abs/2404.15758).
 - Rimsky, N. et al. (2023). *Steering Llama 2 via Contrastive Activation Addition.* [arXiv:2312.06681](https://arxiv.org/abs/2312.06681).
-- Sosis, B., & Gavenčiak, T. (2025). *Measuring Beliefs of Language Models During Chain-of-Thought Reasoning.* LessWrong / AI Alignment Forum. [lesswrong.com/posts/a86uAnPykqNtmEbDH](https://www.lesswrong.com/posts/a86uAnPykqNtmEbDH/measuring-beliefs-of-language-models-during-chain-of-thought-1).
-- Thurnherr, H. (2026). *Trying to use NLAs to find out how Qwen 2.5 7B does multiplication.* LessWrong, May 16, 2026. [lesswrong.com/posts/XN6CrJDiZvphGCC2e](https://lesswrong.com/posts/XN6CrJDiZvphGCC2e/trying-to-use-nlas-to-find-out-how-qwen-2-5-7b-does).
+- Sosis, B., & Gavenčiak, T. (2025). *Measuring Beliefs of Language Models During Chain-of-Thought Reasoning.* AI Alignment Forum. [alignmentforum.org/posts/a86uAnPykqNtmEbDH](https://www.alignmentforum.org/posts/a86uAnPykqNtmEbDH/measuring-beliefs-of-language-models-during-chain-of-thought-1).
+- Thurnherr, H. (2026). *Trying to use NLAs to find out how Qwen 2.5 7B does multiplication.* AI Alignment Forum, May 16, 2026. [alignmentforum.org/posts/XN6CrJDiZvphGCC2e](https://www.alignmentforum.org/posts/XN6CrJDiZvphGCC2e/trying-to-use-nlas-to-find-out-how-qwen-2-5-7b-does).
 - Turpin, M. et al. (2023). *Language Models Don't Always Say What They Think.* [arXiv:2305.04388](https://arxiv.org/abs/2305.04388).
 - Zou, A. et al. (2023). *Representation Engineering: A Top-Down Approach to AI Transparency.* [arXiv:2310.01405](https://arxiv.org/abs/2310.01405).
 

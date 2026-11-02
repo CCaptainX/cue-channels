@@ -2,7 +2,7 @@
 
 ## At a glance
 
-- **Name in the LW post:** Multi-step task triage (pilot failure) (Section 3 (multi-step task boundary), Appendix C).
+- **Name in the write-up:** Multi-step task triage (pilot failure) (Section 3 (multi-step task boundary), Appendix C).
 - **Hypothesis:** H2's signal generalizes to other tasks the model is competent at (no candidate passed the gates).
 - **Pre-registration:** `8a6de72` · **Results:** `e094845` (pilot)
 - **Outputs:** `pilot.json`, `pattern_baseline.json` in this directory.

@@ -29,7 +29,7 @@ for key, ci, col, name in SERIES:
     ax.plot(x, y, "-o", color=col, ms=4, label=name)
     ax.fill_between(x, lo, hi, color=col, alpha=0.15)
 ax.axhline(m["majority"], color="#555555", ls=":", label=f"majority ({m['majority']:.2f})")
-ax.axhline(0.2, color="#999999", ls="--", lw=0.8, label="chance (0.20)")
+ax.axhline(0.2, color="#999999", ls="--", linewidth=0.8, label="chance (0.20)")
 ax.set_xticks(list(x), [lab[a] for a in names], fontsize=7.5)
 ax.set_ylim(0, 1)
 ax.set_ylabel("Target A accuracy at L22 (100 held-out items, 95% CI)")
@@ -37,12 +37,12 @@ ax.set_title("By CoT structural anchor", fontsize=10)
 ax.legend(fontsize=7, loc="upper right")
 ax = axes[1]
 c = m["curve_transfer"]
-ax.plot([p["t"] for p in c if p["n"] >= 50], [p["acc"] for p in c if p["n"] >= 50], color="#1f4e79", lw=1.2,
+ax.plot([p["t"] for p in c if p["n"] >= 50], [p["acc"] for p in c if p["n"] >= 50], color="#1f4e79", linewidth=1.2,
         label="transfer probe")
 pc = m["curve_per_position_cv"]
-ax.plot([p["t"] for p in pc], [p["acc"] for p in pc], color="#c55a11", lw=1.2, label="per-position CV probe")
+ax.plot([p["t"] for p in pc], [p["acc"] for p in pc], color="#c55a11", linewidth=1.2, label="per-position CV probe")
 for a in ("first_eq", "pre_digit", "paren"):
-    ax.axvline(m["anchors"][a]["mean_token_index"], color="#888888", lw=0.7, ls="--")
+    ax.axvline(m["anchors"][a]["mean_token_index"], color="#888888", linewidth=0.7, ls="--")
     ax.text(m["anchors"][a]["mean_token_index"] + 0.5, 0.93, lab[a].replace("\n", " "), fontsize=7, rotation=90,
             va="top")
 ax.axhline(m["majority"], color="#555555", ls=":")

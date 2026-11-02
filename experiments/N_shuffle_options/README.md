@@ -2,7 +2,7 @@
 
 ## At a glance
 
-- **Name in the LW post:** The option-reversal test (Section 5, Figures 5–6).
+- **Name in the write-up:** The option-reversal test (Section 5, Figures 5–6).
 - **Hypothesis:** Each item's probe peak tracks the correct option's slot under order reversal (R² ≥ 0.6). Verdict: mixed (R² = 0.29).
 - **Pre-registration:** `ecb491d` · **Results:** `db62ccb`
 - **Outputs:** `metrics.json`, `per_item.jsonl` in this directory.

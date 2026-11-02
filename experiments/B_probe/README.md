@@ -2,7 +2,7 @@
 
 ## At a glance
 
-- **Name in the LW post:** The initial layer-14 null (Appendix A).
+- **Name in the write-up:** The initial layer-14 null (Appendix A).
 - **Hypothesis:** A linear probe at layer 14, last prompt token, decodes which of two options is correct on two-option addition prompts.
 - **Pre-registration:** none (exploratory) · **Results:** `d2e16f1`
 - **Outputs:** `metrics.json` in this directory.

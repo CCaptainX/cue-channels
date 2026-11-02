@@ -2,7 +2,7 @@
 
 ## At a glance
 
-- **Name in the LW post:** The multiplication benchmark (headline result) (Sections 3–4, Figures 1–2).
+- **Name in the write-up:** The multiplication benchmark (headline result) (Sections 3–4, Figures 1–2).
 - **Hypothesis:** With pattern-proof distractors, the model's answer is linearly decodable before the CoT (no-CoT target L22 0.705; with-CoT target L21 0.667).
 - **Pre-registration:** `1ee5528` · **Results:** `db4fad4` (options-only baseline), `0b9dd69` (results); exploratory: `647b901`, `c37dc63`
 - **Outputs:** `metrics.json`, `pattern_baseline.json`, `exploratory/` in this directory.

@@ -2,7 +2,7 @@
 
 ## At a glance
 
-- **Name in the LW post:** Load check (Appendix A (load checks)).
+- **Name in the write-up:** Load check (Appendix A (load checks)).
 - **Hypothesis:** Qwen 2.5 1.5B Instruct loads on MPS, generates a CoT, and exposes residual-stream activations.
 - **Pre-registration:** none (environment check) · **Results:** `8344f88`
 - **Outputs:** `summary.json` in this directory.

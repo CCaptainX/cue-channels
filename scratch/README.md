@@ -1,7 +1,7 @@
 # scratch/: exploration, not part of the main story
 
 Kept for history (moved with `git mv`, so `git log --follow` still works); none of this is needed to reproduce
-the results in the LessWrong post, and none of it is maintained.
+the results in the write-up, and none of it is maintained.
 
 | Path | What it is |
 |---|---|

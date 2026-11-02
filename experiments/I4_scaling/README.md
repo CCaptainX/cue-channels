@@ -2,7 +2,7 @@
 
 ## At a glance
 
-- **Name in the LW post:** 7B on multi-step tasks (pilot failure) (Section 3 (multi-step boundary), Appendix A).
+- **Name in the write-up:** 7B on multi-step tasks (pilot failure) (Section 3 (multi-step boundary), Appendix A).
 - **Hypothesis:** Qwen 2.5 7B Instruct passes the competence gates on I's multi-step tasks (it did not).
 - **Pre-registration:** `a54d1a6` · **Results:** `aaa65aa` (load check), `3e99734` (pilot)
 - **Outputs:** `pilot.json`, `load_check.json` in this directory.

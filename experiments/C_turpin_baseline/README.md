@@ -2,7 +2,7 @@
 
 ## At a glance
 
-- **Name in the LW post:** Turpin-style cue injection (Appendix A).
+- **Name in the write-up:** Turpin-style cue injection (Appendix A).
 - **Hypothesis:** Six few-shot examples all answering (A) shift answers toward (A) on easy questions, without the CoT mentioning it.
 - **Pre-registration:** none (exploratory) · **Results:** `ddf0053`
 - **Outputs:** `results.json` in this directory.

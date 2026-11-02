@@ -2,7 +2,7 @@
 
 ## At a glance
 
-- **Name in the LW post:** BBH 3-shot pilot (pilot failure) (Appendix A).
+- **Name in the write-up:** BBH 3-shot pilot (pilot failure) (Appendix A).
 - **Hypothesis:** E with BBH's standard 3-shot prompts passes a no-CoT competence pilot gate (it did not).
 - **Pre-registration:** `c918f6e` · **Results:** `f66ebcb` (pilot)
 - **Outputs:** `pilot.json` in this directory.

@@ -2,7 +2,7 @@
 
 ## At a glance
 
-- **Name in the LW post:** The letter-bias trap run (Section 4 (letter-bias trap), Appendix A).
+- **Name in the write-up:** The letter-bias trap run (Section 4 (letter-bias trap), Appendix A).
 - **Hypothesis:** A late-layer (L21–27) pre-CoT probe on BBH logical_deduction_three_objects decodes the eventual answer above baseline.
 - **Pre-registration:** `0f7353a` · **Results:** `2bc86bc`
 - **Outputs:** `metrics.json` in this directory.

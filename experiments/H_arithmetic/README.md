@@ -2,7 +2,7 @@
 
 ## At a glance
 
-- **Name in the LW post:** The leaky first multiplication run (Section 4 (distractor-pattern correction), Appendix D).
+- **Name in the write-up:** The leaky first multiplication run (Section 4 (distractor-pattern correction), Appendix D).
 - **Hypothesis:** On two-digit multiplication the pre-CoT answer is linearly decodable at the last prompt token (distractors were later found to leak).
 - **Pre-registration:** `c1f8159` · **Results:** `f0c44ec` (pilot), `8cb14c3` (results)
 - **Outputs:** `metrics.json` in this directory.

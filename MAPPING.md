@@ -1,11 +1,11 @@
-# Experiment letters → names used in the LessWrong post
+# Experiment letters → names used in the write-up
 
-The post uses thematic names in the main text and letters only in its appendices. Every experiment lives in
-`experiments/<letter>_<name>/`; the SHAs below are the commits cited in the post's Appendix B. Older READMEs say
-"Target A" / "Target B": in the post these are the **no-CoT target** (the model's answer without CoT) and the
+The write-up uses thematic names in the main text and letters only in its appendices. Every experiment lives in
+`experiments/<letter>_<name>/`; the SHAs below are the commits cited in the write-up's Appendix B. Older READMEs say
+"Target A" / "Target B": in the write-up these are the **no-CoT target** (the model's answer without CoT) and the
 **with-CoT target** (its final answer after CoT).
 
-| Letter | Directory | Name in the post | Where in the post | Pre-registration | Results / pilot |
+| Letter | Directory | Name in the write-up | Where in the write-up | Pre-registration | Results / pilot |
 |---|---|---|---|---|---|
 | A | [`experiments/A_sanity/`](experiments/A_sanity/) | Load check | Appendix A (load checks) | none (environment check) | `8344f88` |
 | B | [`experiments/B_probe/`](experiments/B_probe/) | The initial layer-14 null | Appendix A | none (exploratory) | `d2e16f1` |
@@ -24,6 +24,6 @@ The post uses thematic names in the main text and letters only in its appendices
 | K | [`experiments/K_per_token_sweep/`](experiments/K_per_token_sweep/) | The per-token sweep | Section 5 | `56b863a` | `c48a077` |
 | M | [`experiments/M_mid_cot_decay/`](experiments/M_mid_cot_decay/) | The mid-CoT decay test | Section 5, Figure 4 | `3742d74` | `32bef59` |
 | N | [`experiments/N_shuffle_options/`](experiments/N_shuffle_options/) | The option-reversal test | Section 5, Figures 5–6 | `ecb491d` | `db62ccb` |
-| L | [`scratch/experiments/L_llama_replication/`](scratch/experiments/L_llama_replication/) | Llama 3.2 1B replication | Not in the post: blocked at the load check (gated model), never run | `07932be` | `34d5617`, `33f2532` |
+| L | [`scratch/experiments/L_llama_replication/`](scratch/experiments/L_llama_replication/) | Llama 3.2 1B replication | Not in the write-up: blocked at the load check (gated model), never run | `07932be` | `34d5617`, `33f2532` |
 
 Verify any SHA with `git show --stat <sha>`; pre-registration commits precede their result commits in `git log`.

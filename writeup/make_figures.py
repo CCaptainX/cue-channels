@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Figures for the LW draft, built from the committed metrics files.
+"""Figures for the write-up, built from the committed metrics files.
 
 Every figure is laid out for a single column (~6.25 in wide in the Doc): two-panel figures are
 stacked vertically rather than side by side, so text is not shrunk when the Doc scales them.
@@ -37,7 +37,7 @@ plt.rcParams.update({
     "savefig.bbox": "tight",
     "lines.linewidth": 2.0,
 })
-LW = 2.0
+LINE_W = 2.0
 BAND = 0.25
 BLUE, ORANGE, GREEN, PURPLE, GRAY = "#1f4e79", "#c55a11", "#548235", "#7030a0", "#7f7f7f"
 EXP = ROOT / "experiments"
@@ -62,8 +62,8 @@ for key, color, ls, label in (("A", BLUE, "-", "no-CoT target"),
     acc = np.array([t["by_layer"][str(i)]["seed_mean"] for i in xs])
     lo = np.array([t["by_layer"][str(i)]["ci95"][0] for i in xs])
     hi = np.array([t["by_layer"][str(i)]["ci95"][1] for i in xs])
-    ax.plot(xs, acc, ls, color=color, lw=LW, label=label)
-    ax.fill_between(xs, lo, hi, color=color, alpha=BAND, lw=0)
+    ax.plot(xs, acc, ls, color=color, linewidth=LINE_W, label=label)
+    ax.fill_between(xs, lo, hi, color=color, alpha=BAND, linewidth=0)
     pk = t["peak_layer"]
     pm, p0 = t["by_layer"][str(pk)]["seed_mean"], t["by_layer"][str(pk)]["acc"]
     ax.plot(pk, pm, "o", color=color, ms=8)
@@ -71,9 +71,9 @@ for key, color, ls, label in (("A", BLUE, "-", "no-CoT target"),
     ax.annotate(f"peak L{pk}: {p0:.3f} (seed 0)\n5-seed mean {pm:.3f}", (pk, pm),
                 xytext=xy_text, color=color, fontsize=13,
                 bbox=dict(boxstyle="round,pad=0.25", fc="white", ec="none", alpha=0.9),
-                arrowprops=dict(arrowstyle="-", color=color, lw=1.2))
-ax.axhline(0.20, color=GRAY, ls=":", lw=LW, label="chance (0.20)")
-ax.axhline(H2["targets"]["A"]["majority"], color=BLUE, ls="-.", lw=1.5, alpha=0.7,
+                arrowprops=dict(arrowstyle="-", color=color, linewidth=1.2))
+ax.axhline(0.20, color=GRAY, ls=":", linewidth=LINE_W, label="chance (0.20)")
+ax.axhline(H2["targets"]["A"]["majority"], color=BLUE, ls="-.", linewidth=1.5, alpha=0.7,
            label=f"no-CoT-target majority baseline ({H2['targets']['A']['majority']:.2f})")
 ax.set_xlim(-0.5, 27.5)
 ax.set_ylim(0, 1)
@@ -90,7 +90,7 @@ labels = ["original distractors\n(correct ± 1, 2, 10)", "corrected distractors\
 bars = ax.bar(labels, vals, color=[GRAY, BLUE], width=0.5)
 for b, v in zip(bars, vals, strict=True):
     ax.text(b.get_x() + b.get_width() / 2, v + 0.02, f"{v:.3f}", ha="center", fontsize=15)
-ax.axhline(0.20, color=ORANGE, ls=":", lw=LW, label="chance (0.20)")
+ax.axhline(0.20, color=ORANGE, ls=":", linewidth=LINE_W, label="chance (0.20)")
 ax.set_ylim(0, 1.12)
 ax.set_ylabel("accuracy picking the correct letter")
 ax.set_title("Options-only classifier (no model, no question):\ncan the option values alone identify the answer?")
@@ -108,9 +108,9 @@ for ax, mode, title in ((axes[0], "P", "Steering at the last prompt token only (
     x = [a for a in alphas if key(a) in J]
     for letter, col in zip("ABCDE", (BLUE, ORANGE, GREEN, PURPLE, GRAY), strict=True):
         ys = [J[key(a)]["letter_dist"].get(letter, 0) / 100 for a in x]
-        ax.plot(x, ys, "-o", color=col, ms=6, lw=3.0 if letter == "A" else 1.5,
+        ax.plot(x, ys, "-o", color=col, ms=6, linewidth=3.0 if letter == "A" else 1.5,
                 label=f"answer {letter}" + (" (steered toward)" if letter == "A" else ""))
-    ax.plot(x, [J[key(a)]["with_cot_accuracy"] for a in x], "k--", lw=LW, label="with-CoT accuracy")
+    ax.plot(x, [J[key(a)]["with_cot_accuracy"] for a in x], "k--", linewidth=LINE_W, label="with-CoT accuracy")
     rx = [a for a in (2, 5, 20) if f"rand|{a}|{mode}" in J]
     ax.plot(rx, [J[f"rand|{a}|{mode}"]["rate_A"] for a in rx], "x", color="#c00000", ms=11, mew=2.5,
             label="random direction: share A")
@@ -140,10 +140,10 @@ for key, ci, col, name in (("transfer_acc", "transfer_ci95", BLUE, "registered: 
     y = [M["anchors"][a][key] for a in names]
     lo = [M["anchors"][a][ci][0] for a in names]
     hi = [M["anchors"][a][ci][1] for a in names]
-    ax.plot(x, y, "-o" if col == BLUE else "--s", color=col, ms=7, lw=LW, label=name)
+    ax.plot(x, y, "-o" if col == BLUE else "--s", color=col, ms=7, linewidth=LINE_W, label=name)
     ax.fill_between(x, lo, hi, color=col, alpha=BAND)
-ax.axhline(M["majority"], color="#555555", ls=":", lw=LW, label=f"majority ({M['majority']:.2f})")
-ax.axhline(0.2, color="#999999", ls="--", lw=1.5, label="chance (0.20)")
+ax.axhline(M["majority"], color="#555555", ls=":", linewidth=LINE_W, label=f"majority ({M['majority']:.2f})")
+ax.axhline(0.2, color="#999999", ls="--", linewidth=1.5, label="chance (0.20)")
 ax.set_xticks(x, [lab[a] for a in names])
 ax.set_ylim(0, 1)
 ax.set_ylabel("no-CoT answer accuracy\n(layer 22, 95% CI)")
@@ -151,15 +151,15 @@ ax.set_title("By structural anchor in the chain of thought")
 ax.legend(loc="upper right", fontsize=11.5)
 ax = axes[1]
 c = M["curve_transfer"]
-ax.plot([p["t"] for p in c if p["n"] >= 50], [p["acc"] for p in c if p["n"] >= 50], color=BLUE, lw=LW,
+ax.plot([p["t"] for p in c if p["n"] >= 50], [p["acc"] for p in c if p["n"] >= 50], color=BLUE, linewidth=LINE_W,
         label="registered: last-token probe")
 pc = M["curve_per_position_cv"]
-ax.plot([p["t"] for p in pc], [p["acc"] for p in pc], color=ORANGE, lw=LW, ls="--", label="post hoc: retrained probe")
+ax.plot([p["t"] for p in pc], [p["acc"] for p in pc], color=ORANGE, linewidth=LINE_W, ls="--", label="post hoc: retrained probe")
 for a in ("first_eq", "pre_digit", "paren"):
     t = M["anchors"][a]["mean_token_index"]
-    ax.axvline(t, color="#888888", lw=1.2, ls="--")
+    ax.axvline(t, color="#888888", linewidth=1.2, ls="--")
     ax.text(t + 0.6, 0.97, lab[a].replace("\n", " "), fontsize=12, rotation=90, va="top")
-ax.axhline(M["majority"], color="#555555", ls=":", lw=LW)
+ax.axhline(M["majority"], color="#555555", ls=":", linewidth=LINE_W)
 ax.set_ylim(0, 1)
 ax.set_xlabel("CoT token index (0 = last prompt token)")
 ax.set_ylabel("no-CoT answer accuracy\n(layer 22)")
@@ -181,8 +181,8 @@ for v, c, col in (("orig", "c_orig", BLUE), ("rev", "c_rev", ORANGE)):
     yj = np.array([r[f"peak_{v}"] for r in main]) + rng.uniform(-0.15, 0.15, len(main))
     ax.scatter(xj, yj, s=22, alpha=0.3, color=col, label="original order" if v == "orig" else "reversed order")
     means = [np.mean([r[f"peak_{v}"] for r in main if r[c] == k]) for k in range(5)]
-    ax.plot(range(5), means, "-o", color=col, lw=2.5, ms=8)
-ax.plot([0, 4], [0, 4], "k--", lw=1.5, label="peak = correct slot")
+    ax.plot(range(5), means, "-o", color=col, linewidth=2.5, ms=8)
+ax.plot([0, 4], [0, 4], "k--", linewidth=1.5, label="peak = correct slot")
 ax.set_xticks(range(5), list("ABCDE"))
 ax.set_yticks(range(-1, 6), SL)
 ax.set_xlabel("slot of the correct option")
@@ -195,8 +195,8 @@ dp = np.array([r["peak_rev"] - r["peak_orig"] for r in main])
 ax.scatter(dc + rng.uniform(-0.2, 0.2, len(dc)), dp + rng.uniform(-0.2, 0.2, len(dp)), s=22, alpha=0.3, color=GREEN)
 s, b = np.polyfit(dc, dp, 1)
 xl = np.linspace(-4, 4, 10)
-ax.plot(xl, s * xl + b, color=GREEN, lw=2.5, label=f"fit: slope {s:.2f}, R² {N['peak']['R2_delta']:.2f}")
-ax.plot(xl, xl, "k--", lw=1.5, label="perfect tracking (slope 1)")
+ax.plot(xl, s * xl + b, color=GREEN, linewidth=2.5, label=f"fit: slope {s:.2f}, R² {N['peak']['R2_delta']:.2f}")
+ax.plot(xl, xl, "k--", linewidth=1.5, label="perfect tracking (slope 1)")
 ax.set_xlabel("change in correct slot (reversed − original)")
 ax.set_ylabel("change in peak position")
 ax.set_title(f"Registered test: R² = {N['peak']['R2_delta']:.2f} → '{N['peak']['verdict']}' (n = {N['n_main']})")

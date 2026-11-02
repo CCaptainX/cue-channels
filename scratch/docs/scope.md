@@ -143,7 +143,7 @@ The thresholds below are rough. They get frozen in `PREREG.md` (committed and ti
 **W6 (Nov 9–15): launch**
 - Final edits
 - Repo goes public
-- LessWrong post and Twitter thread
+- Public write-up and Twitter thread
 - Preprint only if the results are crisp
 
 ---

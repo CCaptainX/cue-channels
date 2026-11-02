@@ -246,13 +246,13 @@ def plots(m: dict, fig_dir: Path, title: str) -> None:
         mean = np.array([t["by_layer"][i]["seed_mean"] for i in xs])
         lo = np.array([t["by_layer"][i]["ci95"][0] for i in xs])
         hi = np.array([t["by_layer"][i]["ci95"][1] for i in xs])
-        ax.plot(xs, mean, ls, color=col, lw=1.8, label=lab)
+        ax.plot(xs, mean, ls, color=col, linewidth=1.8, label=lab)
         ax.fill_between(xs, lo, hi, color=col, alpha=0.15)
-        ax.axhline(t["majority"], color=col, lw=0.8, alpha=0.7)
-        ax.axhline(t["gaussian_baseline"]["mean"], color=col, lw=0.6, ls="-.", alpha=0.6)
-    ax.axhline(m["chance"], color="k", ls=":", lw=1, label=f"chance (1/{m['n_options']})")
-    ax.plot([], [], color="grey", lw=0.8, label="majority class (per target)")
-    ax.plot([], [], color="grey", lw=0.6, ls="-.", label="random-Gaussian probe")
+        ax.axhline(t["majority"], color=col, linewidth=0.8, alpha=0.7)
+        ax.axhline(t["gaussian_baseline"]["mean"], color=col, linewidth=0.6, ls="-.", alpha=0.6)
+    ax.axhline(m["chance"], color="k", ls=":", linewidth=1, label=f"chance (1/{m['n_options']})")
+    ax.plot([], [], color="grey", linewidth=0.8, label="majority class (per target)")
+    ax.plot([], [], color="grey", linewidth=0.6, ls="-.", label="random-Gaussian probe")
     ax.set_xlabel("layer")
     ax.set_ylabel("probe accuracy (5-fold CV; 5-seed mean, 95% CI shaded)")
     ax.set_title(title, fontsize=10)
@@ -277,7 +277,7 @@ def plots(m: dict, fig_dir: Path, title: str) -> None:
     for r in range(len(letters)):
         for c in range(len(letters)):
             ax.text(c, r, M[r, c], ha="center", va="center", fontsize=8)
-    ax.plot([-0.5, len(letters) - 0.5], [-0.5, len(letters) - 0.5], "r--", lw=0.8)
+    ax.plot([-0.5, len(letters) - 0.5], [-0.5, len(letters) - 0.5], "r--", linewidth=0.8)
     ax.set_xticks(range(len(letters)), letters)
     ax.set_yticks(range(len(letters)), letters)
     ax.set_xlabel(f"probe-B prediction (L{tb['peak_layer']})")
@@ -302,7 +302,7 @@ def plots(m: dict, fig_dir: Path, title: str) -> None:
         ax.bar(np.arange(len(conds)) + (j - 0.5) * w, vals, w, yerr=errs, capsize=2, color=col,
                label=f"Target {name} (L{m['targets'][name]['peak_layer']}), "
                      f"majority {m['targets'][name]['majority']:.2f}")
-    ax.axhline(m["chance"], color="k", ls=":", lw=1)
+    ax.axhline(m["chance"], color="k", ls=":", linewidth=1)
     ax.set_xticks(range(len(conds)), [c.replace("_", "\n") for c in conds], fontsize=8)
     ax.set_ylim(0, 1)
     ax.set_ylabel("accuracy (95% CI)")
@@ -320,7 +320,7 @@ def plots(m: dict, fig_dir: Path, title: str) -> None:
            color="#1f5fa8")
     ax.bar(x + 0.2, [beh["truth_dist"].get(k, 0) for k in letters], 0.4, label="ground truth",
            color="#bbbbbb")
-    ax.axhline(0.6 * m["n"], color="#c0392b", ls=":", lw=1, label="60% bias limit")
+    ax.axhline(0.6 * m["n"], color="#c0392b", ls=":", linewidth=1, label="60% bias limit")
     ax.set_xticks(x, letters)
     ax.set_ylabel(f"items (of {m['n']})")
     ax.set_title("No-CoT letter distribution", fontsize=10)

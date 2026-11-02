@@ -2,7 +2,7 @@
 
 ## At a glance
 
-- **Name in the LW post:** The mid-CoT decay test (Section 5, Figure 4).
+- **Name in the write-up:** The mid-CoT decay test (Section 5, Figure 4).
 - **Hypothesis:** Registered rules on the last-token probe across CoT tokens (overwrite / persists / noise). Verdict: "signal was always noise".
 - **Pre-registration:** `3742d74` · **Results:** `32bef59`
 - **Outputs:** `metrics.json` in this directory.

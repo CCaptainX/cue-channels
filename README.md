@@ -134,7 +134,7 @@ scripts/               one entry point per experiment step; shared helpers f_com
                        h2_pattern_baseline.py (options-only baseline); reproduce_h2.sh + compare_h2.py
 experiments/<X>_*/     per experiment: preregistration.md, pilot and metrics JSON, generations, figures, README
                        (activation pickles are regenerated, not committed)
-writeup/               long-form write-up (lw_post_draft.md), make_figures.py, figures/
+writeup/               long-form write-up (writeup.md), make_figures.py, figures/
 tests/                 `make test` (fast); `make test-slow` downloads weights
 scratch/               exploration not used in the results (see scratch/README.md)
 MAPPING.md             experiment letters → names, directories, pre-registration and results SHAs
