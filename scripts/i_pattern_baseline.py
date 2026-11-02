@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""I gate G4: options-only baseline per task (pre-registered, be4fee1)."""
+"""I gate G4: options-only baseline per task (pre-registered, 44425f0)."""
 
 from __future__ import annotations
 

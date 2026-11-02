@@ -4,7 +4,7 @@
 
 - **Name in the write-up:** The multiplication benchmark (headline result) (Sections 3–4, Figures 1–2).
 - **Hypothesis:** With pattern-proof distractors, the model's answer is linearly decodable before the CoT (no-CoT target L22 0.705; with-CoT target L21 0.667).
-- **Pre-registration:** `7c41311` · **Results:** `63dd6cb` (options-only baseline), `2ac5425` (results); exploratory: `8b0c762`, `013fdfe`
+- **Pre-registration:** `f825941` · **Results:** `ada1969` (options-only baseline), `38e5999` (results); exploratory: `3fbf46d`, `b8c9abd`
 - **Outputs:** `metrics.json`, `pattern_baseline.json`, `exploratory/` in this directory.
 - **Expected runtime:** about 25 min (collection 12, analysis 9) (Apple M4 Pro, MPS, model already downloaded).
 
@@ -16,8 +16,8 @@ bash scripts/reproduce_h2.sh results/h2_repro   # baseline + full protocol + com
 
 Re-running with the default paths overwrites the committed outputs here; `git diff` then shows any change.
 
-Pre-registration [`preregistration.md`](preregistration.md) (`7c41311`) → pattern baseline [`pattern_baseline.md`](pattern_baseline.md)
-(`63dd6cb`) → this results commit. (Naming note: H's own full-run commit `533dbff` was titled "H2 results"; this directory is the
+Pre-registration [`preregistration.md`](preregistration.md) (`f825941`) → pattern baseline [`pattern_baseline.md`](pattern_baseline.md)
+(`ada1969`) → this results commit. (Naming note: H's own full-run commit `0c5d7f5` was titled "H2 results"; this directory is the
 new distractor-fix experiment.) Full numbers: [`metrics.json`](metrics.json); pilot: [`pilot.json`](pilot.json); generations:
 [`generations.jsonl`](generations.jsonl). Qwen2.5-1.5B-Instruct, a × b (10–20), 5 options whose 4 distractors are **other products**.
 Runtime: pilot 2 min, collection 12 min, analysis 8.5 min.

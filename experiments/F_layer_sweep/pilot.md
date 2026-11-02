@@ -1,6 +1,6 @@
 # F pilot: no task passed; full experiment not run
 
-Pre-registration: [`preregistration.md`](preregistration.md) (commit `5f12575`). Raw numbers and CoT samples are in
+Pre-registration: [`preregistration.md`](preregistration.md) (commit `6fc116d`). Raw numbers and CoT samples are in
 [`pilot.json`](pilot.json); the figure is [`figures/4_no_cot_letter_distribution.png`](figures/4_no_cot_letter_distribution.png).
 Qwen2.5-1.5B-Instruct, BBH 3-shot raw text, first 30 of each task's seed-0 sample. Runtime 4 min 53 s.
 

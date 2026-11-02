@@ -4,7 +4,7 @@
 
 - **Name in the write-up:** The letter-bias trap run (Section 4 (letter-bias trap), Appendix A).
 - **Hypothesis:** A late-layer (L21–27) pre-CoT probe on BBH logical_deduction_three_objects decodes the eventual answer above baseline.
-- **Pre-registration:** `411b554` · **Results:** `b29a082`
+- **Pre-registration:** `8647c89` · **Results:** `bde7f3e`
 - **Outputs:** `metrics.json` in this directory.
 - **Expected runtime:** about 7 min (Apple M4 Pro, MPS, model already downloaded).
 
@@ -16,7 +16,7 @@ python scripts/run_e_layer_sweep.py
 
 Re-running with the default paths overwrites the committed outputs here; `git diff` then shows any change.
 
-Pre-registration: [`preregistration.md`](preregistration.md), committed in `411b554` before any model run.
+Pre-registration: [`preregistration.md`](preregistration.md), committed in `8647c89` before any model run.
 Results: `metrics.json` (verdict and all probes), `generations.jsonl` (every CoT and no-CoT output).
 Activation pickle gitignored. Runtime: 8 min 15 s on MPS.
 

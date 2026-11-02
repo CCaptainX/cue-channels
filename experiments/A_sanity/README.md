@@ -4,7 +4,7 @@
 
 - **Name in the write-up:** Load check (Appendix A (load checks)).
 - **Hypothesis:** Qwen 2.5 1.5B Instruct loads on MPS, generates a CoT, and exposes residual-stream activations.
-- **Pre-registration:** none (environment check) · **Results:** `43b910c`
+- **Pre-registration:** none (environment check) · **Results:** `23ebbd7`
 - **Outputs:** `summary.json` in this directory.
 - **Expected runtime:** under a minute once the model is cached (Apple M4 Pro, MPS, model already downloaded).
 

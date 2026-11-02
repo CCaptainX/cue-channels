@@ -4,7 +4,7 @@
 
 - **Name in the write-up:** Turpin-style cue injection (Appendix A).
 - **Hypothesis:** Six few-shot examples all answering (A) shift answers toward (A) on easy questions, without the CoT mentioning it.
-- **Pre-registration:** none (exploratory) · **Results:** `6c7002d`
+- **Pre-registration:** none (exploratory) · **Results:** `a0343ab`
 - **Outputs:** `results.json` in this directory.
 - **Expected runtime:** not recorded (Apple M4 Pro, MPS, model already downloaded).
 

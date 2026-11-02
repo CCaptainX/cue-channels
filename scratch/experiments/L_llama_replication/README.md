@@ -1,6 +1,6 @@
 # L: Llama 3.2 1B Instruct replication: BLOCKED at L1 (gated model, no credentials)
 
-Pre-registration: [`preregistration.md`](preregistration.md) (`11f8dcb`). The L1 load check could not download
+Pre-registration: [`preregistration.md`](preregistration.md) (`9c0f3b0`). The L1 load check could not download
 `meta-llama/Llama-3.2-1B-Instruct`: the repository is gated and this machine has no Hugging Face token ([`load_check.json`](load_check.json)).
 Per the pre-registration, L stops here. L2/L3 were not run, so the Llama question is **untested**.
 

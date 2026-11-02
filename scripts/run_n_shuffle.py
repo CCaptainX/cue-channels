@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Experiment N: option-order reversal (pre-registered, f9ab9ad)."""
+"""Experiment N: option-order reversal (pre-registered, 1f46016)."""
 
 from __future__ import annotations
 
@@ -147,7 +147,7 @@ def main():
                      "peak_orig": peak(po)[0], "peak_rev": peak(pr)[0], "peak_anchor_orig": peak(po)[1],
                      "peak_anchor_rev": peak(pr)[1], "onset_orig": onset(po), "onset_rev": onset(pr)})
     main_rows = [r for r in rows if r["main"]]
-    out = {"preregistration": "f9ab9ad", "layer": LAYER, "versions": res, "n_items_with_both": len(rows),
+    out = {"preregistration": "1f46016", "layer": LAYER, "versions": res, "n_items_with_both": len(rows),
            "n_main": len(main_rows)}
     for meas in ("peak", "onset"):
         dc = [r["c_rev"] - r["c_orig"] for r in main_rows]

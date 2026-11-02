@@ -1,5 +1,5 @@
 {
-  "preregistration": "experiments/E_layer_sweep/preregistration.md (commit 411b554)",
+  "preregistration": "experiments/E_layer_sweep/preregistration.md (commit 8647c89)",
   "model": "Qwen/Qwen2.5-1.5B-Instruct",
   "task": "BBH logical_deduction_three_objects, N=150 (seed 0), zero-shot, chat template",
   "device": "mps",

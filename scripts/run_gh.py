@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Experiments G and H (pre-registration experiments/G_scale_7b/preregistration.md, f3ce9d4).
+"""Experiments G and H (pre-registration experiments/G_scale_7b/preregistration.md, 43d5977).
 
   run_gh.py load-check --model qwen2.5-7b
   run_gh.py pilot --model qwen2.5-7b --suite bbh --out experiments/G_scale_7b

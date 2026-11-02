@@ -4,7 +4,7 @@
 
 - **Name in the write-up:** The causal steering test (Section 5, Section 6 (strongest steering null), Figure 3).
 - **Hypothesis:** Steering at layer 22 along the mean-difference "A" direction (α = +2) raises "A" answers by > 0.15. Not supported.
-- **Pre-registration:** `d310a5b` (+ addendum `c4a9e51`) · **Results:** `00c70ac`
+- **Pre-registration:** `55b6863` (+ addendum `470a541`) · **Results:** `30f15cc`
 - **Outputs:** `metrics.json`, `generations.jsonl` in this directory.
 - **Expected runtime:** about 3 h 10 min (Apple M4 Pro, MPS, model already downloaded).
 
@@ -17,7 +17,7 @@ python scripts/plot_j_dose_response.py
 
 Re-running with the default paths overwrites the committed outputs here; `git diff` then shows any change.
 
-Pre-registration: [`preregistration.md`](preregistration.md) (`d310a5b`), with a pre-run exploratory addendum (`c4a9e51`). Full numbers:
+Pre-registration: [`preregistration.md`](preregistration.md) (`55b6863`), with a pre-run exploratory addendum (`470a541`). Full numbers:
 [`metrics.json`](metrics.json); every output: [`generations.jsonl`](generations.jsonl); plot: [`figures/dose_response.png`](figures/dose_response.png).
 Qwen 2.5 1.5B Instruct; 100 held-out C2 items (200–299, disjoint from the 200 used for the vector); runtime ≈ 3 h 10 min.
 

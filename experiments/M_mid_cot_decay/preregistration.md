@@ -1,8 +1,8 @@
 # M: pre-registration — mid-CoT probe decay on H2 items
 
-**Registered:** 2026-10-16T05:37:07Z (UTC), before any M activations are computed. Model/task/prompts as H2 (`7c41311`/`2ac5425`). Items: the 100
+**Registered:** 2026-10-16T05:37:07Z (UTC), before any M activations are computed. Model/task/prompts as H2 (`f825941`/`38e5999`). Items: the 100
 held-out C2 items (200–299) used in J. **CoTs and labels are reused from J's α = 0 condition** (`experiments/J_causal_steering/generations.jsonl`,
-condition `v|0|P`, commit `00c70ac`): greedy with-CoT text and the no-CoT answer (Target A) for each item. One forward pass over
+condition `v|0|P`, commit `30f15cc`): greedy with-CoT text and the no-CoT answer (Target A) for each item. One forward pass over
 prompt + CoT with `output_hidden_states` gives the block-22 residual at every CoT position (the same computation as during generation).
 
 ## Probes

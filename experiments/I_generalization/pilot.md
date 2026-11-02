@@ -1,6 +1,6 @@
 # I1 pilot: 4-candidate task triage — no task passed; I2 not run
 
-Pre-registration: [`preregistration.md`](preregistration.md) (`be4fee1`). Raw numbers: [`pilot.json`](pilot.json) (model gates) and
+Pre-registration: [`preregistration.md`](preregistration.md) (`44425f0`). Raw numbers: [`pilot.json`](pilot.json) (model gates) and
 [`pattern_baseline.json`](pattern_baseline.json) (G4). Qwen2.5-1.5B-Instruct, 3-shot raw text, 30 items per task, 5 options. Pilot runtime ≈ 6 min.
 
 | Task | G1 no-CoT acc [95% CI] (need 0.55–0.85) | G3 with-CoT acc (need ≥ 0.85) | G2 top no-CoT letter (need ≤ 60%) | G4 options-only best (need ≤ 0.30) | Result |

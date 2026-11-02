@@ -1,6 +1,6 @@
 # L: pre-registration — Llama 3.2 1B Instruct replication on times tables
 
-**Registered:** 2026-10-15T23:22:30Z (UTC), before Llama is downloaded or run. Task = I3 times_tables (`scripts/i3_tasks.py`, `5c3e806`): items,
+**Registered:** 2026-10-15T23:22:30Z (UTC), before Llama is downloaded or run. Task = I3 times_tables (`scripts/i3_tasks.py`, `02fb86d`): items,
 prompts, gates, grouped CV and full protocol identical to I3, model swapped to `meta-llama/Llama-3.2-1B-Instruct` (raw text, no chat
 template). Expected 16 layers, d_model 2048.
 

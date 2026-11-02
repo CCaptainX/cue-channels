@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""F's full protocol (experiments/F_layer_sweep/preregistration.md, 5f12575), as used by G3 / H2.
+"""F's full protocol (experiments/F_layer_sweep/preregistration.md, 6fc116d), as used by G3 / H2.
 
   run_full_f_protocol.py --model qwen2.5-1.5b --suite arith --task C --out experiments/H_arithmetic
 """

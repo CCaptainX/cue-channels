@@ -1,7 +1,7 @@
 # I4 pilot: Qwen 2.5 7B Instruct on I's multi-step tasks: 0 of 4 pass; no full runs
 
-Pre-registration: [`preregistration.md`](preregistration.md) (`28c6a1b`). Load check: [`load_check.json`](load_check.json) (`6c6eb43`; bf16 MPS,
-15.5 GB, 28 layers, d_model 3584). Raw numbers: [`pilot.json`](pilot.json). Same items and prompts as I (`be4fee1` / `0eb4fcb`). G4 is
+Pre-registration: [`preregistration.md`](preregistration.md) (`176b201`). Load check: [`load_check.json`](load_check.json) (`56784a0`; bf16 MPS,
+15.5 GB, 28 layers, d_model 3584). Raw numbers: [`pilot.json`](pilot.json). Same items and prompts as I (`44425f0` / `a5389fe`). G4 is
 model-independent and carried over from I (`../I_generalization/pattern_baseline.json`). Pilot runtime 32 min.
 
 | Task | G1 no-CoT [95% CI] (0.55–0.85) | G3 with-CoT (≥ 0.85) | G2 top letter (≤ 60%) | G4 options-only (≤ 0.30) | Result |

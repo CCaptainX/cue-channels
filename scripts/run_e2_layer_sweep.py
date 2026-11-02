@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Experiment E2: E with BBH standard 3-shot raw-text prompts and a no-CoT pilot gate.
 
-Implements experiments/E2_layer_sweep_3shot/preregistration.md (commit 80f4000), which inherits
-experiments/E_layer_sweep/preregistration.md (411b554). Probe/statistics code is reused from E.
+Implements experiments/E2_layer_sweep_3shot/preregistration.md (commit c08b6fb), which inherits
+experiments/E_layer_sweep/preregistration.md (8647c89). Probe/statistics code is reused from E.
 
   python scripts/run_e2_layer_sweep.py --pilot   # 30-item no-CoT gate
   python scripts/run_e2_layer_sweep.py --full    # N=150, only if the gate passed
@@ -227,7 +227,7 @@ def main() -> None:
     res = analyze(blob, items)
     dir_ans, cot_ans = res.pop("_answers")
     metrics = {
-        "preregistration": "E2 80f4000 (inherits E 411b554)",
+        "preregistration": "E2 c08b6fb (inherits E 8647c89)",
         "model": cfg.model_config.hf_id,
         "task": "BBH logical_deduction_three_objects, N=150 (seed 0), BBH 3-shot, raw text",
         "device": blob.get("device"), "runtime_seconds": blob.get("seconds"),

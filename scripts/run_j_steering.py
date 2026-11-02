@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Experiment J: CAA steering along the H2 layer-22 direction (pre-registered, d310a5b)."""
+"""Experiment J: CAA steering along the H2 layer-22 direction (pre-registered, 55b6863)."""
 
 from __future__ import annotations
 
@@ -150,7 +150,7 @@ def main():
     rng = random.Random(0)
     sample_idx = sorted(rng.sample(range(len(items)), 10))
     (OUT / "metrics.json").write_text(json.dumps({
-        "preregistration": "d310a5b", "layer": LAYER, "n_items": len(items),
+        "preregistration": "55b6863", "layer": LAYER, "n_items": len(items),
         "held_out": "h_arith C2 items 200-299", "steering_vector": vinfo, "conditions": summ,
         "coherence_sample_item_positions": sample_idx, "seconds": timing}, indent=2) + "\n")
     print(json.dumps({k: {kk: vv for kk, vv in s.items() if kk != "letter_dist"} for k, s in summ.items()}, indent=1))

@@ -2,7 +2,7 @@
 
 **Registered:** 2026-10-11T01:04:59Z (UTC). Committed before the 7B model is downloaded or loaded, and before any H data
 is generated. Inherits F's pre-registration ([`../F_layer_sweep/preregistration.md`](../F_layer_sweep/preregistration.md),
-`5f12575`): probes, CV, bootstrap CIs, seeds, baselines, positional checks, peak-layer selection and its correction,
+`6fc116d`): probes, CV, bootstrap CIs, seeds, baselines, positional checks, peak-layer selection and its correction,
 decision rules and figures. Only what's stated below changes.
 
 **Shared change (efficiency only):** generation stops as soon as the completion contains `\nQ:` (the model starting

@@ -1,6 +1,6 @@
 # H1 pilot: arithmetic difficulty calibration (Qwen2.5-1.5B-Instruct)
 
-Dispatched automatically after the G pilot failed (pre-registration `f3ce9d4`). Items and prompts come from
+Dispatched automatically after the G pilot failed (pre-registration `43d5977`). Items and prompts come from
 `scripts/h_arith.py` exactly as registered. 30 items per variant, 5 options (A)–(E), 3-shot raw text. Runtime 3 min 22 s.
 Raw numbers: [`pilot.json`](pilot.json).
 

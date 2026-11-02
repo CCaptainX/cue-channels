@@ -4,7 +4,7 @@
 
 - **Name in the write-up:** The mid-CoT decay test (Section 5, Figure 4).
 - **Hypothesis:** Registered rules on the last-token probe across CoT tokens (overwrite / persists / noise). Verdict: "signal was always noise".
-- **Pre-registration:** `6cb35be` · **Results:** `da18d77`
+- **Pre-registration:** `77ae121` · **Results:** `463b0e1`
 - **Outputs:** `metrics.json` in this directory.
 - **Expected runtime:** about 5 min (Apple M4 Pro, MPS, model already downloaded).
 
@@ -17,9 +17,9 @@ python scripts/plot_m_decay.py
 
 Re-running with the default paths overwrites the committed outputs here; `git diff` then shows any change.
 
-Pre-registration: [`preregistration.md`](preregistration.md) (`6cb35be`). Numbers: [`metrics.json`](metrics.json); per-item curves:
+Pre-registration: [`preregistration.md`](preregistration.md) (`77ae121`). Numbers: [`metrics.json`](metrics.json); per-item curves:
 [`per_item_curves.jsonl`](per_item_curves.jsonl); figures: `figures/decay_curve.png`, `figures/example_annotated.png`. 100 held-out C2 items
-(200–299) with J's α = 0 greedy CoTs (`00c70ac`); prompt tokenization matched the generation prefix on 100/100 items. Runtime ≈ 5 min.
+(200–299) with J's α = 0 greedy CoTs (`30f15cc`); prompt tokenization matched the generation prefix on 100/100 items. Runtime ≈ 5 min.
 
 ## Registered verdict: "signal was always noise", but the label is misleading (see below)
 The rule fires because the **transfer probe** (trained on H2's last-prompt-token activations, applied unchanged to every CoT position) is

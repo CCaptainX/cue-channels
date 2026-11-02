@@ -4,7 +4,7 @@
 
 - **Name in the write-up:** 7B on multi-step tasks (pilot failure) (Section 3 (multi-step boundary), Appendix A).
 - **Hypothesis:** Qwen 2.5 7B Instruct passes the competence gates on I's multi-step tasks (it did not).
-- **Pre-registration:** `28c6a1b` · **Results:** `6c6eb43` (load check), `6cf21db` (pilot)
+- **Pre-registration:** `176b201` · **Results:** `56784a0` (load check), `58c36f0` (pilot)
 - **Outputs:** `pilot.json`, `load_check.json` in this directory.
 - **Expected runtime:** about 32 min (15.5 GB model) (Apple M4 Pro, MPS, model already downloaded).
 

@@ -1,7 +1,7 @@
 # I: pre-registration — does H2's late-layer pre-CoT signal generalize across tasks?
 
 **Registered:** 2026-10-15T05:51:17Z (UTC). Committed before any I data is downloaded or generated and before any model run.
-Methodology ancestors: H (`f3ce9d4` pre-reg → `533dbff` results) and H2 (`7c41311` → `63dd6cb` → `2ac5425`).
+Methodology ancestors: H (`43d5977` pre-reg → `0c5d7f5` results) and H2 (`f825941` → `ada1969` → `38e5999`).
 Everything not stated here is identical to H2: model (`Qwen/Qwen2.5-1.5B-Instruct`, bf16, MPS, greedy), raw-text 3-shot
 prompt layout and parsing, stop at `\nQ:`, probe (StandardScaler + multinomial LR, C = 0.1), stratified 5-fold CV, 5 seeds,
 2,000-resample bootstrap CI, majority / chance / random-Gaussian baselines, 100-permutation max-over-layers test, position-only probe.
