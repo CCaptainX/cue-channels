@@ -7,6 +7,8 @@ at the last prompt token predicts the model's answer at 0.705 (majority baseline
 pre-registered follow-ups, including a steering experiment, failed to show that the model uses that signal. So the
 answer can be read out before the CoT starts. I could not show that it has been decided.
 
+**Full write-up:** [`writeup/writeup.md`](writeup/writeup.md) (methods, all five nulls, appendices with every pre-registration SHA).
+
 This is a single-author project: 17 experiments, the 13 from E onward pre-registered in git before their data
 existed, and one headline result that reproduces from a fresh clone in about 25 minutes.
 
@@ -27,6 +29,8 @@ correct one. On the 52 items the model gets wrong without CoT, it recovers the m
 and the correct letter 26.9% of the time. The result replicates on times tables (a, b in 2–12): 0.780 at layer 21
 against a 0.230 majority baseline.
 
+For the full methodology, the per-position analyses and the detail behind each null, read [`writeup/writeup.md`](writeup/writeup.md).
+
 ## Two methodology errors I caught, and what changed afterwards
 
 **The letter-bias trap (experiment E).** My first pre-registered layer sweep, on a BIG-Bench Hard logic task, gave a
@@ -42,7 +46,7 @@ question. The symptom was a probe peaking inside the option list (0.835 at the t
 0.665 at the last prompt token). I rebuilt the distractors as other products from the same range. I also added an
 **options-only baseline** to every pre-registration from then on: a classifier that sees only the five option values,
 the best of logistic regression, a random forest and two hand-written rules
-([`scripts/h2_pattern_baseline.py`](scripts/h2_pattern_baseline.py); full spec in Appendix D of the write-up). It scores
+([`scripts/h2_pattern_baseline.py`](scripts/h2_pattern_baseline.py); full spec in Appendix D of [`writeup/writeup.md`](writeup/writeup.md)). It scores
 1.000 on the old distractors and 0.206 on the new ones (chance 0.20). The headline survived the fix (0.695 → 0.705),
 and the option-list peak went away.
 
@@ -75,7 +79,7 @@ so every item gets an out-of-fold prediction. 95% CIs come from 2,000 bootstrap 
 Each layer is repeated over 5 seeds; seed-to-seed SD is 0.005–0.046 across layers. I pick the peak from 28 layers, so
 significance comes from a max-over-layers permutation test (100 permutations registered, 1,000 rerun post hoc; null
 maximum 0.380). A post-hoc C sweep gives 0.705–0.715 at layer 22 for C in {0.1, 1, 10}. Positive controls (facts
-written in the prompt) decode at 0.93–1.00. The paper-length version is in [`writeup/`](writeup/).
+written in the prompt) decode at 0.93–1.00. The paper-length version is [`writeup/writeup.md`](writeup/writeup.md).
 
 ## Pre-registration
 
@@ -140,6 +144,8 @@ scratch/               exploration not used in the results (see scratch/README.m
 MAPPING.md             experiment letters → names, directories, pre-registration and results SHAs
 ```
 
+The write-up itself is [`writeup/writeup.md`](writeup/writeup.md).
+
 All commits are authored by the project's GitHub identity, CCaptainX
 (`167642035+CCaptainX@users.noreply.github.com`). Nothing in the main results needs a gated model or an `HF_TOKEN`.
 
@@ -165,4 +171,4 @@ alternatives above, for example patching the written product mid-CoT to see whet
 - See also: Kudo et al. (2026) on answers computed during arithmetic CoT; Jia & Mu (2026) on CoT becoming
   load-bearing as difficulty rises; Pfau, Merrill & Bowman (2024) on filler tokens standing in for CoT.
 
-Full references are in the write-up.
+Full references are in [`writeup/writeup.md`](writeup/writeup.md).
